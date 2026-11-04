@@ -202,6 +202,11 @@ TMP=$(mktemp -d)
 trap 'rm -rf "$TMP"' EXIT INT TERM
 
 download_archive "$TMP/src.tar.gz"
+# Um repositório privado ou uma ref inexistente devolvem uma página HTML, não um tar.gz.
+case $(od -An -N2 -tx1 "$TMP/src.tar.gz" 2>/dev/null | tr -d ' ') in
+	1f8b) ;;
+	*) die "the download is not a tar.gz archive (private repository, wrong --ref, or a proxy in the way?)" ;;
+esac
 mkdir -p "$TMP/x"
 tar -xzf "$TMP/src.tar.gz" -C "$TMP/x"
 SRC=$(find "$TMP/x" -maxdepth 3 -type d -name "$MODULE" | head -n 1)
