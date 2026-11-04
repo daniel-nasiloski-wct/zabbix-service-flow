@@ -1,0 +1,246 @@
+# APM dashboard module for Zabbix 8.0 - translations.
+# This file is distributed under the same license as the module.
+msgid ""
+msgstr ""
+"Project-Id-Version: zabbix_service_dashboard 1.0.0\n"
+"POT-Creation-Date: 2026-11-04 02:00+0000\n"
+"PO-Revision-Date: 2026-11-04 02:00+0000\n"
+"Language: bg\n"
+"Last-Translator: Daniel Nasiloski\n"
+"Language-Team: bg\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+msgid "APM dashboard"
+msgstr "APM табло"
+
+msgid "Actions"
+msgstr "Действия"
+
+msgid "Edit"
+msgstr "Редактиране"
+
+msgid "Save"
+msgstr "Запазване"
+
+msgid "Cancel"
+msgstr "Отказ"
+
+msgid "Remove"
+msgstr "Премахване"
+
+msgid "Nothing to remove"
+msgstr "Няма какво да се премахне"
+
+msgid "Nothing to save"
+msgstr "Няма какво да се запази"
+
+msgid "Invalid time range or filter"
+msgstr "Невалиден период или филтър"
+
+msgid "Application"
+msgstr "Приложение"
+
+msgid "Time range"
+msgstr "Период"
+
+msgid "All applications (overview)"
+msgstr "Всички приложения (общ изглед)"
+
+msgid "Last %1$s minutes"
+msgstr "Последните %1$s минути"
+
+msgid "Overview"
+msgstr "Общ изглед"
+
+msgid "Back to %1$s"
+msgstr "Обратно към %1$s"
+
+msgid "Remove application"
+msgstr "Премахване на приложение"
+
+msgid "Remove service"
+msgstr "Премахване на услуга"
+
+msgid "Remove application \"%1$s\" from the map?"
+msgstr "Да се премахне ли приложението \"%1$s\" от картата?"
+
+msgid "Remove service \"%1$s\" from the map?"
+msgstr "Да се премахне ли услугата \"%1$s\" от картата?"
+
+msgid "Its services, databases and external calls leave the map. Services shared with other applications stay."
+msgstr "Неговите услуги, бази данни и външни извиквания изчезват от картата. Услугите, споделени с други приложения, остават."
+
+msgid "The service, its connections, databases and external calls leave the map."
+msgstr "Услугата, нейните връзки, бази данни и външни извиквания изчезват от картата."
+
+msgid "If the application is discovered again in new traces, it is recreated automatically, with all its entities."
+msgstr "Ако приложението бъде открито отново в нови трасета, то се създава автоматично наново с всички свои обекти."
+
+msgid "If the service is discovered again in new traces, it is recreated automatically, with all its entities."
+msgstr "Ако услугата бъде открита отново в нови трасета, тя се създава автоматично наново с всички свои обекти."
+
+msgid "Hosts, items and triggers in Zabbix are not changed."
+msgstr "Хостовете, елементите и тригерите в Zabbix не се променят."
+
+msgid "Remove %1$s"
+msgstr "Премахване на %1$s"
+
+msgid "No data found"
+msgstr "Не са намерени данни"
+
+msgid "No APM span matches the attribute filter in the selected time range. Change the filter above or press Reset to see everything."
+msgstr "Нито един APM span не отговаря на филтъра по атрибути за избрания период. Променете филтъра по-горе или натиснете Нулиране, за да видите всичко."
+
+msgid "No APM traces in the selected time range and no host with the apm.requests item. Services appear here as soon as the applications send traces to the Zabbix proxy."
+msgstr "Няма APM трасета за избрания период и няма хост с елемент apm.requests. Услугите се появяват тук веднага щом приложенията изпратят трасета към Zabbix proxy."
+
+msgid "Could not save the layout: %1$s"
+msgstr "Подредбата не можа да бъде запазена: %1$s"
+
+msgid "Service"
+msgstr "Услуга"
+
+msgid "Database"
+msgstr "База данни"
+
+msgid "External service"
+msgstr "Външна услуга"
+
+msgid "Application · %1$s services"
+msgstr "Приложение · %1$s услуги"
+
+msgid "No traffic in the window"
+msgstr "Няма трафик за периода"
+
+msgid "last span %1$s"
+msgstr "последен span %1$s"
+
+msgid "no spans seen yet"
+msgstr "още няма видени spans"
+
+msgid "%1$s req/min"
+msgstr "%1$s заявки/мин"
+
+msgid "%1$s calls/min"
+msgstr "%1$s извиквания/мин"
+
+msgid "p95 %1$s"
+msgstr "p95 %1$s"
+
+msgid "%1$s errors/min"
+msgstr "%1$s грешки/мин"
+
+msgid "%1$s errors"
+msgstr "%1$s грешки"
+
+msgid "Traces (errors and slowest)"
+msgstr "Трасета (грешки и най-бавни)"
+
+msgid "Requests/min"
+msgstr "Заявки/мин"
+
+msgid "Calls/min"
+msgstr "Извиквания/мин"
+
+msgid "Average"
+msgstr "Средно"
+
+msgid "Errors"
+msgstr "Грешки"
+
+msgid "p95 latency"
+msgstr "Латентност p95"
+
+msgid "Logs ERROR/min"
+msgstr "Логове ERROR/мин"
+
+msgid "No traffic in the selected time range."
+msgstr "Няма трафик за избрания период."
+
+msgid "Last span %1$s (%2$s)."
+msgstr "Последен span %1$s (%2$s)."
+
+msgid "No spans seen yet."
+msgstr "Още няма видени spans."
+
+msgid "Zabbix problems"
+msgstr "Проблеми в Zabbix"
+
+msgid "Zabbix items (host %1$s, last 30 min)"
+msgstr "Елементи в Zabbix (хост %1$s, последните 30 мин)"
+
+msgid "Inbound spans (traces)"
+msgstr "Входящи spans (трасета)"
+
+msgid "Incoming calls (traces)"
+msgstr "Входящи извиквания (трасета)"
+
+msgid "Endpoints"
+msgstr "Крайни точки"
+
+msgid "Operation"
+msgstr "Операция"
+
+msgid "req/min"
+msgstr "заявки/мин"
+
+msgid "p95"
+msgstr "p95"
+
+msgid "errors"
+msgstr "грешки"
+
+msgid "Operations"
+msgstr "Операции"
+
+msgid "%1$s/min"
+msgstr "%1$s/мин"
+
+msgid "Open host problems in Zabbix"
+msgstr "Отваряне на проблемите на хоста в Zabbix"
+
+msgid "%1$s ms"
+msgstr "%1$s мс"
+
+msgid "%1$s s"
+msgstr "%1$s с"
+
+msgid "%1$s s ago"
+msgstr "преди %1$s с"
+
+msgid "%1$s min ago"
+msgstr "преди %1$s мин"
+
+msgid "%1$s h ago"
+msgstr "преди %1$s ч"
+
+msgid "%1$s d ago"
+msgstr "преди %1$s д"
+
+msgid "Not classified"
+msgstr "Некласифицирано"
+
+msgid "Information"
+msgstr "Информация"
+
+msgid "Warning"
+msgstr "Предупреждение"
+
+msgid "High"
+msgstr "Високо"
+
+msgid "Disaster"
+msgstr "Бедствие"
+
+msgid "OK"
+msgstr "OK"
+
+msgid "Incident"
+msgstr "Инцидент"
+
+msgid "No Zabbix host"
+msgstr "Няма Zabbix хост"
+

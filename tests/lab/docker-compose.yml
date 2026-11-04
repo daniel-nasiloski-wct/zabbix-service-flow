@@ -1,0 +1,74 @@
+# Lab de homologação do módulo APM dashboard: Zabbix 8.0 rc (pacotes oficiais do repo unstable) com
+# server + frontend numa das duas imagens (trocar o "build" do serviço zabbix):
+#   ./zabbix-rpm  RPMs, httpd + php-fpm: Oracle Linux 10 (padrão, igual à VM .100) ou AlmaLinux 10 (args)
+#   ./zabbix-deb  .deb, Apache + mod-php: Ubuntu 24.04 (padrão) ou Debian 12 (args)
+# proxy com coletor APM em Oracle Linux 10 (o pacote zabbix-proxy-sqlite3-apm só existe em RPM),
+# PostgreSQL e ClickHouse. Nada aqui toca a VM .100. As quatro distros foram validadas em 2026-11-03.
+#
+#   docker compose up -d --build          # sobe tudo (primeira vez demora: apt/dnf install)
+#   ../../../.venv/bin/python seed.py     # fonte de APM, proxy e os 17 hosts com itens e triggers
+#   python multi_app.py --endpoint http://localhost:4317 --iterations 300 --interval 2   # tráfego
+#   Frontend: http://localhost:8080/zabbix/  (Admin / zabbix)
+name: sdlab
+
+services:
+  db:
+    image: postgres:16-alpine
+    container_name: sdlab-db
+    environment:
+      POSTGRES_USER: zabbix
+      POSTGRES_PASSWORD: zabbix
+      POSTGRES_DB: zabbix
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U zabbix -d zabbix"]
+      interval: 5s
+      timeout: 3s
+      retries: 20
+
+  clickhouse:
+    image: clickhouse/clickhouse-server:26.8
+    container_name: sdlab-clickhouse
+    environment:
+      CLICKHOUSE_USER: zabbix
+      CLICKHOUSE_PASSWORD: zabbix
+      CLICKHOUSE_DB: zabbix
+    volumes:
+      - ./clickhouse/otel_schema.sql:/docker-entrypoint-initdb.d/otel_schema.sql:ro
+    ulimits:
+      nofile: 262144
+    healthcheck:
+      test: ["CMD-SHELL", "wget -qO- http://localhost:8123/ping | grep -q Ok"]
+      interval: 5s
+      timeout: 3s
+      retries: 30
+
+  zabbix:
+    build:
+      context: ./zabbix-rpm          # ou ./zabbix-deb (Ubuntu 24.04 / Debian 12)
+      args:                          # remover para Oracle Linux 10
+        BASE: almalinux:10
+        ZABBIX_RELEASE_RPM: https://repo.zabbix.com/zabbix/8.0/release/alma/10/noarch/zabbix-release-latest-8.0.el10.noarch.rpm
+    image: sdlab-zabbix
+    container_name: sdlab-zabbix
+    hostname: sdlab-zabbix
+    depends_on:
+      db:
+        condition: service_healthy
+      clickhouse:
+        condition: service_healthy
+    ports:
+      - "8080:80"
+      - "10051:10051"
+
+  proxy:
+    build: ./proxy
+    image: sdlab-proxy
+    container_name: sdlab-proxy
+    hostname: sdlab-proxy
+    depends_on:
+      zabbix:
+        condition: service_started
+      clickhouse:
+        condition: service_healthy
+    ports:
+      - "4317:4317"

@@ -1,0 +1,246 @@
+# APM dashboard module for Zabbix 8.0 - translations.
+# This file is distributed under the same license as the module.
+msgid ""
+msgstr ""
+"Project-Id-Version: zabbix_service_dashboard 1.0.0\n"
+"POT-Creation-Date: 2026-11-04 02:00+0000\n"
+"PO-Revision-Date: 2026-11-04 02:00+0000\n"
+"Language: lt\n"
+"Last-Translator: Daniel Nasiloski\n"
+"Language-Team: lt\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
+
+msgid "APM dashboard"
+msgstr "APM skydelis"
+
+msgid "Actions"
+msgstr "Veiksmai"
+
+msgid "Edit"
+msgstr "Redaguoti"
+
+msgid "Save"
+msgstr "Išsaugoti"
+
+msgid "Cancel"
+msgstr "Atšaukti"
+
+msgid "Remove"
+msgstr "Pašalinti"
+
+msgid "Nothing to remove"
+msgstr "Nėra ko pašalinti"
+
+msgid "Nothing to save"
+msgstr "Nėra ko išsaugoti"
+
+msgid "Invalid time range or filter"
+msgstr "Neteisingas laiko intervalas arba filtras"
+
+msgid "Application"
+msgstr "Programa"
+
+msgid "Time range"
+msgstr "Laiko intervalas"
+
+msgid "All applications (overview)"
+msgstr "Visos programos (apžvalga)"
+
+msgid "Last %1$s minutes"
+msgstr "Paskutinės %1$s min."
+
+msgid "Overview"
+msgstr "Apžvalga"
+
+msgid "Back to %1$s"
+msgstr "Grįžti į %1$s"
+
+msgid "Remove application"
+msgstr "Pašalinti programą"
+
+msgid "Remove service"
+msgstr "Pašalinti paslaugą"
+
+msgid "Remove application \"%1$s\" from the map?"
+msgstr "Pašalinti programą \"%1$s\" iš žemėlapio?"
+
+msgid "Remove service \"%1$s\" from the map?"
+msgstr "Pašalinti paslaugą \"%1$s\" iš žemėlapio?"
+
+msgid "Its services, databases and external calls leave the map. Services shared with other applications stay."
+msgstr "Jos paslaugos, duomenų bazės ir išoriniai kvietimai dingsta iš žemėlapio. Su kitomis programomis bendros paslaugos lieka."
+
+msgid "The service, its connections, databases and external calls leave the map."
+msgstr "Paslauga, jos ryšiai, duomenų bazės ir išoriniai kvietimai dingsta iš žemėlapio."
+
+msgid "If the application is discovered again in new traces, it is recreated automatically, with all its entities."
+msgstr "Jei programa vėl aptinkama naujose trasose, ji automatiškai sukuriama iš naujo su visais savo objektais."
+
+msgid "If the service is discovered again in new traces, it is recreated automatically, with all its entities."
+msgstr "Jei paslauga vėl aptinkama naujose trasose, ji automatiškai sukuriama iš naujo su visais savo objektais."
+
+msgid "Hosts, items and triggers in Zabbix are not changed."
+msgstr "Zabbix mazgai, elementai ir trigeriai nekeičiami."
+
+msgid "Remove %1$s"
+msgstr "Pašalinti %1$s"
+
+msgid "No data found"
+msgstr "Duomenų nerasta"
+
+msgid "No APM span matches the attribute filter in the selected time range. Change the filter above or press Reset to see everything."
+msgstr "Nė vienas APM span neatitinka atributų filtro pasirinktame laiko intervale. Pakeiskite filtrą aukščiau arba spauskite Atstatyti, kad matytumėte viską."
+
+msgid "No APM traces in the selected time range and no host with the apm.requests item. Services appear here as soon as the applications send traces to the Zabbix proxy."
+msgstr "Pasirinktame laiko intervale nėra APM trasų ir nėra mazgo su elementu apm.requests. Paslaugos čia atsiras, kai tik programos pradės siųsti trasas į Zabbix proxy."
+
+msgid "Could not save the layout: %1$s"
+msgstr "Nepavyko išsaugoti išdėstymo: %1$s"
+
+msgid "Service"
+msgstr "Paslauga"
+
+msgid "Database"
+msgstr "Duomenų bazė"
+
+msgid "External service"
+msgstr "Išorinė paslauga"
+
+msgid "Application · %1$s services"
+msgstr "Programa · %1$s paslaugos"
+
+msgid "No traffic in the window"
+msgstr "Intervale srauto nėra"
+
+msgid "last span %1$s"
+msgstr "paskutinis span %1$s"
+
+msgid "no spans seen yet"
+msgstr "span dar nematyta"
+
+msgid "%1$s req/min"
+msgstr "%1$s užkl./min"
+
+msgid "%1$s calls/min"
+msgstr "%1$s kviet./min"
+
+msgid "p95 %1$s"
+msgstr "p95 %1$s"
+
+msgid "%1$s errors/min"
+msgstr "%1$s klaidų/min"
+
+msgid "%1$s errors"
+msgstr "%1$s klaidų"
+
+msgid "Traces (errors and slowest)"
+msgstr "Trasos (klaidos ir lėčiausios)"
+
+msgid "Requests/min"
+msgstr "Užklausų/min"
+
+msgid "Calls/min"
+msgstr "Kvietimų/min"
+
+msgid "Average"
+msgstr "Vidurkis"
+
+msgid "Errors"
+msgstr "Klaidos"
+
+msgid "p95 latency"
+msgstr "p95 delsa"
+
+msgid "Logs ERROR/min"
+msgstr "ERROR žurnalai/min"
+
+msgid "No traffic in the selected time range."
+msgstr "Pasirinktame laiko intervale srauto nėra."
+
+msgid "Last span %1$s (%2$s)."
+msgstr "Paskutinis span %1$s (%2$s)."
+
+msgid "No spans seen yet."
+msgstr "Span dar nematyta."
+
+msgid "Zabbix problems"
+msgstr "Zabbix problemos"
+
+msgid "Zabbix items (host %1$s, last 30 min)"
+msgstr "Zabbix elementai (mazgas %1$s, paskutinės 30 min.)"
+
+msgid "Inbound spans (traces)"
+msgstr "Gaunami span (trasos)"
+
+msgid "Incoming calls (traces)"
+msgstr "Gaunami kvietimai (trasos)"
+
+msgid "Endpoints"
+msgstr "Galiniai taškai"
+
+msgid "Operation"
+msgstr "Operacija"
+
+msgid "req/min"
+msgstr "užkl./min"
+
+msgid "p95"
+msgstr "p95"
+
+msgid "errors"
+msgstr "klaidų"
+
+msgid "Operations"
+msgstr "Operacijos"
+
+msgid "%1$s/min"
+msgstr "%1$s/min"
+
+msgid "Open host problems in Zabbix"
+msgstr "Atidaryti mazgo problemas Zabbix"
+
+msgid "%1$s ms"
+msgstr "%1$s ms"
+
+msgid "%1$s s"
+msgstr "%1$s s"
+
+msgid "%1$s s ago"
+msgstr "prieš %1$s s"
+
+msgid "%1$s min ago"
+msgstr "prieš %1$s min"
+
+msgid "%1$s h ago"
+msgstr "prieš %1$s val."
+
+msgid "%1$s d ago"
+msgstr "prieš %1$s d."
+
+msgid "Not classified"
+msgstr "Neklasifikuota"
+
+msgid "Information"
+msgstr "Informacija"
+
+msgid "Warning"
+msgstr "Įspėjimas"
+
+msgid "High"
+msgstr "Aukštas"
+
+msgid "Disaster"
+msgstr "Katastrofa"
+
+msgid "OK"
+msgstr "Gerai"
+
+msgid "Incident"
+msgstr "Incidentas"
+
+msgid "No Zabbix host"
+msgstr "Nėra Zabbix mazgo"
+

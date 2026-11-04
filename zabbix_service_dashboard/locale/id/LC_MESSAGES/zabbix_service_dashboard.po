@@ -1,0 +1,246 @@
+# APM dashboard module for Zabbix 8.0 - translations.
+# This file is distributed under the same license as the module.
+msgid ""
+msgstr ""
+"Project-Id-Version: zabbix_service_dashboard 1.0.0\n"
+"POT-Creation-Date: 2026-11-04 02:00+0000\n"
+"PO-Revision-Date: 2026-11-04 02:00+0000\n"
+"Language: id\n"
+"Last-Translator: Daniel Nasiloski\n"
+"Language-Team: id\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+
+msgid "APM dashboard"
+msgstr "Dasbor APM"
+
+msgid "Actions"
+msgstr "Tindakan"
+
+msgid "Edit"
+msgstr "Edit"
+
+msgid "Save"
+msgstr "Simpan"
+
+msgid "Cancel"
+msgstr "Batal"
+
+msgid "Remove"
+msgstr "Hapus"
+
+msgid "Nothing to remove"
+msgstr "Tidak ada yang dihapus"
+
+msgid "Nothing to save"
+msgstr "Tidak ada yang disimpan"
+
+msgid "Invalid time range or filter"
+msgstr "Rentang waktu atau filter tidak valid"
+
+msgid "Application"
+msgstr "Aplikasi"
+
+msgid "Time range"
+msgstr "Rentang waktu"
+
+msgid "All applications (overview)"
+msgstr "Semua aplikasi (ikhtisar)"
+
+msgid "Last %1$s minutes"
+msgstr "%1$s menit terakhir"
+
+msgid "Overview"
+msgstr "Ikhtisar"
+
+msgid "Back to %1$s"
+msgstr "Kembali ke %1$s"
+
+msgid "Remove application"
+msgstr "Hapus aplikasi"
+
+msgid "Remove service"
+msgstr "Hapus layanan"
+
+msgid "Remove application \"%1$s\" from the map?"
+msgstr "Hapus aplikasi \"%1$s\" dari peta?"
+
+msgid "Remove service \"%1$s\" from the map?"
+msgstr "Hapus layanan \"%1$s\" dari peta?"
+
+msgid "Its services, databases and external calls leave the map. Services shared with other applications stay."
+msgstr "Layanan, basis data, dan panggilan eksternalnya hilang dari peta. Layanan yang dibagi dengan aplikasi lain tetap ada."
+
+msgid "The service, its connections, databases and external calls leave the map."
+msgstr "Layanan ini beserta koneksi, basis data, dan panggilan eksternalnya hilang dari peta."
+
+msgid "If the application is discovered again in new traces, it is recreated automatically, with all its entities."
+msgstr "Jika aplikasi ditemukan lagi dalam trace baru, aplikasi dibuat ulang secara otomatis beserta semua entitasnya."
+
+msgid "If the service is discovered again in new traces, it is recreated automatically, with all its entities."
+msgstr "Jika layanan ditemukan lagi dalam trace baru, layanan dibuat ulang secara otomatis beserta semua entitasnya."
+
+msgid "Hosts, items and triggers in Zabbix are not changed."
+msgstr "Host, item, dan trigger di Zabbix tidak diubah."
+
+msgid "Remove %1$s"
+msgstr "Hapus %1$s"
+
+msgid "No data found"
+msgstr "Data tidak ditemukan"
+
+msgid "No APM span matches the attribute filter in the selected time range. Change the filter above or press Reset to see everything."
+msgstr "Tidak ada span APM yang cocok dengan filter atribut dalam rentang waktu yang dipilih. Ubah filter di atas atau tekan Reset untuk melihat semuanya."
+
+msgid "No APM traces in the selected time range and no host with the apm.requests item. Services appear here as soon as the applications send traces to the Zabbix proxy."
+msgstr "Tidak ada trace APM dalam rentang waktu yang dipilih dan tidak ada host dengan item apm.requests. Layanan muncul di sini segera setelah aplikasi mengirim trace ke Zabbix proxy."
+
+msgid "Could not save the layout: %1$s"
+msgstr "Tidak dapat menyimpan tata letak: %1$s"
+
+msgid "Service"
+msgstr "Layanan"
+
+msgid "Database"
+msgstr "Basis data"
+
+msgid "External service"
+msgstr "Layanan eksternal"
+
+msgid "Application · %1$s services"
+msgstr "Aplikasi · %1$s layanan"
+
+msgid "No traffic in the window"
+msgstr "Tidak ada lalu lintas dalam rentang"
+
+msgid "last span %1$s"
+msgstr "span terakhir %1$s"
+
+msgid "no spans seen yet"
+msgstr "belum ada span terlihat"
+
+msgid "%1$s req/min"
+msgstr "%1$s permintaan/menit"
+
+msgid "%1$s calls/min"
+msgstr "%1$s panggilan/menit"
+
+msgid "p95 %1$s"
+msgstr "p95 %1$s"
+
+msgid "%1$s errors/min"
+msgstr "%1$s kesalahan/menit"
+
+msgid "%1$s errors"
+msgstr "%1$s kesalahan"
+
+msgid "Traces (errors and slowest)"
+msgstr "Trace (kesalahan dan paling lambat)"
+
+msgid "Requests/min"
+msgstr "Permintaan/menit"
+
+msgid "Calls/min"
+msgstr "Panggilan/menit"
+
+msgid "Average"
+msgstr "Rata-rata"
+
+msgid "Errors"
+msgstr "Kesalahan"
+
+msgid "p95 latency"
+msgstr "Latensi p95"
+
+msgid "Logs ERROR/min"
+msgstr "Log ERROR/menit"
+
+msgid "No traffic in the selected time range."
+msgstr "Tidak ada lalu lintas dalam rentang waktu yang dipilih."
+
+msgid "Last span %1$s (%2$s)."
+msgstr "Span terakhir %1$s (%2$s)."
+
+msgid "No spans seen yet."
+msgstr "Belum ada span terlihat."
+
+msgid "Zabbix problems"
+msgstr "Masalah Zabbix"
+
+msgid "Zabbix items (host %1$s, last 30 min)"
+msgstr "Item Zabbix (host %1$s, 30 menit terakhir)"
+
+msgid "Inbound spans (traces)"
+msgstr "Span masuk (trace)"
+
+msgid "Incoming calls (traces)"
+msgstr "Panggilan masuk (trace)"
+
+msgid "Endpoints"
+msgstr "Endpoint"
+
+msgid "Operation"
+msgstr "Operasi"
+
+msgid "req/min"
+msgstr "permintaan/menit"
+
+msgid "p95"
+msgstr "p95"
+
+msgid "errors"
+msgstr "kesalahan"
+
+msgid "Operations"
+msgstr "Operasi"
+
+msgid "%1$s/min"
+msgstr "%1$s/menit"
+
+msgid "Open host problems in Zabbix"
+msgstr "Buka masalah host di Zabbix"
+
+msgid "%1$s ms"
+msgstr "%1$s md"
+
+msgid "%1$s s"
+msgstr "%1$s dtk"
+
+msgid "%1$s s ago"
+msgstr "%1$s dtk yang lalu"
+
+msgid "%1$s min ago"
+msgstr "%1$s mnt yang lalu"
+
+msgid "%1$s h ago"
+msgstr "%1$s jam yang lalu"
+
+msgid "%1$s d ago"
+msgstr "%1$s hari yang lalu"
+
+msgid "Not classified"
+msgstr "Tidak diklasifikasikan"
+
+msgid "Information"
+msgstr "Informasi"
+
+msgid "Warning"
+msgstr "Peringatan"
+
+msgid "High"
+msgstr "Tinggi"
+
+msgid "Disaster"
+msgstr "Bencana"
+
+msgid "OK"
+msgstr "OK"
+
+msgid "Incident"
+msgstr "Insiden"
+
+msgid "No Zabbix host"
+msgstr "Tidak ada host Zabbix"
+

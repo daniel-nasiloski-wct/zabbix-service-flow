@@ -1,0 +1,246 @@
+# APM dashboard module for Zabbix 8.0 - translations.
+# This file is distributed under the same license as the module.
+msgid ""
+msgstr ""
+"Project-Id-Version: zabbix_service_dashboard 1.0.0\n"
+"POT-Creation-Date: 2026-11-04 02:00+0000\n"
+"PO-Revision-Date: 2026-11-04 02:00+0000\n"
+"Language: th\n"
+"Last-Translator: Daniel Nasiloski\n"
+"Language-Team: th\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+
+msgid "APM dashboard"
+msgstr "แดชบอร์ด APM"
+
+msgid "Actions"
+msgstr "การดำเนินการ"
+
+msgid "Edit"
+msgstr "แก้ไข"
+
+msgid "Save"
+msgstr "บันทึก"
+
+msgid "Cancel"
+msgstr "ยกเลิก"
+
+msgid "Remove"
+msgstr "นำออก"
+
+msgid "Nothing to remove"
+msgstr "ไม่มีอะไรให้นำออก"
+
+msgid "Nothing to save"
+msgstr "ไม่มีอะไรให้บันทึก"
+
+msgid "Invalid time range or filter"
+msgstr "ช่วงเวลาหรือตัวกรองไม่ถูกต้อง"
+
+msgid "Application"
+msgstr "แอปพลิเคชัน"
+
+msgid "Time range"
+msgstr "ช่วงเวลา"
+
+msgid "All applications (overview)"
+msgstr "แอปพลิเคชันทั้งหมด (ภาพรวม)"
+
+msgid "Last %1$s minutes"
+msgstr "%1$s นาทีล่าสุด"
+
+msgid "Overview"
+msgstr "ภาพรวม"
+
+msgid "Back to %1$s"
+msgstr "กลับไปที่ %1$s"
+
+msgid "Remove application"
+msgstr "นำแอปพลิเคชันออก"
+
+msgid "Remove service"
+msgstr "นำบริการออก"
+
+msgid "Remove application \"%1$s\" from the map?"
+msgstr "นำแอปพลิเคชัน \"%1$s\" ออกจากแผนที่หรือไม่"
+
+msgid "Remove service \"%1$s\" from the map?"
+msgstr "นำบริการ \"%1$s\" ออกจากแผนที่หรือไม่"
+
+msgid "Its services, databases and external calls leave the map. Services shared with other applications stay."
+msgstr "บริการ ฐานข้อมูล และการเรียกภายนอกของแอปพลิเคชันนี้จะหายไปจากแผนที่ บริการที่ใช้ร่วมกับแอปพลิเคชันอื่นจะยังคงอยู่"
+
+msgid "The service, its connections, databases and external calls leave the map."
+msgstr "บริการนี้ รวมถึงการเชื่อมต่อ ฐานข้อมูล และการเรียกภายนอกจะหายไปจากแผนที่"
+
+msgid "If the application is discovered again in new traces, it is recreated automatically, with all its entities."
+msgstr "หากพบแอปพลิเคชันนี้อีกครั้งใน trace ใหม่ ระบบจะสร้างขึ้นใหม่โดยอัตโนมัติพร้อมเอนทิตีทั้งหมด"
+
+msgid "If the service is discovered again in new traces, it is recreated automatically, with all its entities."
+msgstr "หากพบบริการนี้อีกครั้งใน trace ใหม่ ระบบจะสร้างขึ้นใหม่โดยอัตโนมัติพร้อมเอนทิตีทั้งหมด"
+
+msgid "Hosts, items and triggers in Zabbix are not changed."
+msgstr "โฮสต์ ไอเทม และทริกเกอร์ใน Zabbix จะไม่ถูกเปลี่ยนแปลง"
+
+msgid "Remove %1$s"
+msgstr "นำ %1$s ออก"
+
+msgid "No data found"
+msgstr "ไม่พบข้อมูล"
+
+msgid "No APM span matches the attribute filter in the selected time range. Change the filter above or press Reset to see everything."
+msgstr "ไม่มี span ของ APM ที่ตรงกับตัวกรองแอตทริบิวต์ในช่วงเวลาที่เลือก เปลี่ยนตัวกรองด้านบนหรือกดรีเซ็ตเพื่อดูทั้งหมด"
+
+msgid "No APM traces in the selected time range and no host with the apm.requests item. Services appear here as soon as the applications send traces to the Zabbix proxy."
+msgstr "ไม่มี trace ของ APM ในช่วงเวลาที่เลือก และไม่มีโฮสต์ที่มีไอเทม apm.requests บริการจะปรากฏที่นี่ทันทีที่แอปพลิเคชันส่ง trace ไปยัง Zabbix proxy"
+
+msgid "Could not save the layout: %1$s"
+msgstr "ไม่สามารถบันทึกเลย์เอาต์ได้: %1$s"
+
+msgid "Service"
+msgstr "บริการ"
+
+msgid "Database"
+msgstr "ฐานข้อมูล"
+
+msgid "External service"
+msgstr "บริการภายนอก"
+
+msgid "Application · %1$s services"
+msgstr "แอปพลิเคชัน · %1$s บริการ"
+
+msgid "No traffic in the window"
+msgstr "ไม่มีทราฟฟิกในช่วงเวลา"
+
+msgid "last span %1$s"
+msgstr "span ล่าสุด %1$s"
+
+msgid "no spans seen yet"
+msgstr "ยังไม่พบ span"
+
+msgid "%1$s req/min"
+msgstr "%1$s คำขอ/นาที"
+
+msgid "%1$s calls/min"
+msgstr "%1$s การเรียก/นาที"
+
+msgid "p95 %1$s"
+msgstr "p95 %1$s"
+
+msgid "%1$s errors/min"
+msgstr "%1$s ข้อผิดพลาด/นาที"
+
+msgid "%1$s errors"
+msgstr "ข้อผิดพลาด %1$s"
+
+msgid "Traces (errors and slowest)"
+msgstr "Trace (ข้อผิดพลาดและช้าที่สุด)"
+
+msgid "Requests/min"
+msgstr "คำขอ/นาที"
+
+msgid "Calls/min"
+msgstr "การเรียก/นาที"
+
+msgid "Average"
+msgstr "เฉลี่ย"
+
+msgid "Errors"
+msgstr "ข้อผิดพลาด"
+
+msgid "p95 latency"
+msgstr "ความหน่วง p95"
+
+msgid "Logs ERROR/min"
+msgstr "ล็อก ERROR/นาที"
+
+msgid "No traffic in the selected time range."
+msgstr "ไม่มีทราฟฟิกในช่วงเวลาที่เลือก"
+
+msgid "Last span %1$s (%2$s)."
+msgstr "span ล่าสุด %1$s (%2$s)"
+
+msgid "No spans seen yet."
+msgstr "ยังไม่พบ span"
+
+msgid "Zabbix problems"
+msgstr "ปัญหาใน Zabbix"
+
+msgid "Zabbix items (host %1$s, last 30 min)"
+msgstr "ไอเทมใน Zabbix (โฮสต์ %1$s, 30 นาทีล่าสุด)"
+
+msgid "Inbound spans (traces)"
+msgstr "span ขาเข้า (trace)"
+
+msgid "Incoming calls (traces)"
+msgstr "การเรียกขาเข้า (trace)"
+
+msgid "Endpoints"
+msgstr "เอนด์พอยต์"
+
+msgid "Operation"
+msgstr "การดำเนินการ"
+
+msgid "req/min"
+msgstr "คำขอ/นาที"
+
+msgid "p95"
+msgstr "p95"
+
+msgid "errors"
+msgstr "ข้อผิดพลาด"
+
+msgid "Operations"
+msgstr "การดำเนินการ"
+
+msgid "%1$s/min"
+msgstr "%1$s/นาที"
+
+msgid "Open host problems in Zabbix"
+msgstr "เปิดปัญหาของโฮสต์ใน Zabbix"
+
+msgid "%1$s ms"
+msgstr "%1$s มิลลิวินาที"
+
+msgid "%1$s s"
+msgstr "%1$s วินาที"
+
+msgid "%1$s s ago"
+msgstr "%1$s วินาทีที่แล้ว"
+
+msgid "%1$s min ago"
+msgstr "%1$s นาทีที่แล้ว"
+
+msgid "%1$s h ago"
+msgstr "%1$s ชั่วโมงที่แล้ว"
+
+msgid "%1$s d ago"
+msgstr "%1$s วันที่แล้ว"
+
+msgid "Not classified"
+msgstr "ไม่ได้จัดประเภท"
+
+msgid "Information"
+msgstr "ข้อมูล"
+
+msgid "Warning"
+msgstr "คำเตือน"
+
+msgid "High"
+msgstr "สูง"
+
+msgid "Disaster"
+msgstr "หายนะ"
+
+msgid "OK"
+msgstr "ปกติ"
+
+msgid "Incident"
+msgstr "เหตุการณ์"
+
+msgid "No Zabbix host"
+msgstr "ไม่มีโฮสต์ Zabbix"
+

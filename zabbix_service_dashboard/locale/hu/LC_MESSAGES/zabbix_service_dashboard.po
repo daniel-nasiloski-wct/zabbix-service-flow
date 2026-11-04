@@ -1,0 +1,246 @@
+# APM dashboard module for Zabbix 8.0 - translations.
+# This file is distributed under the same license as the module.
+msgid ""
+msgstr ""
+"Project-Id-Version: zabbix_service_dashboard 1.0.0\n"
+"POT-Creation-Date: 2026-11-04 02:00+0000\n"
+"PO-Revision-Date: 2026-11-04 02:00+0000\n"
+"Language: hu\n"
+"Last-Translator: Daniel Nasiloski\n"
+"Language-Team: hu\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+msgid "APM dashboard"
+msgstr "APM irányítópult"
+
+msgid "Actions"
+msgstr "Műveletek"
+
+msgid "Edit"
+msgstr "Szerkesztés"
+
+msgid "Save"
+msgstr "Mentés"
+
+msgid "Cancel"
+msgstr "Mégse"
+
+msgid "Remove"
+msgstr "Eltávolítás"
+
+msgid "Nothing to remove"
+msgstr "Nincs mit eltávolítani"
+
+msgid "Nothing to save"
+msgstr "Nincs mit menteni"
+
+msgid "Invalid time range or filter"
+msgstr "Érvénytelen időtartomány vagy szűrő"
+
+msgid "Application"
+msgstr "Alkalmazás"
+
+msgid "Time range"
+msgstr "Időtartomány"
+
+msgid "All applications (overview)"
+msgstr "Minden alkalmazás (áttekintés)"
+
+msgid "Last %1$s minutes"
+msgstr "Utolsó %1$s perc"
+
+msgid "Overview"
+msgstr "Áttekintés"
+
+msgid "Back to %1$s"
+msgstr "Vissza: %1$s"
+
+msgid "Remove application"
+msgstr "Alkalmazás eltávolítása"
+
+msgid "Remove service"
+msgstr "Szolgáltatás eltávolítása"
+
+msgid "Remove application \"%1$s\" from the map?"
+msgstr "Eltávolítja a(z) \"%1$s\" alkalmazást a térképről?"
+
+msgid "Remove service \"%1$s\" from the map?"
+msgstr "Eltávolítja a(z) \"%1$s\" szolgáltatást a térképről?"
+
+msgid "Its services, databases and external calls leave the map. Services shared with other applications stay."
+msgstr "A szolgáltatásai, adatbázisai és külső hívásai eltűnnek a térképről. A más alkalmazásokkal közös szolgáltatások maradnak."
+
+msgid "The service, its connections, databases and external calls leave the map."
+msgstr "A szolgáltatás, a kapcsolatai, adatbázisai és külső hívásai eltűnnek a térképről."
+
+msgid "If the application is discovered again in new traces, it is recreated automatically, with all its entities."
+msgstr "Ha az alkalmazást újra felfedezik új nyomkövetésekben, automatikusan újra létrejön az összes entitásával."
+
+msgid "If the service is discovered again in new traces, it is recreated automatically, with all its entities."
+msgstr "Ha a szolgáltatást újra felfedezik új nyomkövetésekben, automatikusan újra létrejön az összes entitásával."
+
+msgid "Hosts, items and triggers in Zabbix are not changed."
+msgstr "A Zabbix hosztjai, elemei és triggerei nem változnak."
+
+msgid "Remove %1$s"
+msgstr "%1$s eltávolítása"
+
+msgid "No data found"
+msgstr "Nincs találat"
+
+msgid "No APM span matches the attribute filter in the selected time range. Change the filter above or press Reset to see everything."
+msgstr "Egyetlen APM span sem felel meg az attribútumszűrőnek a kiválasztott időtartományban. Módosítsa a fenti szűrőt, vagy nyomja meg a Visszaállítás gombot, hogy mindent lásson."
+
+msgid "No APM traces in the selected time range and no host with the apm.requests item. Services appear here as soon as the applications send traces to the Zabbix proxy."
+msgstr "Nincs APM nyomkövetés a kiválasztott időtartományban, és nincs hoszt apm.requests elemmel. A szolgáltatások akkor jelennek meg itt, amint az alkalmazások nyomkövetéseket küldenek a Zabbix proxynak."
+
+msgid "Could not save the layout: %1$s"
+msgstr "Az elrendezés mentése nem sikerült: %1$s"
+
+msgid "Service"
+msgstr "Szolgáltatás"
+
+msgid "Database"
+msgstr "Adatbázis"
+
+msgid "External service"
+msgstr "Külső szolgáltatás"
+
+msgid "Application · %1$s services"
+msgstr "Alkalmazás · %1$s szolgáltatás"
+
+msgid "No traffic in the window"
+msgstr "Nincs forgalom az időtartományban"
+
+msgid "last span %1$s"
+msgstr "utolsó span %1$s"
+
+msgid "no spans seen yet"
+msgstr "még nem volt span"
+
+msgid "%1$s req/min"
+msgstr "%1$s kérés/perc"
+
+msgid "%1$s calls/min"
+msgstr "%1$s hívás/perc"
+
+msgid "p95 %1$s"
+msgstr "p95 %1$s"
+
+msgid "%1$s errors/min"
+msgstr "%1$s hiba/perc"
+
+msgid "%1$s errors"
+msgstr "%1$s hiba"
+
+msgid "Traces (errors and slowest)"
+msgstr "Nyomkövetések (hibák és leglassabbak)"
+
+msgid "Requests/min"
+msgstr "Kérés/perc"
+
+msgid "Calls/min"
+msgstr "Hívás/perc"
+
+msgid "Average"
+msgstr "Átlag"
+
+msgid "Errors"
+msgstr "Hibák"
+
+msgid "p95 latency"
+msgstr "p95 késleltetés"
+
+msgid "Logs ERROR/min"
+msgstr "ERROR naplók/perc"
+
+msgid "No traffic in the selected time range."
+msgstr "Nincs forgalom a kiválasztott időtartományban."
+
+msgid "Last span %1$s (%2$s)."
+msgstr "Utolsó span %1$s (%2$s)."
+
+msgid "No spans seen yet."
+msgstr "Még nem volt span."
+
+msgid "Zabbix problems"
+msgstr "Zabbix problémák"
+
+msgid "Zabbix items (host %1$s, last 30 min)"
+msgstr "Zabbix elemek (hoszt: %1$s, utolsó 30 perc)"
+
+msgid "Inbound spans (traces)"
+msgstr "Bejövő spanek (nyomkövetések)"
+
+msgid "Incoming calls (traces)"
+msgstr "Bejövő hívások (nyomkövetések)"
+
+msgid "Endpoints"
+msgstr "Végpontok"
+
+msgid "Operation"
+msgstr "Művelet"
+
+msgid "req/min"
+msgstr "kérés/perc"
+
+msgid "p95"
+msgstr "p95"
+
+msgid "errors"
+msgstr "hiba"
+
+msgid "Operations"
+msgstr "Műveletek"
+
+msgid "%1$s/min"
+msgstr "%1$s/perc"
+
+msgid "Open host problems in Zabbix"
+msgstr "A hoszt problémáinak megnyitása a Zabbixban"
+
+msgid "%1$s ms"
+msgstr "%1$s ms"
+
+msgid "%1$s s"
+msgstr "%1$s s"
+
+msgid "%1$s s ago"
+msgstr "%1$s mp-e"
+
+msgid "%1$s min ago"
+msgstr "%1$s perce"
+
+msgid "%1$s h ago"
+msgstr "%1$s órája"
+
+msgid "%1$s d ago"
+msgstr "%1$s napja"
+
+msgid "Not classified"
+msgstr "Nem besorolt"
+
+msgid "Information"
+msgstr "Információ"
+
+msgid "Warning"
+msgstr "Figyelmeztetés"
+
+msgid "High"
+msgstr "Magas"
+
+msgid "Disaster"
+msgstr "Katasztrófa"
+
+msgid "OK"
+msgstr "OK"
+
+msgid "Incident"
+msgstr "Incidens"
+
+msgid "No Zabbix host"
+msgstr "Nincs Zabbix hoszt"
+

@@ -1,0 +1,246 @@
+# APM dashboard module for Zabbix 8.0 - translations.
+# This file is distributed under the same license as the module.
+msgid ""
+msgstr ""
+"Project-Id-Version: zabbix_service_dashboard 1.0.0\n"
+"POT-Creation-Date: 2026-11-04 02:00+0000\n"
+"PO-Revision-Date: 2026-11-04 02:00+0000\n"
+"Language: ka\n"
+"Last-Translator: Daniel Nasiloski\n"
+"Language-Team: ka\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+
+msgid "APM dashboard"
+msgstr "APM დაფა"
+
+msgid "Actions"
+msgstr "მოქმედებები"
+
+msgid "Edit"
+msgstr "რედაქტირება"
+
+msgid "Save"
+msgstr "შენახვა"
+
+msgid "Cancel"
+msgstr "გაუქმება"
+
+msgid "Remove"
+msgstr "წაშლა"
+
+msgid "Nothing to remove"
+msgstr "წასაშლელი არაფერია"
+
+msgid "Nothing to save"
+msgstr "შესანახი არაფერია"
+
+msgid "Invalid time range or filter"
+msgstr "არასწორი დროის შუალედი ან ფილტრი"
+
+msgid "Application"
+msgstr "აპლიკაცია"
+
+msgid "Time range"
+msgstr "დროის შუალედი"
+
+msgid "All applications (overview)"
+msgstr "ყველა აპლიკაცია (მიმოხილვა)"
+
+msgid "Last %1$s minutes"
+msgstr "ბოლო %1$s წუთი"
+
+msgid "Overview"
+msgstr "მიმოხილვა"
+
+msgid "Back to %1$s"
+msgstr "დაბრუნება: %1$s"
+
+msgid "Remove application"
+msgstr "აპლიკაციის წაშლა"
+
+msgid "Remove service"
+msgstr "სერვისის წაშლა"
+
+msgid "Remove application \"%1$s\" from the map?"
+msgstr "წავშალოთ აპლიკაცია \"%1$s\" რუკიდან?"
+
+msgid "Remove service \"%1$s\" from the map?"
+msgstr "წავშალოთ სერვისი \"%1$s\" რუკიდან?"
+
+msgid "Its services, databases and external calls leave the map. Services shared with other applications stay."
+msgstr "მისი სერვისები, მონაცემთა ბაზები და გარე გამოძახებები რუკიდან გაქრება. სხვა აპლიკაციებთან საზიარო სერვისები რჩება."
+
+msgid "The service, its connections, databases and external calls leave the map."
+msgstr "სერვისი, მისი კავშირები, მონაცემთა ბაზები და გარე გამოძახებები რუკიდან გაქრება."
+
+msgid "If the application is discovered again in new traces, it is recreated automatically, with all its entities."
+msgstr "თუ აპლიკაცია ახალ ტრეისებში ისევ აღმოჩნდება, ის ავტომატურად თავიდან შეიქმნება ყველა თავისი ერთეულით."
+
+msgid "If the service is discovered again in new traces, it is recreated automatically, with all its entities."
+msgstr "თუ სერვისი ახალ ტრეისებში ისევ აღმოჩნდება, ის ავტომატურად თავიდან შეიქმნება ყველა თავისი ერთეულით."
+
+msgid "Hosts, items and triggers in Zabbix are not changed."
+msgstr "Zabbix-ის ჰოსტები, ელემენტები და ტრიგერები არ იცვლება."
+
+msgid "Remove %1$s"
+msgstr "წაშლა: %1$s"
+
+msgid "No data found"
+msgstr "მონაცემები ვერ მოიძებნა"
+
+msgid "No APM span matches the attribute filter in the selected time range. Change the filter above or press Reset to see everything."
+msgstr "არჩეულ დროის შუალედში ატრიბუტების ფილტრს არც ერთი APM span არ ემთხვევა. შეცვალეთ ფილტრი ზემოთ ან დააჭირეთ „გადატვირთვას“, რომ ყველაფერი ნახოთ."
+
+msgid "No APM traces in the selected time range and no host with the apm.requests item. Services appear here as soon as the applications send traces to the Zabbix proxy."
+msgstr "არჩეულ დროის შუალედში APM ტრეისები არ არის და არც ჰოსტი ელემენტით apm.requests. სერვისები აქ გამოჩნდება, როგორც კი აპლიკაციები ტრეისებს Zabbix proxy-ს გაუგზავნიან."
+
+msgid "Could not save the layout: %1$s"
+msgstr "განლაგების შენახვა ვერ მოხერხდა: %1$s"
+
+msgid "Service"
+msgstr "სერვისი"
+
+msgid "Database"
+msgstr "მონაცემთა ბაზა"
+
+msgid "External service"
+msgstr "გარე სერვისი"
+
+msgid "Application · %1$s services"
+msgstr "აპლიკაცია · %1$s სერვისი"
+
+msgid "No traffic in the window"
+msgstr "შუალედში ტრაფიკი არ არის"
+
+msgid "last span %1$s"
+msgstr "ბოლო span %1$s"
+
+msgid "no spans seen yet"
+msgstr "span ჯერ არ ყოფილა"
+
+msgid "%1$s req/min"
+msgstr "%1$s მოთხ./წთ"
+
+msgid "%1$s calls/min"
+msgstr "%1$s გამოძ./წთ"
+
+msgid "p95 %1$s"
+msgstr "p95 %1$s"
+
+msgid "%1$s errors/min"
+msgstr "%1$s შეცდომა/წთ"
+
+msgid "%1$s errors"
+msgstr "%1$s შეცდომები"
+
+msgid "Traces (errors and slowest)"
+msgstr "ტრეისები (შეცდომები და ყველაზე ნელი)"
+
+msgid "Requests/min"
+msgstr "მოთხოვნები/წთ"
+
+msgid "Calls/min"
+msgstr "გამოძახებები/წთ"
+
+msgid "Average"
+msgstr "საშუალო"
+
+msgid "Errors"
+msgstr "შეცდომები"
+
+msgid "p95 latency"
+msgstr "p95 დაყოვნება"
+
+msgid "Logs ERROR/min"
+msgstr "ERROR ლოგები/წთ"
+
+msgid "No traffic in the selected time range."
+msgstr "არჩეულ დროის შუალედში ტრაფიკი არ არის."
+
+msgid "Last span %1$s (%2$s)."
+msgstr "ბოლო span %1$s (%2$s)."
+
+msgid "No spans seen yet."
+msgstr "span ჯერ არ ყოფილა."
+
+msgid "Zabbix problems"
+msgstr "Zabbix-ის პრობლემები"
+
+msgid "Zabbix items (host %1$s, last 30 min)"
+msgstr "Zabbix-ის ელემენტები (ჰოსტი %1$s, ბოლო 30 წთ)"
+
+msgid "Inbound spans (traces)"
+msgstr "შემომავალი span-ები (ტრეისები)"
+
+msgid "Incoming calls (traces)"
+msgstr "შემომავალი გამოძახებები (ტრეისები)"
+
+msgid "Endpoints"
+msgstr "ბოლო წერტილები"
+
+msgid "Operation"
+msgstr "ოპერაცია"
+
+msgid "req/min"
+msgstr "მოთხ./წთ"
+
+msgid "p95"
+msgstr "p95"
+
+msgid "errors"
+msgstr "შეცდომები"
+
+msgid "Operations"
+msgstr "ოპერაციები"
+
+msgid "%1$s/min"
+msgstr "%1$s/წთ"
+
+msgid "Open host problems in Zabbix"
+msgstr "ჰოსტის პრობლემების გახსნა Zabbix-ში"
+
+msgid "%1$s ms"
+msgstr "%1$s მწმ"
+
+msgid "%1$s s"
+msgstr "%1$s წმ"
+
+msgid "%1$s s ago"
+msgstr "%1$s წმ წინ"
+
+msgid "%1$s min ago"
+msgstr "%1$s წთ წინ"
+
+msgid "%1$s h ago"
+msgstr "%1$s სთ წინ"
+
+msgid "%1$s d ago"
+msgstr "%1$s დღის წინ"
+
+msgid "Not classified"
+msgstr "კლასიფიცირებული არ არის"
+
+msgid "Information"
+msgstr "ინფორმაცია"
+
+msgid "Warning"
+msgstr "გაფრთხილება"
+
+msgid "High"
+msgstr "მაღალი"
+
+msgid "Disaster"
+msgstr "კატასტროფა"
+
+msgid "OK"
+msgstr "OK"
+
+msgid "Incident"
+msgstr "ინციდენტი"
+
+msgid "No Zabbix host"
+msgstr "Zabbix ჰოსტი არ არის"
+

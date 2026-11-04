@@ -1,0 +1,246 @@
+# APM dashboard module for Zabbix 8.0 - translations.
+# This file is distributed under the same license as the module.
+msgid ""
+msgstr ""
+"Project-Id-Version: zabbix_service_dashboard 1.0.0\n"
+"POT-Creation-Date: 2026-11-04 02:00+0000\n"
+"PO-Revision-Date: 2026-11-04 02:00+0000\n"
+"Language: ro\n"
+"Last-Translator: Daniel Nasiloski\n"
+"Language-Team: ro\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=3; plural=(n==1 ? 0 : (n==0 || (n%100 > 0 && n%100 < 20)) ? 1 : 2);\n"
+
+msgid "APM dashboard"
+msgstr "Panou APM"
+
+msgid "Actions"
+msgstr "Acțiuni"
+
+msgid "Edit"
+msgstr "Editare"
+
+msgid "Save"
+msgstr "Salvare"
+
+msgid "Cancel"
+msgstr "Anulare"
+
+msgid "Remove"
+msgstr "Eliminare"
+
+msgid "Nothing to remove"
+msgstr "Nimic de eliminat"
+
+msgid "Nothing to save"
+msgstr "Nimic de salvat"
+
+msgid "Invalid time range or filter"
+msgstr "Interval de timp sau filtru nevalid"
+
+msgid "Application"
+msgstr "Aplicație"
+
+msgid "Time range"
+msgstr "Interval de timp"
+
+msgid "All applications (overview)"
+msgstr "Toate aplicațiile (prezentare generală)"
+
+msgid "Last %1$s minutes"
+msgstr "Ultimele %1$s minute"
+
+msgid "Overview"
+msgstr "Prezentare generală"
+
+msgid "Back to %1$s"
+msgstr "Înapoi la %1$s"
+
+msgid "Remove application"
+msgstr "Eliminare aplicație"
+
+msgid "Remove service"
+msgstr "Eliminare serviciu"
+
+msgid "Remove application \"%1$s\" from the map?"
+msgstr "Eliminați aplicația \"%1$s\" de pe hartă?"
+
+msgid "Remove service \"%1$s\" from the map?"
+msgstr "Eliminați serviciul \"%1$s\" de pe hartă?"
+
+msgid "Its services, databases and external calls leave the map. Services shared with other applications stay."
+msgstr "Serviciile, bazele de date și apelurile externe ale acesteia dispar de pe hartă. Serviciile partajate cu alte aplicații rămân."
+
+msgid "The service, its connections, databases and external calls leave the map."
+msgstr "Serviciul, conexiunile, bazele de date și apelurile externe ale acestuia dispar de pe hartă."
+
+msgid "If the application is discovered again in new traces, it is recreated automatically, with all its entities."
+msgstr "Dacă aplicația este descoperită din nou în trasee noi, este recreată automat, cu toate entitățile ei."
+
+msgid "If the service is discovered again in new traces, it is recreated automatically, with all its entities."
+msgstr "Dacă serviciul este descoperit din nou în trasee noi, este recreat automat, cu toate entitățile lui."
+
+msgid "Hosts, items and triggers in Zabbix are not changed."
+msgstr "Gazdele, elementele și declanșatoarele din Zabbix nu sunt modificate."
+
+msgid "Remove %1$s"
+msgstr "Eliminare %1$s"
+
+msgid "No data found"
+msgstr "Nu s-au găsit date"
+
+msgid "No APM span matches the attribute filter in the selected time range. Change the filter above or press Reset to see everything."
+msgstr "Niciun span APM nu corespunde filtrului de atribute în intervalul selectat. Modificați filtrul de mai sus sau apăsați Resetare pentru a vedea tot."
+
+msgid "No APM traces in the selected time range and no host with the apm.requests item. Services appear here as soon as the applications send traces to the Zabbix proxy."
+msgstr "Nu există trasee APM în intervalul selectat și nicio gazdă cu elementul apm.requests. Serviciile apar aici imediat ce aplicațiile trimit trasee către proxy-ul Zabbix."
+
+msgid "Could not save the layout: %1$s"
+msgstr "Aranjamentul nu a putut fi salvat: %1$s"
+
+msgid "Service"
+msgstr "Serviciu"
+
+msgid "Database"
+msgstr "Bază de date"
+
+msgid "External service"
+msgstr "Serviciu extern"
+
+msgid "Application · %1$s services"
+msgstr "Aplicație · %1$s servicii"
+
+msgid "No traffic in the window"
+msgstr "Fără trafic în interval"
+
+msgid "last span %1$s"
+msgstr "ultimul span %1$s"
+
+msgid "no spans seen yet"
+msgstr "niciun span văzut încă"
+
+msgid "%1$s req/min"
+msgstr "%1$s cereri/min"
+
+msgid "%1$s calls/min"
+msgstr "%1$s apeluri/min"
+
+msgid "p95 %1$s"
+msgstr "p95 %1$s"
+
+msgid "%1$s errors/min"
+msgstr "%1$s erori/min"
+
+msgid "%1$s errors"
+msgstr "%1$s erori"
+
+msgid "Traces (errors and slowest)"
+msgstr "Trasee (erori și cele mai lente)"
+
+msgid "Requests/min"
+msgstr "Cereri/min"
+
+msgid "Calls/min"
+msgstr "Apeluri/min"
+
+msgid "Average"
+msgstr "Medie"
+
+msgid "Errors"
+msgstr "Erori"
+
+msgid "p95 latency"
+msgstr "Latență p95"
+
+msgid "Logs ERROR/min"
+msgstr "Jurnale ERROR/min"
+
+msgid "No traffic in the selected time range."
+msgstr "Fără trafic în intervalul de timp selectat."
+
+msgid "Last span %1$s (%2$s)."
+msgstr "Ultimul span %1$s (%2$s)."
+
+msgid "No spans seen yet."
+msgstr "Niciun span văzut încă."
+
+msgid "Zabbix problems"
+msgstr "Probleme Zabbix"
+
+msgid "Zabbix items (host %1$s, last 30 min)"
+msgstr "Elemente Zabbix (gazda %1$s, ultimele 30 min)"
+
+msgid "Inbound spans (traces)"
+msgstr "Span-uri primite (trasee)"
+
+msgid "Incoming calls (traces)"
+msgstr "Apeluri primite (trasee)"
+
+msgid "Endpoints"
+msgstr "Puncte finale"
+
+msgid "Operation"
+msgstr "Operație"
+
+msgid "req/min"
+msgstr "cereri/min"
+
+msgid "p95"
+msgstr "p95"
+
+msgid "errors"
+msgstr "erori"
+
+msgid "Operations"
+msgstr "Operații"
+
+msgid "%1$s/min"
+msgstr "%1$s/min"
+
+msgid "Open host problems in Zabbix"
+msgstr "Deschide problemele gazdei în Zabbix"
+
+msgid "%1$s ms"
+msgstr "%1$s ms"
+
+msgid "%1$s s"
+msgstr "%1$s s"
+
+msgid "%1$s s ago"
+msgstr "acum %1$s s"
+
+msgid "%1$s min ago"
+msgstr "acum %1$s min"
+
+msgid "%1$s h ago"
+msgstr "acum %1$s h"
+
+msgid "%1$s d ago"
+msgstr "acum %1$s z"
+
+msgid "Not classified"
+msgstr "Neclasificat"
+
+msgid "Information"
+msgstr "Informație"
+
+msgid "Warning"
+msgstr "Avertisment"
+
+msgid "High"
+msgstr "Ridicată"
+
+msgid "Disaster"
+msgstr "Dezastru"
+
+msgid "OK"
+msgstr "OK"
+
+msgid "Incident"
+msgstr "Incident"
+
+msgid "No Zabbix host"
+msgstr "Nicio gazdă Zabbix"
+

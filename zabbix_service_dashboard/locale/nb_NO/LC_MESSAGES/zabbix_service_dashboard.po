@@ -1,0 +1,246 @@
+# APM dashboard module for Zabbix 8.0 - translations.
+# This file is distributed under the same license as the module.
+msgid ""
+msgstr ""
+"Project-Id-Version: zabbix_service_dashboard 1.0.0\n"
+"POT-Creation-Date: 2026-11-04 02:00+0000\n"
+"PO-Revision-Date: 2026-11-04 02:00+0000\n"
+"Language: nb_NO\n"
+"Last-Translator: Daniel Nasiloski\n"
+"Language-Team: nb_NO\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+msgid "APM dashboard"
+msgstr "APM-dashbord"
+
+msgid "Actions"
+msgstr "Handlinger"
+
+msgid "Edit"
+msgstr "Rediger"
+
+msgid "Save"
+msgstr "Lagre"
+
+msgid "Cancel"
+msgstr "Avbryt"
+
+msgid "Remove"
+msgstr "Fjern"
+
+msgid "Nothing to remove"
+msgstr "Ingenting å fjerne"
+
+msgid "Nothing to save"
+msgstr "Ingenting å lagre"
+
+msgid "Invalid time range or filter"
+msgstr "Ugyldig tidsintervall eller filter"
+
+msgid "Application"
+msgstr "Applikasjon"
+
+msgid "Time range"
+msgstr "Tidsintervall"
+
+msgid "All applications (overview)"
+msgstr "Alle applikasjoner (oversikt)"
+
+msgid "Last %1$s minutes"
+msgstr "Siste %1$s minutter"
+
+msgid "Overview"
+msgstr "Oversikt"
+
+msgid "Back to %1$s"
+msgstr "Tilbake til %1$s"
+
+msgid "Remove application"
+msgstr "Fjern applikasjon"
+
+msgid "Remove service"
+msgstr "Fjern tjeneste"
+
+msgid "Remove application \"%1$s\" from the map?"
+msgstr "Fjerne applikasjonen \"%1$s\" fra kartet?"
+
+msgid "Remove service \"%1$s\" from the map?"
+msgstr "Fjerne tjenesten \"%1$s\" fra kartet?"
+
+msgid "Its services, databases and external calls leave the map. Services shared with other applications stay."
+msgstr "Tjenestene, databasene og de eksterne kallene dens forsvinner fra kartet. Tjenester som deles med andre applikasjoner, blir værende."
+
+msgid "The service, its connections, databases and external calls leave the map."
+msgstr "Tjenesten, dens koblinger, databaser og eksterne kall forsvinner fra kartet."
+
+msgid "If the application is discovered again in new traces, it is recreated automatically, with all its entities."
+msgstr "Hvis applikasjonen oppdages igjen i nye traces, gjenskapes den automatisk med alle entitetene sine."
+
+msgid "If the service is discovered again in new traces, it is recreated automatically, with all its entities."
+msgstr "Hvis tjenesten oppdages igjen i nye traces, gjenskapes den automatisk med alle entitetene sine."
+
+msgid "Hosts, items and triggers in Zabbix are not changed."
+msgstr "Verter, elementer og triggere i Zabbix endres ikke."
+
+msgid "Remove %1$s"
+msgstr "Fjern %1$s"
+
+msgid "No data found"
+msgstr "Ingen data funnet"
+
+msgid "No APM span matches the attribute filter in the selected time range. Change the filter above or press Reset to see everything."
+msgstr "Ingen APM-spans samsvarer med attributtfilteret i valgt tidsintervall. Endre filteret ovenfor eller trykk Tilbakestill for å se alt."
+
+msgid "No APM traces in the selected time range and no host with the apm.requests item. Services appear here as soon as the applications send traces to the Zabbix proxy."
+msgstr "Ingen APM-traces i valgt tidsintervall og ingen vert med elementet apm.requests. Tjenester vises her så snart applikasjonene sender traces til Zabbix-proxyen."
+
+msgid "Could not save the layout: %1$s"
+msgstr "Kunne ikke lagre oppsettet: %1$s"
+
+msgid "Service"
+msgstr "Tjeneste"
+
+msgid "Database"
+msgstr "Database"
+
+msgid "External service"
+msgstr "Ekstern tjeneste"
+
+msgid "Application · %1$s services"
+msgstr "Applikasjon · %1$s tjenester"
+
+msgid "No traffic in the window"
+msgstr "Ingen trafikk i intervallet"
+
+msgid "last span %1$s"
+msgstr "siste span %1$s"
+
+msgid "no spans seen yet"
+msgstr "ingen spans sett ennå"
+
+msgid "%1$s req/min"
+msgstr "%1$s foresp/min"
+
+msgid "%1$s calls/min"
+msgstr "%1$s kall/min"
+
+msgid "p95 %1$s"
+msgstr "p95 %1$s"
+
+msgid "%1$s errors/min"
+msgstr "%1$s feil/min"
+
+msgid "%1$s errors"
+msgstr "%1$s feil"
+
+msgid "Traces (errors and slowest)"
+msgstr "Traces (feil og tregeste)"
+
+msgid "Requests/min"
+msgstr "Forespørsler/min"
+
+msgid "Calls/min"
+msgstr "Kall/min"
+
+msgid "Average"
+msgstr "Gjennomsnitt"
+
+msgid "Errors"
+msgstr "Feil"
+
+msgid "p95 latency"
+msgstr "p95-latens"
+
+msgid "Logs ERROR/min"
+msgstr "Logger ERROR/min"
+
+msgid "No traffic in the selected time range."
+msgstr "Ingen trafikk i valgt tidsintervall."
+
+msgid "Last span %1$s (%2$s)."
+msgstr "Siste span %1$s (%2$s)."
+
+msgid "No spans seen yet."
+msgstr "Ingen spans sett ennå."
+
+msgid "Zabbix problems"
+msgstr "Zabbix-problemer"
+
+msgid "Zabbix items (host %1$s, last 30 min)"
+msgstr "Zabbix-elementer (vert %1$s, siste 30 min)"
+
+msgid "Inbound spans (traces)"
+msgstr "Innkommende spans (traces)"
+
+msgid "Incoming calls (traces)"
+msgstr "Innkommende kall (traces)"
+
+msgid "Endpoints"
+msgstr "Endepunkter"
+
+msgid "Operation"
+msgstr "Operasjon"
+
+msgid "req/min"
+msgstr "foresp/min"
+
+msgid "p95"
+msgstr "p95"
+
+msgid "errors"
+msgstr "feil"
+
+msgid "Operations"
+msgstr "Operasjoner"
+
+msgid "%1$s/min"
+msgstr "%1$s/min"
+
+msgid "Open host problems in Zabbix"
+msgstr "Åpne vertens problemer i Zabbix"
+
+msgid "%1$s ms"
+msgstr "%1$s ms"
+
+msgid "%1$s s"
+msgstr "%1$s s"
+
+msgid "%1$s s ago"
+msgstr "%1$s s siden"
+
+msgid "%1$s min ago"
+msgstr "%1$s min siden"
+
+msgid "%1$s h ago"
+msgstr "%1$s t siden"
+
+msgid "%1$s d ago"
+msgstr "%1$s d siden"
+
+msgid "Not classified"
+msgstr "Ikke klassifisert"
+
+msgid "Information"
+msgstr "Informasjon"
+
+msgid "Warning"
+msgstr "Advarsel"
+
+msgid "High"
+msgstr "Høy"
+
+msgid "Disaster"
+msgstr "Katastrofe"
+
+msgid "OK"
+msgstr "OK"
+
+msgid "Incident"
+msgstr "Hendelse"
+
+msgid "No Zabbix host"
+msgstr "Ingen Zabbix-vert"
+

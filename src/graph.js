@@ -1,7 +1,11 @@
 // Monta o fluxo de serviços a partir dos spans: quem chama quem, com estatísticas por ligação,
 // e cruza com os hosts do Zabbix (host = service.name) para saber quem está em incidente.
+import { t as i18n } from './i18n.js'
 
 const MAX_SAMPLES = 200
+// Passo da grade da visão geral (cards de 284×82 com folga).
+export const OVERVIEW_COL_W = 360
+export const OVERVIEW_ROW_H = 140
 
 function p95(values) {
   if (!values.length) return 0
@@ -21,8 +25,10 @@ function stats(acc, minutes) {
 }
 
 function newAcc() {
-  return { durations: [], errors: 0, samples: [], ops: new Map() }
+  return { durations: [], errors: 0, samples: [], ops: new Map(), last: 0 }
 }
+
+const spanTime = (span) => Number(span.timestamp) / 1e9
 
 function add(acc, span, op) {
   const seconds = Number(span.duration) / 1e9
@@ -30,6 +36,7 @@ function add(acc, span, op) {
   acc.durations.push(seconds)
   acc.errors += error
   if (op) acc.ops.set(op, (acc.ops.get(op) || 0) + 1)
+  acc.last = Math.max(acc.last, spanTime(span))
   acc.samples.push({ traceid: span.traceid, seconds, error, ts: Number(span.timestamp) / 1e6, op })
   if (acc.samples.length > MAX_SAMPLES) acc.samples.shift()
 }
@@ -44,6 +51,7 @@ export function buildGraph(spans, minutes) {
   const nodes = new Map()
   const edges = new Map()
   const remoteParents = new Set()
+  const lastSeen = new Map()
 
   const node = (id, kind, label) => {
     if (!nodes.has(id)) nodes.set(id, { id, kind, label, acc: newAcc(), endpoints: new Map() })
@@ -58,6 +66,7 @@ export function buildGraph(spans, minutes) {
   // Ligações entre serviços: span filho em outro serviço; a estatística vem do span CLIENT do chamador.
   for (const s of spans) {
     node(s.service_name, 'service', s.service_name)
+    lastSeen.set(s.service_name, Math.max(lastSeen.get(s.service_name) || 0, spanTime(s)))
     const parent = byId.get(s.parent_spanid)
     if (parent && parent.service_name !== s.service_name) {
       remoteParents.add(parent.spanid)
@@ -89,6 +98,7 @@ export function buildGraph(spans, minutes) {
 
   const finalNodes = [...nodes.values()].map((n) => ({
     id: n.id, kind: n.kind, label: n.label,
+    lastSeen: lastSeen.get(n.id) || n.acc.last,
     stats: stats(n.acc, minutes),
     endpoints: [...n.endpoints.entries()].map(([name, acc]) => ({ name, ...stats(acc, minutes) }))
       .sort((a, b) => b.count - a.count),
@@ -96,12 +106,52 @@ export function buildGraph(spans, minutes) {
   }))
   const finalEdges = [...edges.values()].map((e) => ({
     key: e.key, from: e.from, to: e.to,
+    lastSeen: e.acc.last,
     stats: stats(e.acc, minutes),
     ops: [...e.acc.ops.entries()].map(([name, count]) => ({ name, rpm: count / minutes }))
       .sort((a, b) => b.rpm - a.rpm),
     traces: topTraces(e.acc.samples),
   }))
   return { nodes: finalNodes, edges: finalEdges }
+}
+
+// Junta o que veio nos spans da janela com a topologia salva (known) e os hosts com itens apm.*:
+// o que não teve tráfego na janela continua no mapa, marcado como idle. O que o usuário removeu
+// (known.hidden, id → horário da remoção) só volta se tiver um span mais novo que a remoção.
+export function mergeKnown(graph, known, apmHosts, minutes) {
+  const hiddenAt = known.hidden || {}
+  const shown = (id, last) => !(id in hiddenAt) || (last || 0) > hiddenAt[id]
+  const idleStats = stats(newAcc(), minutes)
+
+  const nodes = new Map()
+  for (const n of graph.nodes) if (shown(n.id, n.lastSeen)) nodes.set(n.id, { ...n, idle: false })
+  for (const n of known.nodes) {
+    if (!nodes.has(n.id) && shown(n.id, n.lastSeen)) {
+      nodes.set(n.id, { ...n, stats: idleStats, endpoints: [], traces: [], idle: true })
+    }
+  }
+  for (const host of apmHosts) {
+    if (!nodes.has(host) && !(host in hiddenAt)) {
+      nodes.set(host, { id: host, kind: 'service', label: host, lastSeen: null, stats: idleStats, endpoints: [], traces: [], idle: true })
+    }
+  }
+
+  const edges = new Map()
+  for (const e of graph.edges) if (nodes.has(e.from) && nodes.has(e.to)) edges.set(e.key, { ...e, idle: false })
+  for (const e of known.edges) {
+    if (!edges.has(e.key) && nodes.has(e.from) && nodes.has(e.to)) {
+      edges.set(e.key, { ...e, stats: idleStats, ops: [], traces: [], idle: true })
+    }
+  }
+  return { nodes: [...nodes.values()], edges: [...edges.values()] }
+}
+
+// O que vai para a topologia salva: só o que teve span na janela.
+export function seenTopology(graph) {
+  return {
+    nodes: graph.nodes.map((n) => ({ id: n.id, kind: n.kind, label: n.label, lastSeen: n.lastSeen })),
+    edges: graph.edges.map((e) => ({ key: e.key, from: e.from, to: e.to, lastSeen: e.lastSeen })),
+  }
 }
 
 const RANK = { ok: 0, unknown: 0, warn: 1, crit: 2 }
@@ -270,15 +320,27 @@ export function tenants(graph) {
 
 // Visão geral: só os cards das aplicações (serviço de entrada), em grade. Cada card leva o pior estado
 // e todos os problemas da aplicação, e é o mesmo nó do fluxo, para a troca de tela animar.
-export function overviewLayout(apps) {
-  const cols = Math.ceil(Math.sqrt(apps.length))
+// A grade tende ao quadrado; maxCols (quantas colunas cabem na largura sem encolher os cards abaixo
+// do mínimo) limita, e o que sobrar desce e rola.
+// `grid` (passo e colunas) é o que o arrastar-e-soltar do modo de edição usa para encaixar o card na
+// grade; `animMs` encurta a animação de reacomodação dos outros cards durante o arrasto.
+export function overviewLayout(apps, maxCols = Infinity, animMs = undefined) {
+  const cols = Math.max(1, Math.min(Math.ceil(Math.sqrt(apps.length)), maxCols))
   const nodes = apps.map((t, i) => ({
     ...t.root,
     state: t.state,
     problems: t.problems,
-    kindLabel: `Application · ${t.services.length} services`,
-    x: (i % cols) * 360,
-    y: Math.floor(i / cols) * 140,
+    kindLabel: i18n('Application · %1$s services', t.services.length),
+    x: (i % cols) * OVERVIEW_COL_W,
+    y: Math.floor(i / cols) * OVERVIEW_ROW_H,
   }))
-  return { nodes, edges: [] }
+  return { nodes, edges: [], grid: { cols, colW: OVERVIEW_COL_W, rowH: OVERVIEW_ROW_H }, animMs }
+}
+
+// Ordem salva (Save do modo de edição) primeiro; o que não está nela segue a ordem padrão (estado, nome).
+export function sortApps(apps, order) {
+  if (!order || !order.length) return apps
+  const rank = new Map(order.map((id, i) => [id, i]))
+  return apps.map((a, i) => [a, rank.has(a.id) ? rank.get(a.id) : order.length + i])
+    .sort((a, b) => a[1] - b[1]).map(([a]) => a)
 }

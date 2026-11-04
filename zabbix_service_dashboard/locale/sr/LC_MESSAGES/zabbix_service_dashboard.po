@@ -1,0 +1,246 @@
+# APM dashboard module for Zabbix 8.0 - translations.
+# This file is distributed under the same license as the module.
+msgid ""
+msgstr ""
+"Project-Id-Version: zabbix_service_dashboard 1.0.0\n"
+"POT-Creation-Date: 2026-11-04 02:00+0000\n"
+"PO-Revision-Date: 2026-11-04 02:00+0000\n"
+"Language: sr\n"
+"Last-Translator: Daniel Nasiloski\n"
+"Language-Team: sr\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
+
+msgid "APM dashboard"
+msgstr "APM kontrolna tabla"
+
+msgid "Actions"
+msgstr "Radnje"
+
+msgid "Edit"
+msgstr "Izmeni"
+
+msgid "Save"
+msgstr "Sačuvaj"
+
+msgid "Cancel"
+msgstr "Otkaži"
+
+msgid "Remove"
+msgstr "Ukloni"
+
+msgid "Nothing to remove"
+msgstr "Nema šta da se ukloni"
+
+msgid "Nothing to save"
+msgstr "Nema šta da se sačuva"
+
+msgid "Invalid time range or filter"
+msgstr "Neispravan vremenski opseg ili filter"
+
+msgid "Application"
+msgstr "Aplikacija"
+
+msgid "Time range"
+msgstr "Vremenski opseg"
+
+msgid "All applications (overview)"
+msgstr "Sve aplikacije (pregled)"
+
+msgid "Last %1$s minutes"
+msgstr "Poslednjih %1$s minuta"
+
+msgid "Overview"
+msgstr "Pregled"
+
+msgid "Back to %1$s"
+msgstr "Nazad na %1$s"
+
+msgid "Remove application"
+msgstr "Ukloni aplikaciju"
+
+msgid "Remove service"
+msgstr "Ukloni servis"
+
+msgid "Remove application \"%1$s\" from the map?"
+msgstr "Ukloniti aplikaciju \"%1$s\" sa mape?"
+
+msgid "Remove service \"%1$s\" from the map?"
+msgstr "Ukloniti servis \"%1$s\" sa mape?"
+
+msgid "Its services, databases and external calls leave the map. Services shared with other applications stay."
+msgstr "Njeni servisi, baze podataka i spoljni pozivi nestaju sa mape. Servisi deljeni sa drugim aplikacijama ostaju."
+
+msgid "The service, its connections, databases and external calls leave the map."
+msgstr "Servis, njegove veze, baze podataka i spoljni pozivi nestaju sa mape."
+
+msgid "If the application is discovered again in new traces, it is recreated automatically, with all its entities."
+msgstr "Ako se aplikacija ponovo otkrije u novim tragovima, automatski se ponovo kreira sa svim svojim entitetima."
+
+msgid "If the service is discovered again in new traces, it is recreated automatically, with all its entities."
+msgstr "Ako se servis ponovo otkrije u novim tragovima, automatski se ponovo kreira sa svim svojim entitetima."
+
+msgid "Hosts, items and triggers in Zabbix are not changed."
+msgstr "Hostovi, stavke i okidači u Zabbixu se ne menjaju."
+
+msgid "Remove %1$s"
+msgstr "Ukloni %1$s"
+
+msgid "No data found"
+msgstr "Nema pronađenih podataka"
+
+msgid "No APM span matches the attribute filter in the selected time range. Change the filter above or press Reset to see everything."
+msgstr "Nijedan APM span ne odgovara filteru atributa u izabranom vremenskom opsegu. Promenite filter iznad ili pritisnite Resetuj da vidite sve."
+
+msgid "No APM traces in the selected time range and no host with the apm.requests item. Services appear here as soon as the applications send traces to the Zabbix proxy."
+msgstr "Nema APM tragova u izabranom vremenskom opsegu i nema hosta sa stavkom apm.requests. Servisi se ovde pojavljuju čim aplikacije pošalju tragove Zabbix proxyju."
+
+msgid "Could not save the layout: %1$s"
+msgstr "Raspored nije moguće sačuvati: %1$s"
+
+msgid "Service"
+msgstr "Servis"
+
+msgid "Database"
+msgstr "Baza podataka"
+
+msgid "External service"
+msgstr "Spoljni servis"
+
+msgid "Application · %1$s services"
+msgstr "Aplikacija · %1$s servisa"
+
+msgid "No traffic in the window"
+msgstr "Nema saobraćaja u opsegu"
+
+msgid "last span %1$s"
+msgstr "poslednji span %1$s"
+
+msgid "no spans seen yet"
+msgstr "još nema viđenih spanova"
+
+msgid "%1$s req/min"
+msgstr "%1$s zaht/min"
+
+msgid "%1$s calls/min"
+msgstr "%1$s poziva/min"
+
+msgid "p95 %1$s"
+msgstr "p95 %1$s"
+
+msgid "%1$s errors/min"
+msgstr "%1$s grešaka/min"
+
+msgid "%1$s errors"
+msgstr "%1$s grešaka"
+
+msgid "Traces (errors and slowest)"
+msgstr "Tragovi (greške i najsporiji)"
+
+msgid "Requests/min"
+msgstr "Zahtevi/min"
+
+msgid "Calls/min"
+msgstr "Pozivi/min"
+
+msgid "Average"
+msgstr "Prosek"
+
+msgid "Errors"
+msgstr "Greške"
+
+msgid "p95 latency"
+msgstr "Latencija p95"
+
+msgid "Logs ERROR/min"
+msgstr "Logovi ERROR/min"
+
+msgid "No traffic in the selected time range."
+msgstr "Nema saobraćaja u izabranom vremenskom opsegu."
+
+msgid "Last span %1$s (%2$s)."
+msgstr "Poslednji span %1$s (%2$s)."
+
+msgid "No spans seen yet."
+msgstr "Još nema viđenih spanova."
+
+msgid "Zabbix problems"
+msgstr "Zabbix problemi"
+
+msgid "Zabbix items (host %1$s, last 30 min)"
+msgstr "Zabbix stavke (host %1$s, poslednjih 30 min)"
+
+msgid "Inbound spans (traces)"
+msgstr "Dolazni spanovi (tragovi)"
+
+msgid "Incoming calls (traces)"
+msgstr "Dolazni pozivi (tragovi)"
+
+msgid "Endpoints"
+msgstr "Krajnje tačke"
+
+msgid "Operation"
+msgstr "Operacija"
+
+msgid "req/min"
+msgstr "zaht/min"
+
+msgid "p95"
+msgstr "p95"
+
+msgid "errors"
+msgstr "grešaka"
+
+msgid "Operations"
+msgstr "Operacije"
+
+msgid "%1$s/min"
+msgstr "%1$s/min"
+
+msgid "Open host problems in Zabbix"
+msgstr "Otvori probleme hosta u Zabbixu"
+
+msgid "%1$s ms"
+msgstr "%1$s ms"
+
+msgid "%1$s s"
+msgstr "%1$s s"
+
+msgid "%1$s s ago"
+msgstr "pre %1$s s"
+
+msgid "%1$s min ago"
+msgstr "pre %1$s min"
+
+msgid "%1$s h ago"
+msgstr "pre %1$s h"
+
+msgid "%1$s d ago"
+msgstr "pre %1$s d"
+
+msgid "Not classified"
+msgstr "Neklasifikovano"
+
+msgid "Information"
+msgstr "Informacija"
+
+msgid "Warning"
+msgstr "Upozorenje"
+
+msgid "High"
+msgstr "Visoko"
+
+msgid "Disaster"
+msgstr "Katastrofa"
+
+msgid "OK"
+msgstr "OK"
+
+msgid "Incident"
+msgstr "Incident"
+
+msgid "No Zabbix host"
+msgstr "Nema Zabbix hosta"
+

@@ -1,0 +1,246 @@
+# APM dashboard module for Zabbix 8.0 - translations.
+# This file is distributed under the same license as the module.
+msgid ""
+msgstr ""
+"Project-Id-Version: zabbix_service_dashboard 1.0.0\n"
+"POT-Creation-Date: 2026-11-04 02:00+0000\n"
+"PO-Revision-Date: 2026-11-04 02:00+0000\n"
+"Language: kk\n"
+"Last-Translator: Daniel Nasiloski\n"
+"Language-Team: kk\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+
+msgid "APM dashboard"
+msgstr "APM тақтасы"
+
+msgid "Actions"
+msgstr "Әрекеттер"
+
+msgid "Edit"
+msgstr "Өңдеу"
+
+msgid "Save"
+msgstr "Сақтау"
+
+msgid "Cancel"
+msgstr "Болдырмау"
+
+msgid "Remove"
+msgstr "Жою"
+
+msgid "Nothing to remove"
+msgstr "Жоятын ештеңе жоқ"
+
+msgid "Nothing to save"
+msgstr "Сақтайтын ештеңе жоқ"
+
+msgid "Invalid time range or filter"
+msgstr "Уақыт аралығы немесе сүзгі жарамсыз"
+
+msgid "Application"
+msgstr "Қолданба"
+
+msgid "Time range"
+msgstr "Уақыт аралығы"
+
+msgid "All applications (overview)"
+msgstr "Барлық қолданбалар (шолу)"
+
+msgid "Last %1$s minutes"
+msgstr "Соңғы %1$s минут"
+
+msgid "Overview"
+msgstr "Шолу"
+
+msgid "Back to %1$s"
+msgstr "%1$s дегенге оралу"
+
+msgid "Remove application"
+msgstr "Қолданбаны жою"
+
+msgid "Remove service"
+msgstr "Қызметті жою"
+
+msgid "Remove application \"%1$s\" from the map?"
+msgstr "\"%1$s\" қолданбасын картадан жою керек пе?"
+
+msgid "Remove service \"%1$s\" from the map?"
+msgstr "\"%1$s\" қызметін картадан жою керек пе?"
+
+msgid "Its services, databases and external calls leave the map. Services shared with other applications stay."
+msgstr "Оның қызметтері, дерекқорлары және сыртқы шақырулары картадан жоғалады. Басқа қолданбалармен ортақ қызметтер қалады."
+
+msgid "The service, its connections, databases and external calls leave the map."
+msgstr "Қызмет, оның байланыстары, дерекқорлары және сыртқы шақырулары картадан жоғалады."
+
+msgid "If the application is discovered again in new traces, it is recreated automatically, with all its entities."
+msgstr "Қолданба жаңа трейстерде қайта табылса, ол барлық нысандарымен бірге автоматты түрде қайта жасалады."
+
+msgid "If the service is discovered again in new traces, it is recreated automatically, with all its entities."
+msgstr "Қызмет жаңа трейстерде қайта табылса, ол барлық нысандарымен бірге автоматты түрде қайта жасалады."
+
+msgid "Hosts, items and triggers in Zabbix are not changed."
+msgstr "Zabbix-тегі хосттар, элементтер және триггерлер өзгермейді."
+
+msgid "Remove %1$s"
+msgstr "%1$s жою"
+
+msgid "No data found"
+msgstr "Деректер табылмады"
+
+msgid "No APM span matches the attribute filter in the selected time range. Change the filter above or press Reset to see everything."
+msgstr "Таңдалған уақыт аралығында атрибут сүзгісіне сәйкес APM span жоқ. Жоғарыдағы сүзгіні өзгертіңіз немесе бәрін көру үшін Қалпына келтіруді басыңыз."
+
+msgid "No APM traces in the selected time range and no host with the apm.requests item. Services appear here as soon as the applications send traces to the Zabbix proxy."
+msgstr "Таңдалған уақыт аралығында APM трейстері жоқ және apm.requests элементі бар хост жоқ. Қолданбалар Zabbix proxy-ге трейс жібере бастасымен қызметтер осында пайда болады."
+
+msgid "Could not save the layout: %1$s"
+msgstr "Орналасуды сақтау мүмкін болмады: %1$s"
+
+msgid "Service"
+msgstr "Қызмет"
+
+msgid "Database"
+msgstr "Дерекқор"
+
+msgid "External service"
+msgstr "Сыртқы қызмет"
+
+msgid "Application · %1$s services"
+msgstr "Қолданба · %1$s қызмет"
+
+msgid "No traffic in the window"
+msgstr "Аралықта трафик жоқ"
+
+msgid "last span %1$s"
+msgstr "соңғы span %1$s"
+
+msgid "no spans seen yet"
+msgstr "span әлі көрінген жоқ"
+
+msgid "%1$s req/min"
+msgstr "%1$s сұрау/мин"
+
+msgid "%1$s calls/min"
+msgstr "%1$s шақыру/мин"
+
+msgid "p95 %1$s"
+msgstr "p95 %1$s"
+
+msgid "%1$s errors/min"
+msgstr "%1$s қате/мин"
+
+msgid "%1$s errors"
+msgstr "%1$s қате"
+
+msgid "Traces (errors and slowest)"
+msgstr "Трейстер (қателер және ең баяулары)"
+
+msgid "Requests/min"
+msgstr "Сұраулар/мин"
+
+msgid "Calls/min"
+msgstr "Шақырулар/мин"
+
+msgid "Average"
+msgstr "Орташа"
+
+msgid "Errors"
+msgstr "Қателер"
+
+msgid "p95 latency"
+msgstr "p95 кідірісі"
+
+msgid "Logs ERROR/min"
+msgstr "ERROR журналдары/мин"
+
+msgid "No traffic in the selected time range."
+msgstr "Таңдалған уақыт аралығында трафик жоқ."
+
+msgid "Last span %1$s (%2$s)."
+msgstr "Соңғы span %1$s (%2$s)."
+
+msgid "No spans seen yet."
+msgstr "Span әлі көрінген жоқ."
+
+msgid "Zabbix problems"
+msgstr "Zabbix мәселелері"
+
+msgid "Zabbix items (host %1$s, last 30 min)"
+msgstr "Zabbix элементтері (хост %1$s, соңғы 30 мин)"
+
+msgid "Inbound spans (traces)"
+msgstr "Кіріс span-дар (трейстер)"
+
+msgid "Incoming calls (traces)"
+msgstr "Кіріс шақырулар (трейстер)"
+
+msgid "Endpoints"
+msgstr "Соңғы нүктелер"
+
+msgid "Operation"
+msgstr "Операция"
+
+msgid "req/min"
+msgstr "сұрау/мин"
+
+msgid "p95"
+msgstr "p95"
+
+msgid "errors"
+msgstr "қате"
+
+msgid "Operations"
+msgstr "Операциялар"
+
+msgid "%1$s/min"
+msgstr "%1$s/мин"
+
+msgid "Open host problems in Zabbix"
+msgstr "Хост мәселелерін Zabbix-те ашу"
+
+msgid "%1$s ms"
+msgstr "%1$s мс"
+
+msgid "%1$s s"
+msgstr "%1$s с"
+
+msgid "%1$s s ago"
+msgstr "%1$s с бұрын"
+
+msgid "%1$s min ago"
+msgstr "%1$s мин бұрын"
+
+msgid "%1$s h ago"
+msgstr "%1$s сағ бұрын"
+
+msgid "%1$s d ago"
+msgstr "%1$s күн бұрын"
+
+msgid "Not classified"
+msgstr "Жіктелмеген"
+
+msgid "Information"
+msgstr "Ақпарат"
+
+msgid "Warning"
+msgstr "Ескерту"
+
+msgid "High"
+msgstr "Жоғары"
+
+msgid "Disaster"
+msgstr "Апат"
+
+msgid "OK"
+msgstr "OK"
+
+msgid "Incident"
+msgstr "Инцидент"
+
+msgid "No Zabbix host"
+msgstr "Zabbix хосты жоқ"
+

@@ -1,0 +1,246 @@
+# APM dashboard module for Zabbix 8.0 - translations.
+# This file is distributed under the same license as the module.
+msgid ""
+msgstr ""
+"Project-Id-Version: zabbix_service_dashboard 1.0.0\n"
+"POT-Creation-Date: 2026-11-04 02:00+0000\n"
+"PO-Revision-Date: 2026-11-04 02:00+0000\n"
+"Language: ja\n"
+"Last-Translator: Daniel Nasiloski\n"
+"Language-Team: ja\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+
+msgid "APM dashboard"
+msgstr "APMダッシュボード"
+
+msgid "Actions"
+msgstr "アクション"
+
+msgid "Edit"
+msgstr "編集"
+
+msgid "Save"
+msgstr "保存"
+
+msgid "Cancel"
+msgstr "キャンセル"
+
+msgid "Remove"
+msgstr "削除"
+
+msgid "Nothing to remove"
+msgstr "削除するものがありません"
+
+msgid "Nothing to save"
+msgstr "保存するものがありません"
+
+msgid "Invalid time range or filter"
+msgstr "時間範囲またはフィルターが無効です"
+
+msgid "Application"
+msgstr "アプリケーション"
+
+msgid "Time range"
+msgstr "時間範囲"
+
+msgid "All applications (overview)"
+msgstr "すべてのアプリケーション（概要）"
+
+msgid "Last %1$s minutes"
+msgstr "直近%1$s分"
+
+msgid "Overview"
+msgstr "概要"
+
+msgid "Back to %1$s"
+msgstr "%1$sに戻る"
+
+msgid "Remove application"
+msgstr "アプリケーションを削除"
+
+msgid "Remove service"
+msgstr "サービスを削除"
+
+msgid "Remove application \"%1$s\" from the map?"
+msgstr "アプリケーション「%1$s」をマップから削除しますか？"
+
+msgid "Remove service \"%1$s\" from the map?"
+msgstr "サービス「%1$s」をマップから削除しますか？"
+
+msgid "Its services, databases and external calls leave the map. Services shared with other applications stay."
+msgstr "そのサービス、データベース、外部呼び出しがマップから消えます。他のアプリケーションと共有しているサービスは残ります。"
+
+msgid "The service, its connections, databases and external calls leave the map."
+msgstr "このサービスと、その接続、データベース、外部呼び出しがマップから消えます。"
+
+msgid "If the application is discovered again in new traces, it is recreated automatically, with all its entities."
+msgstr "新しいトレースでアプリケーションが再び検出されると、すべてのエンティティとともに自動的に再作成されます。"
+
+msgid "If the service is discovered again in new traces, it is recreated automatically, with all its entities."
+msgstr "新しいトレースでサービスが再び検出されると、すべてのエンティティとともに自動的に再作成されます。"
+
+msgid "Hosts, items and triggers in Zabbix are not changed."
+msgstr "Zabbixのホスト、アイテム、トリガーは変更されません。"
+
+msgid "Remove %1$s"
+msgstr "%1$sを削除"
+
+msgid "No data found"
+msgstr "データが見つかりません"
+
+msgid "No APM span matches the attribute filter in the selected time range. Change the filter above or press Reset to see everything."
+msgstr "選択した時間範囲で属性フィルターに一致するAPMスパンがありません。上のフィルターを変更するか、リセットを押してすべてを表示してください。"
+
+msgid "No APM traces in the selected time range and no host with the apm.requests item. Services appear here as soon as the applications send traces to the Zabbix proxy."
+msgstr "選択した時間範囲にAPMトレースがなく、apm.requestsアイテムを持つホストもありません。アプリケーションがZabbixプロキシにトレースを送信するとサービスがここに表示されます。"
+
+msgid "Could not save the layout: %1$s"
+msgstr "レイアウトを保存できませんでした: %1$s"
+
+msgid "Service"
+msgstr "サービス"
+
+msgid "Database"
+msgstr "データベース"
+
+msgid "External service"
+msgstr "外部サービス"
+
+msgid "Application · %1$s services"
+msgstr "アプリケーション · %1$sサービス"
+
+msgid "No traffic in the window"
+msgstr "時間範囲内にトラフィックなし"
+
+msgid "last span %1$s"
+msgstr "最後のスパン %1$s"
+
+msgid "no spans seen yet"
+msgstr "スパンはまだありません"
+
+msgid "%1$s req/min"
+msgstr "%1$s リクエスト/分"
+
+msgid "%1$s calls/min"
+msgstr "%1$s 呼び出し/分"
+
+msgid "p95 %1$s"
+msgstr "p95 %1$s"
+
+msgid "%1$s errors/min"
+msgstr "%1$s エラー/分"
+
+msgid "%1$s errors"
+msgstr "エラー %1$s"
+
+msgid "Traces (errors and slowest)"
+msgstr "トレース（エラーと最も遅いもの）"
+
+msgid "Requests/min"
+msgstr "リクエスト/分"
+
+msgid "Calls/min"
+msgstr "呼び出し/分"
+
+msgid "Average"
+msgstr "平均"
+
+msgid "Errors"
+msgstr "エラー"
+
+msgid "p95 latency"
+msgstr "p95レイテンシ"
+
+msgid "Logs ERROR/min"
+msgstr "ERRORログ/分"
+
+msgid "No traffic in the selected time range."
+msgstr "選択した時間範囲にトラフィックがありません。"
+
+msgid "Last span %1$s (%2$s)."
+msgstr "最後のスパン %1$s (%2$s)。"
+
+msgid "No spans seen yet."
+msgstr "スパンはまだありません。"
+
+msgid "Zabbix problems"
+msgstr "Zabbixの障害"
+
+msgid "Zabbix items (host %1$s, last 30 min)"
+msgstr "Zabbixのアイテム（ホスト %1$s、直近30分）"
+
+msgid "Inbound spans (traces)"
+msgstr "受信スパン（トレース）"
+
+msgid "Incoming calls (traces)"
+msgstr "受信呼び出し（トレース）"
+
+msgid "Endpoints"
+msgstr "エンドポイント"
+
+msgid "Operation"
+msgstr "操作"
+
+msgid "req/min"
+msgstr "リクエスト/分"
+
+msgid "p95"
+msgstr "p95"
+
+msgid "errors"
+msgstr "エラー"
+
+msgid "Operations"
+msgstr "操作"
+
+msgid "%1$s/min"
+msgstr "%1$s/分"
+
+msgid "Open host problems in Zabbix"
+msgstr "Zabbixでホストの障害を開く"
+
+msgid "%1$s ms"
+msgstr "%1$s ms"
+
+msgid "%1$s s"
+msgstr "%1$s s"
+
+msgid "%1$s s ago"
+msgstr "%1$s秒前"
+
+msgid "%1$s min ago"
+msgstr "%1$s分前"
+
+msgid "%1$s h ago"
+msgstr "%1$s時間前"
+
+msgid "%1$s d ago"
+msgstr "%1$s日前"
+
+msgid "Not classified"
+msgstr "未分類"
+
+msgid "Information"
+msgstr "情報"
+
+msgid "Warning"
+msgstr "警告"
+
+msgid "High"
+msgstr "重度の障害"
+
+msgid "Disaster"
+msgstr "致命的な障害"
+
+msgid "OK"
+msgstr "OK"
+
+msgid "Incident"
+msgstr "インシデント"
+
+msgid "No Zabbix host"
+msgstr "Zabbixホストなし"
+

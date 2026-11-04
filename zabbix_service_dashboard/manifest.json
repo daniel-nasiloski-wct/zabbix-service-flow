@@ -1,0 +1,28 @@
+{
+	"manifest_version": 2.0,
+	"id": "zabbix_service_dashboard",
+	"name": "APM dashboard",
+	"namespace": "ServiceDashboard",
+	"version": "1.0.0",
+	"author": "Daniel Nasiloski",
+	"url": "https://github.com/daniel-nasiloski-wct/zabbix-service-flow",
+	"description": "Service map built from the APM traces: who calls whom, with the Zabbix problems painted on services and connections. Adds APM → APM dashboard.",
+	"actions": {
+		"servicedashboard.view": {
+			"class": "CControllerServiceDashboardView",
+			"view": "servicedashboard.view"
+		},
+		"servicedashboard.data": {
+			"class": "CControllerServiceDashboardData",
+			"layout": "layout.json"
+		},
+		"servicedashboard.remove": {
+			"class": "CControllerServiceDashboardRemove",
+			"layout": "layout.json"
+		},
+		"servicedashboard.layout": {
+			"class": "CControllerServiceDashboardLayout",
+			"layout": "layout.json"
+		}
+	}
+}

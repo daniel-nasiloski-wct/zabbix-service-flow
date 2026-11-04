@@ -1,0 +1,246 @@
+# APM dashboard module for Zabbix 8.0 - translations.
+# This file is distributed under the same license as the module.
+msgid ""
+msgstr ""
+"Project-Id-Version: zabbix_service_dashboard 1.0.0\n"
+"POT-Creation-Date: 2026-11-04 02:00+0000\n"
+"PO-Revision-Date: 2026-11-04 02:00+0000\n"
+"Language: ca\n"
+"Last-Translator: Daniel Nasiloski\n"
+"Language-Team: ca\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+msgid "APM dashboard"
+msgstr "Tauler APM"
+
+msgid "Actions"
+msgstr "Accions"
+
+msgid "Edit"
+msgstr "Edita"
+
+msgid "Save"
+msgstr "Desa"
+
+msgid "Cancel"
+msgstr "Cancel·la"
+
+msgid "Remove"
+msgstr "Elimina"
+
+msgid "Nothing to remove"
+msgstr "No hi ha res a eliminar"
+
+msgid "Nothing to save"
+msgstr "No hi ha res a desar"
+
+msgid "Invalid time range or filter"
+msgstr "Interval de temps o filtre no vàlid"
+
+msgid "Application"
+msgstr "Aplicació"
+
+msgid "Time range"
+msgstr "Interval de temps"
+
+msgid "All applications (overview)"
+msgstr "Totes les aplicacions (visió general)"
+
+msgid "Last %1$s minutes"
+msgstr "Últims %1$s minuts"
+
+msgid "Overview"
+msgstr "Visió general"
+
+msgid "Back to %1$s"
+msgstr "Torna a %1$s"
+
+msgid "Remove application"
+msgstr "Elimina l'aplicació"
+
+msgid "Remove service"
+msgstr "Elimina el servei"
+
+msgid "Remove application \"%1$s\" from the map?"
+msgstr "Voleu eliminar l'aplicació \"%1$s\" del mapa?"
+
+msgid "Remove service \"%1$s\" from the map?"
+msgstr "Voleu eliminar el servei \"%1$s\" del mapa?"
+
+msgid "Its services, databases and external calls leave the map. Services shared with other applications stay."
+msgstr "Els seus serveis, bases de dades i crides externes surten del mapa. Els serveis compartits amb altres aplicacions es mantenen."
+
+msgid "The service, its connections, databases and external calls leave the map."
+msgstr "El servei, les seves connexions, bases de dades i crides externes surten del mapa."
+
+msgid "If the application is discovered again in new traces, it is recreated automatically, with all its entities."
+msgstr "Si l'aplicació es torna a descobrir en traces noves, es torna a crear automàticament, amb totes les seves entitats."
+
+msgid "If the service is discovered again in new traces, it is recreated automatically, with all its entities."
+msgstr "Si el servei es torna a descobrir en traces noves, es torna a crear automàticament, amb totes les seves entitats."
+
+msgid "Hosts, items and triggers in Zabbix are not changed."
+msgstr "Els hosts, elements i activadors del Zabbix no es modifiquen."
+
+msgid "Remove %1$s"
+msgstr "Elimina %1$s"
+
+msgid "No data found"
+msgstr "No s'han trobat dades"
+
+msgid "No APM span matches the attribute filter in the selected time range. Change the filter above or press Reset to see everything."
+msgstr "Cap span d'APM coincideix amb el filtre d'atributs a l'interval seleccionat. Canvieu el filtre de dalt o premeu Reinicialitza per veure-ho tot."
+
+msgid "No APM traces in the selected time range and no host with the apm.requests item. Services appear here as soon as the applications send traces to the Zabbix proxy."
+msgstr "No hi ha traces d'APM a l'interval seleccionat ni cap host amb l'element apm.requests. Els serveis apareixen aquí quan les aplicacions enviïn traces al proxy del Zabbix."
+
+msgid "Could not save the layout: %1$s"
+msgstr "No s'ha pogut desar la disposició: %1$s"
+
+msgid "Service"
+msgstr "Servei"
+
+msgid "Database"
+msgstr "Base de dades"
+
+msgid "External service"
+msgstr "Servei extern"
+
+msgid "Application · %1$s services"
+msgstr "Aplicació · %1$s serveis"
+
+msgid "No traffic in the window"
+msgstr "Sense trànsit a l'interval"
+
+msgid "last span %1$s"
+msgstr "últim span %1$s"
+
+msgid "no spans seen yet"
+msgstr "encara no s'ha vist cap span"
+
+msgid "%1$s req/min"
+msgstr "%1$s sol/min"
+
+msgid "%1$s calls/min"
+msgstr "%1$s crides/min"
+
+msgid "p95 %1$s"
+msgstr "p95 %1$s"
+
+msgid "%1$s errors/min"
+msgstr "%1$s errors/min"
+
+msgid "%1$s errors"
+msgstr "%1$s d'errors"
+
+msgid "Traces (errors and slowest)"
+msgstr "Traces (errors i més lentes)"
+
+msgid "Requests/min"
+msgstr "Sol·licituds/min"
+
+msgid "Calls/min"
+msgstr "Crides/min"
+
+msgid "Average"
+msgstr "Mitjana"
+
+msgid "Errors"
+msgstr "Errors"
+
+msgid "p95 latency"
+msgstr "Latència p95"
+
+msgid "Logs ERROR/min"
+msgstr "Logs ERROR/min"
+
+msgid "No traffic in the selected time range."
+msgstr "Sense trànsit a l'interval de temps seleccionat."
+
+msgid "Last span %1$s (%2$s)."
+msgstr "Últim span %1$s (%2$s)."
+
+msgid "No spans seen yet."
+msgstr "Encara no s'ha vist cap span."
+
+msgid "Zabbix problems"
+msgstr "Problemes del Zabbix"
+
+msgid "Zabbix items (host %1$s, last 30 min)"
+msgstr "Elements del Zabbix (host %1$s, últims 30 min)"
+
+msgid "Inbound spans (traces)"
+msgstr "Spans entrants (traces)"
+
+msgid "Incoming calls (traces)"
+msgstr "Crides entrants (traces)"
+
+msgid "Endpoints"
+msgstr "Endpoints"
+
+msgid "Operation"
+msgstr "Operació"
+
+msgid "req/min"
+msgstr "sol/min"
+
+msgid "p95"
+msgstr "p95"
+
+msgid "errors"
+msgstr "errors"
+
+msgid "Operations"
+msgstr "Operacions"
+
+msgid "%1$s/min"
+msgstr "%1$s/min"
+
+msgid "Open host problems in Zabbix"
+msgstr "Obre els problemes del host al Zabbix"
+
+msgid "%1$s ms"
+msgstr "%1$s ms"
+
+msgid "%1$s s"
+msgstr "%1$s s"
+
+msgid "%1$s s ago"
+msgstr "fa %1$s s"
+
+msgid "%1$s min ago"
+msgstr "fa %1$s min"
+
+msgid "%1$s h ago"
+msgstr "fa %1$s h"
+
+msgid "%1$s d ago"
+msgstr "fa %1$s d"
+
+msgid "Not classified"
+msgstr "Sense classificar"
+
+msgid "Information"
+msgstr "Informació"
+
+msgid "Warning"
+msgstr "Avís"
+
+msgid "High"
+msgstr "Alta"
+
+msgid "Disaster"
+msgstr "Desastre"
+
+msgid "OK"
+msgstr "OK"
+
+msgid "Incident"
+msgstr "Incident"
+
+msgid "No Zabbix host"
+msgstr "Sense host al Zabbix"
+

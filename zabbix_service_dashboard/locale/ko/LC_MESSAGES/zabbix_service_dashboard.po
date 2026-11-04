@@ -1,0 +1,246 @@
+# APM dashboard module for Zabbix 8.0 - translations.
+# This file is distributed under the same license as the module.
+msgid ""
+msgstr ""
+"Project-Id-Version: zabbix_service_dashboard 1.0.0\n"
+"POT-Creation-Date: 2026-11-04 02:00+0000\n"
+"PO-Revision-Date: 2026-11-04 02:00+0000\n"
+"Language: ko\n"
+"Last-Translator: Daniel Nasiloski\n"
+"Language-Team: ko\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+
+msgid "APM dashboard"
+msgstr "APM 대시보드"
+
+msgid "Actions"
+msgstr "작업"
+
+msgid "Edit"
+msgstr "편집"
+
+msgid "Save"
+msgstr "저장"
+
+msgid "Cancel"
+msgstr "취소"
+
+msgid "Remove"
+msgstr "제거"
+
+msgid "Nothing to remove"
+msgstr "제거할 항목이 없습니다"
+
+msgid "Nothing to save"
+msgstr "저장할 항목이 없습니다"
+
+msgid "Invalid time range or filter"
+msgstr "시간 범위 또는 필터가 잘못되었습니다"
+
+msgid "Application"
+msgstr "애플리케이션"
+
+msgid "Time range"
+msgstr "시간 범위"
+
+msgid "All applications (overview)"
+msgstr "모든 애플리케이션(개요)"
+
+msgid "Last %1$s minutes"
+msgstr "최근 %1$s분"
+
+msgid "Overview"
+msgstr "개요"
+
+msgid "Back to %1$s"
+msgstr "%1$s(으)로 돌아가기"
+
+msgid "Remove application"
+msgstr "애플리케이션 제거"
+
+msgid "Remove service"
+msgstr "서비스 제거"
+
+msgid "Remove application \"%1$s\" from the map?"
+msgstr "애플리케이션 \"%1$s\"을(를) 맵에서 제거하시겠습니까?"
+
+msgid "Remove service \"%1$s\" from the map?"
+msgstr "서비스 \"%1$s\"을(를) 맵에서 제거하시겠습니까?"
+
+msgid "Its services, databases and external calls leave the map. Services shared with other applications stay."
+msgstr "해당 서비스, 데이터베이스 및 외부 호출이 맵에서 사라집니다. 다른 애플리케이션과 공유하는 서비스는 남습니다."
+
+msgid "The service, its connections, databases and external calls leave the map."
+msgstr "서비스와 그 연결, 데이터베이스 및 외부 호출이 맵에서 사라집니다."
+
+msgid "If the application is discovered again in new traces, it is recreated automatically, with all its entities."
+msgstr "새 트레이스에서 애플리케이션이 다시 발견되면 모든 엔터티와 함께 자동으로 다시 생성됩니다."
+
+msgid "If the service is discovered again in new traces, it is recreated automatically, with all its entities."
+msgstr "새 트레이스에서 서비스가 다시 발견되면 모든 엔터티와 함께 자동으로 다시 생성됩니다."
+
+msgid "Hosts, items and triggers in Zabbix are not changed."
+msgstr "Zabbix의 호스트, 아이템, 트리거는 변경되지 않습니다."
+
+msgid "Remove %1$s"
+msgstr "%1$s 제거"
+
+msgid "No data found"
+msgstr "데이터를 찾을 수 없습니다"
+
+msgid "No APM span matches the attribute filter in the selected time range. Change the filter above or press Reset to see everything."
+msgstr "선택한 시간 범위에서 속성 필터와 일치하는 APM 스팬이 없습니다. 위의 필터를 변경하거나 초기화를 눌러 전체를 확인하세요."
+
+msgid "No APM traces in the selected time range and no host with the apm.requests item. Services appear here as soon as the applications send traces to the Zabbix proxy."
+msgstr "선택한 시간 범위에 APM 트레이스가 없고 apm.requests 아이템이 있는 호스트도 없습니다. 애플리케이션이 Zabbix 프록시로 트레이스를 보내면 서비스가 여기에 표시됩니다."
+
+msgid "Could not save the layout: %1$s"
+msgstr "레이아웃을 저장할 수 없습니다: %1$s"
+
+msgid "Service"
+msgstr "서비스"
+
+msgid "Database"
+msgstr "데이터베이스"
+
+msgid "External service"
+msgstr "외부 서비스"
+
+msgid "Application · %1$s services"
+msgstr "애플리케이션 · 서비스 %1$s개"
+
+msgid "No traffic in the window"
+msgstr "시간 범위 내 트래픽 없음"
+
+msgid "last span %1$s"
+msgstr "마지막 스팬 %1$s"
+
+msgid "no spans seen yet"
+msgstr "아직 스팬이 없습니다"
+
+msgid "%1$s req/min"
+msgstr "%1$s 요청/분"
+
+msgid "%1$s calls/min"
+msgstr "%1$s 호출/분"
+
+msgid "p95 %1$s"
+msgstr "p95 %1$s"
+
+msgid "%1$s errors/min"
+msgstr "%1$s 오류/분"
+
+msgid "%1$s errors"
+msgstr "오류 %1$s"
+
+msgid "Traces (errors and slowest)"
+msgstr "트레이스(오류 및 가장 느린 항목)"
+
+msgid "Requests/min"
+msgstr "요청/분"
+
+msgid "Calls/min"
+msgstr "호출/분"
+
+msgid "Average"
+msgstr "평균"
+
+msgid "Errors"
+msgstr "오류"
+
+msgid "p95 latency"
+msgstr "p95 지연 시간"
+
+msgid "Logs ERROR/min"
+msgstr "ERROR 로그/분"
+
+msgid "No traffic in the selected time range."
+msgstr "선택한 시간 범위에 트래픽이 없습니다."
+
+msgid "Last span %1$s (%2$s)."
+msgstr "마지막 스팬 %1$s (%2$s)."
+
+msgid "No spans seen yet."
+msgstr "아직 스팬이 없습니다."
+
+msgid "Zabbix problems"
+msgstr "Zabbix 장애"
+
+msgid "Zabbix items (host %1$s, last 30 min)"
+msgstr "Zabbix 아이템(호스트 %1$s, 최근 30분)"
+
+msgid "Inbound spans (traces)"
+msgstr "수신 스팬(트레이스)"
+
+msgid "Incoming calls (traces)"
+msgstr "수신 호출(트레이스)"
+
+msgid "Endpoints"
+msgstr "엔드포인트"
+
+msgid "Operation"
+msgstr "작업"
+
+msgid "req/min"
+msgstr "요청/분"
+
+msgid "p95"
+msgstr "p95"
+
+msgid "errors"
+msgstr "오류"
+
+msgid "Operations"
+msgstr "작업"
+
+msgid "%1$s/min"
+msgstr "%1$s/분"
+
+msgid "Open host problems in Zabbix"
+msgstr "Zabbix에서 호스트 장애 열기"
+
+msgid "%1$s ms"
+msgstr "%1$s ms"
+
+msgid "%1$s s"
+msgstr "%1$s s"
+
+msgid "%1$s s ago"
+msgstr "%1$s초 전"
+
+msgid "%1$s min ago"
+msgstr "%1$s분 전"
+
+msgid "%1$s h ago"
+msgstr "%1$s시간 전"
+
+msgid "%1$s d ago"
+msgstr "%1$s일 전"
+
+msgid "Not classified"
+msgstr "미분류"
+
+msgid "Information"
+msgstr "정보"
+
+msgid "Warning"
+msgstr "경고"
+
+msgid "High"
+msgstr "높음"
+
+msgid "Disaster"
+msgstr "치명적"
+
+msgid "OK"
+msgstr "OK"
+
+msgid "Incident"
+msgstr "인시던트"
+
+msgid "No Zabbix host"
+msgstr "Zabbix 호스트 없음"
+

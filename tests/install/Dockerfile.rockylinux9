@@ -1,0 +1,5 @@
+# Teste do install.sh numa distro da família RHEL (Rocky 9): só o pacote do frontend, sem banco nem servidor.
+FROM rockylinux:9
+RUN dnf install -y https://repo.zabbix.com/zabbix/8.0/release/rocky/9/noarch/zabbix-release-latest-8.0.el9.noarch.rpm \
+ && dnf install -y zabbix-web zabbix-apache-conf \
+ && dnf clean all

@@ -1,0 +1,246 @@
+# APM dashboard module for Zabbix 8.0 - translations.
+# This file is distributed under the same license as the module.
+msgid ""
+msgstr ""
+"Project-Id-Version: zabbix_service_dashboard 1.0.0\n"
+"POT-Creation-Date: 2026-11-04 02:00+0000\n"
+"PO-Revision-Date: 2026-11-04 02:00+0000\n"
+"Language: fi\n"
+"Last-Translator: Daniel Nasiloski\n"
+"Language-Team: fi\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+msgid "APM dashboard"
+msgstr "APM-kojelauta"
+
+msgid "Actions"
+msgstr "Toiminnot"
+
+msgid "Edit"
+msgstr "Muokkaa"
+
+msgid "Save"
+msgstr "Tallenna"
+
+msgid "Cancel"
+msgstr "Peruuta"
+
+msgid "Remove"
+msgstr "Poista"
+
+msgid "Nothing to remove"
+msgstr "Ei poistettavaa"
+
+msgid "Nothing to save"
+msgstr "Ei tallennettavaa"
+
+msgid "Invalid time range or filter"
+msgstr "Virheellinen aikaväli tai suodatin"
+
+msgid "Application"
+msgstr "Sovellus"
+
+msgid "Time range"
+msgstr "Aikaväli"
+
+msgid "All applications (overview)"
+msgstr "Kaikki sovellukset (yleiskuva)"
+
+msgid "Last %1$s minutes"
+msgstr "Viimeiset %1$s minuuttia"
+
+msgid "Overview"
+msgstr "Yleiskuva"
+
+msgid "Back to %1$s"
+msgstr "Takaisin: %1$s"
+
+msgid "Remove application"
+msgstr "Poista sovellus"
+
+msgid "Remove service"
+msgstr "Poista palvelu"
+
+msgid "Remove application \"%1$s\" from the map?"
+msgstr "Poistetaanko sovellus \"%1$s\" kartalta?"
+
+msgid "Remove service \"%1$s\" from the map?"
+msgstr "Poistetaanko palvelu \"%1$s\" kartalta?"
+
+msgid "Its services, databases and external calls leave the map. Services shared with other applications stay."
+msgstr "Sen palvelut, tietokannat ja ulkoiset kutsut poistuvat kartalta. Muiden sovellusten kanssa jaetut palvelut jäävät."
+
+msgid "The service, its connections, databases and external calls leave the map."
+msgstr "Palvelu, sen yhteydet, tietokannat ja ulkoiset kutsut poistuvat kartalta."
+
+msgid "If the application is discovered again in new traces, it is recreated automatically, with all its entities."
+msgstr "Jos sovellus löydetään uudelleen uusista jäljistä, se luodaan automaattisesti uudelleen kaikkine entiteetteineen."
+
+msgid "If the service is discovered again in new traces, it is recreated automatically, with all its entities."
+msgstr "Jos palvelu löydetään uudelleen uusista jäljistä, se luodaan automaattisesti uudelleen kaikkine entiteetteineen."
+
+msgid "Hosts, items and triggers in Zabbix are not changed."
+msgstr "Zabbixin isäntiä, kohteita ja liipaisimia ei muuteta."
+
+msgid "Remove %1$s"
+msgstr "Poista %1$s"
+
+msgid "No data found"
+msgstr "Tietoja ei löytynyt"
+
+msgid "No APM span matches the attribute filter in the selected time range. Change the filter above or press Reset to see everything."
+msgstr "Yksikään APM-span ei vastaa attribuuttisuodatinta valitulla aikavälillä. Muuta yllä olevaa suodatinta tai paina Palauta nähdäksesi kaiken."
+
+msgid "No APM traces in the selected time range and no host with the apm.requests item. Services appear here as soon as the applications send traces to the Zabbix proxy."
+msgstr "Ei APM-jälkiä valitulla aikavälillä eikä isäntää, jolla on kohde apm.requests. Palvelut ilmestyvät tänne heti, kun sovellukset lähettävät jälkiä Zabbix-proxylle."
+
+msgid "Could not save the layout: %1$s"
+msgstr "Asettelua ei voitu tallentaa: %1$s"
+
+msgid "Service"
+msgstr "Palvelu"
+
+msgid "Database"
+msgstr "Tietokanta"
+
+msgid "External service"
+msgstr "Ulkoinen palvelu"
+
+msgid "Application · %1$s services"
+msgstr "Sovellus · %1$s palvelua"
+
+msgid "No traffic in the window"
+msgstr "Ei liikennettä aikavälillä"
+
+msgid "last span %1$s"
+msgstr "viimeisin span %1$s"
+
+msgid "no spans seen yet"
+msgstr "spaneja ei ole vielä nähty"
+
+msgid "%1$s req/min"
+msgstr "%1$s pyyntöä/min"
+
+msgid "%1$s calls/min"
+msgstr "%1$s kutsua/min"
+
+msgid "p95 %1$s"
+msgstr "p95 %1$s"
+
+msgid "%1$s errors/min"
+msgstr "%1$s virhettä/min"
+
+msgid "%1$s errors"
+msgstr "%1$s virheitä"
+
+msgid "Traces (errors and slowest)"
+msgstr "Jäljet (virheet ja hitaimmat)"
+
+msgid "Requests/min"
+msgstr "Pyyntöjä/min"
+
+msgid "Calls/min"
+msgstr "Kutsuja/min"
+
+msgid "Average"
+msgstr "Keskiarvo"
+
+msgid "Errors"
+msgstr "Virheet"
+
+msgid "p95 latency"
+msgstr "p95-viive"
+
+msgid "Logs ERROR/min"
+msgstr "Lokit ERROR/min"
+
+msgid "No traffic in the selected time range."
+msgstr "Ei liikennettä valitulla aikavälillä."
+
+msgid "Last span %1$s (%2$s)."
+msgstr "Viimeisin span %1$s (%2$s)."
+
+msgid "No spans seen yet."
+msgstr "Spaneja ei ole vielä nähty."
+
+msgid "Zabbix problems"
+msgstr "Zabbix-ongelmat"
+
+msgid "Zabbix items (host %1$s, last 30 min)"
+msgstr "Zabbix-kohteet (isäntä %1$s, viimeiset 30 min)"
+
+msgid "Inbound spans (traces)"
+msgstr "Saapuvat spanit (jäljet)"
+
+msgid "Incoming calls (traces)"
+msgstr "Saapuvat kutsut (jäljet)"
+
+msgid "Endpoints"
+msgstr "Päätepisteet"
+
+msgid "Operation"
+msgstr "Operaatio"
+
+msgid "req/min"
+msgstr "pyyntöä/min"
+
+msgid "p95"
+msgstr "p95"
+
+msgid "errors"
+msgstr "virheitä"
+
+msgid "Operations"
+msgstr "Operaatiot"
+
+msgid "%1$s/min"
+msgstr "%1$s/min"
+
+msgid "Open host problems in Zabbix"
+msgstr "Avaa isännän ongelmat Zabbixissa"
+
+msgid "%1$s ms"
+msgstr "%1$s ms"
+
+msgid "%1$s s"
+msgstr "%1$s s"
+
+msgid "%1$s s ago"
+msgstr "%1$s s sitten"
+
+msgid "%1$s min ago"
+msgstr "%1$s min sitten"
+
+msgid "%1$s h ago"
+msgstr "%1$s h sitten"
+
+msgid "%1$s d ago"
+msgstr "%1$s pv sitten"
+
+msgid "Not classified"
+msgstr "Luokittelematon"
+
+msgid "Information"
+msgstr "Tiedoksi"
+
+msgid "Warning"
+msgstr "Varoitus"
+
+msgid "High"
+msgstr "Korkea"
+
+msgid "Disaster"
+msgstr "Katastrofi"
+
+msgid "OK"
+msgstr "OK"
+
+msgid "Incident"
+msgstr "Häiriö"
+
+msgid "No Zabbix host"
+msgstr "Ei Zabbix-isäntää"
+

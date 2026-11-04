@@ -1,0 +1,246 @@
+# APM dashboard module for Zabbix 8.0 - translations.
+# This file is distributed under the same license as the module.
+msgid ""
+msgstr ""
+"Project-Id-Version: zabbix_service_dashboard 1.0.0\n"
+"POT-Creation-Date: 2026-11-04 02:00+0000\n"
+"PO-Revision-Date: 2026-11-04 02:00+0000\n"
+"Language: zh_CN\n"
+"Last-Translator: Daniel Nasiloski\n"
+"Language-Team: zh_CN\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+
+msgid "APM dashboard"
+msgstr "APM 仪表板"
+
+msgid "Actions"
+msgstr "操作"
+
+msgid "Edit"
+msgstr "编辑"
+
+msgid "Save"
+msgstr "保存"
+
+msgid "Cancel"
+msgstr "取消"
+
+msgid "Remove"
+msgstr "移除"
+
+msgid "Nothing to remove"
+msgstr "没有可移除的内容"
+
+msgid "Nothing to save"
+msgstr "没有可保存的内容"
+
+msgid "Invalid time range or filter"
+msgstr "时间范围或过滤器无效"
+
+msgid "Application"
+msgstr "应用"
+
+msgid "Time range"
+msgstr "时间范围"
+
+msgid "All applications (overview)"
+msgstr "所有应用（概览）"
+
+msgid "Last %1$s minutes"
+msgstr "最近 %1$s 分钟"
+
+msgid "Overview"
+msgstr "概览"
+
+msgid "Back to %1$s"
+msgstr "返回 %1$s"
+
+msgid "Remove application"
+msgstr "移除应用"
+
+msgid "Remove service"
+msgstr "移除服务"
+
+msgid "Remove application \"%1$s\" from the map?"
+msgstr "要从地图中移除应用“%1$s”吗？"
+
+msgid "Remove service \"%1$s\" from the map?"
+msgstr "要从地图中移除服务“%1$s”吗？"
+
+msgid "Its services, databases and external calls leave the map. Services shared with other applications stay."
+msgstr "它的服务、数据库和外部调用将从地图中消失。与其他应用共享的服务会保留。"
+
+msgid "The service, its connections, databases and external calls leave the map."
+msgstr "该服务及其连接、数据库和外部调用将从地图中消失。"
+
+msgid "If the application is discovered again in new traces, it is recreated automatically, with all its entities."
+msgstr "如果在新的链路追踪中再次发现该应用，它会连同所有实体自动重新创建。"
+
+msgid "If the service is discovered again in new traces, it is recreated automatically, with all its entities."
+msgstr "如果在新的链路追踪中再次发现该服务，它会连同所有实体自动重新创建。"
+
+msgid "Hosts, items and triggers in Zabbix are not changed."
+msgstr "Zabbix 中的主机、监控项和触发器不会被更改。"
+
+msgid "Remove %1$s"
+msgstr "移除 %1$s"
+
+msgid "No data found"
+msgstr "未找到数据"
+
+msgid "No APM span matches the attribute filter in the selected time range. Change the filter above or press Reset to see everything."
+msgstr "所选时间范围内没有与属性过滤器匹配的 APM span。请修改上方的过滤器，或点击重置以查看全部。"
+
+msgid "No APM traces in the selected time range and no host with the apm.requests item. Services appear here as soon as the applications send traces to the Zabbix proxy."
+msgstr "所选时间范围内没有 APM 链路追踪，也没有带 apm.requests 监控项的主机。应用向 Zabbix proxy 发送链路追踪后，服务就会显示在这里。"
+
+msgid "Could not save the layout: %1$s"
+msgstr "无法保存布局：%1$s"
+
+msgid "Service"
+msgstr "服务"
+
+msgid "Database"
+msgstr "数据库"
+
+msgid "External service"
+msgstr "外部服务"
+
+msgid "Application · %1$s services"
+msgstr "应用 · %1$s 个服务"
+
+msgid "No traffic in the window"
+msgstr "时间范围内无流量"
+
+msgid "last span %1$s"
+msgstr "最后 span %1$s"
+
+msgid "no spans seen yet"
+msgstr "尚未见到 span"
+
+msgid "%1$s req/min"
+msgstr "%1$s 请求/分钟"
+
+msgid "%1$s calls/min"
+msgstr "%1$s 调用/分钟"
+
+msgid "p95 %1$s"
+msgstr "p95 %1$s"
+
+msgid "%1$s errors/min"
+msgstr "%1$s 错误/分钟"
+
+msgid "%1$s errors"
+msgstr "%1$s 错误"
+
+msgid "Traces (errors and slowest)"
+msgstr "链路追踪（错误和最慢的）"
+
+msgid "Requests/min"
+msgstr "请求/分钟"
+
+msgid "Calls/min"
+msgstr "调用/分钟"
+
+msgid "Average"
+msgstr "平均"
+
+msgid "Errors"
+msgstr "错误"
+
+msgid "p95 latency"
+msgstr "p95 延迟"
+
+msgid "Logs ERROR/min"
+msgstr "ERROR 日志/分钟"
+
+msgid "No traffic in the selected time range."
+msgstr "所选时间范围内无流量。"
+
+msgid "Last span %1$s (%2$s)."
+msgstr "最后 span %1$s（%2$s）。"
+
+msgid "No spans seen yet."
+msgstr "尚未见到 span。"
+
+msgid "Zabbix problems"
+msgstr "Zabbix 问题"
+
+msgid "Zabbix items (host %1$s, last 30 min)"
+msgstr "Zabbix 监控项（主机 %1$s，最近 30 分钟）"
+
+msgid "Inbound spans (traces)"
+msgstr "入站 span（链路追踪）"
+
+msgid "Incoming calls (traces)"
+msgstr "入站调用（链路追踪）"
+
+msgid "Endpoints"
+msgstr "端点"
+
+msgid "Operation"
+msgstr "操作"
+
+msgid "req/min"
+msgstr "请求/分钟"
+
+msgid "p95"
+msgstr "p95"
+
+msgid "errors"
+msgstr "错误"
+
+msgid "Operations"
+msgstr "操作"
+
+msgid "%1$s/min"
+msgstr "%1$s/分钟"
+
+msgid "Open host problems in Zabbix"
+msgstr "在 Zabbix 中打开主机问题"
+
+msgid "%1$s ms"
+msgstr "%1$s 毫秒"
+
+msgid "%1$s s"
+msgstr "%1$s 秒"
+
+msgid "%1$s s ago"
+msgstr "%1$s 秒前"
+
+msgid "%1$s min ago"
+msgstr "%1$s 分钟前"
+
+msgid "%1$s h ago"
+msgstr "%1$s 小时前"
+
+msgid "%1$s d ago"
+msgstr "%1$s 天前"
+
+msgid "Not classified"
+msgstr "未分类"
+
+msgid "Information"
+msgstr "信息"
+
+msgid "Warning"
+msgstr "警告"
+
+msgid "High"
+msgstr "严重"
+
+msgid "Disaster"
+msgstr "灾难"
+
+msgid "OK"
+msgstr "OK"
+
+msgid "Incident"
+msgstr "事故"
+
+msgid "No Zabbix host"
+msgstr "无 Zabbix 主机"
+

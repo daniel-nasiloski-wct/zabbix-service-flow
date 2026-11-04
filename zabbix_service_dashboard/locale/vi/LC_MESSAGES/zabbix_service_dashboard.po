@@ -1,0 +1,246 @@
+# APM dashboard module for Zabbix 8.0 - translations.
+# This file is distributed under the same license as the module.
+msgid ""
+msgstr ""
+"Project-Id-Version: zabbix_service_dashboard 1.0.0\n"
+"POT-Creation-Date: 2026-11-04 02:00+0000\n"
+"PO-Revision-Date: 2026-11-04 02:00+0000\n"
+"Language: vi\n"
+"Last-Translator: Daniel Nasiloski\n"
+"Language-Team: vi\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+
+msgid "APM dashboard"
+msgstr "Bảng điều khiển APM"
+
+msgid "Actions"
+msgstr "Thao tác"
+
+msgid "Edit"
+msgstr "Chỉnh sửa"
+
+msgid "Save"
+msgstr "Lưu"
+
+msgid "Cancel"
+msgstr "Hủy"
+
+msgid "Remove"
+msgstr "Gỡ bỏ"
+
+msgid "Nothing to remove"
+msgstr "Không có gì để gỡ bỏ"
+
+msgid "Nothing to save"
+msgstr "Không có gì để lưu"
+
+msgid "Invalid time range or filter"
+msgstr "Khoảng thời gian hoặc bộ lọc không hợp lệ"
+
+msgid "Application"
+msgstr "Ứng dụng"
+
+msgid "Time range"
+msgstr "Khoảng thời gian"
+
+msgid "All applications (overview)"
+msgstr "Tất cả ứng dụng (tổng quan)"
+
+msgid "Last %1$s minutes"
+msgstr "%1$s phút gần nhất"
+
+msgid "Overview"
+msgstr "Tổng quan"
+
+msgid "Back to %1$s"
+msgstr "Quay lại %1$s"
+
+msgid "Remove application"
+msgstr "Gỡ bỏ ứng dụng"
+
+msgid "Remove service"
+msgstr "Gỡ bỏ dịch vụ"
+
+msgid "Remove application \"%1$s\" from the map?"
+msgstr "Gỡ bỏ ứng dụng \"%1$s\" khỏi bản đồ?"
+
+msgid "Remove service \"%1$s\" from the map?"
+msgstr "Gỡ bỏ dịch vụ \"%1$s\" khỏi bản đồ?"
+
+msgid "Its services, databases and external calls leave the map. Services shared with other applications stay."
+msgstr "Các dịch vụ, cơ sở dữ liệu và lời gọi bên ngoài của nó sẽ biến mất khỏi bản đồ. Các dịch vụ dùng chung với ứng dụng khác vẫn được giữ lại."
+
+msgid "The service, its connections, databases and external calls leave the map."
+msgstr "Dịch vụ này cùng các kết nối, cơ sở dữ liệu và lời gọi bên ngoài của nó sẽ biến mất khỏi bản đồ."
+
+msgid "If the application is discovered again in new traces, it is recreated automatically, with all its entities."
+msgstr "Nếu ứng dụng được phát hiện lại trong các trace mới, nó sẽ tự động được tạo lại cùng toàn bộ thực thể."
+
+msgid "If the service is discovered again in new traces, it is recreated automatically, with all its entities."
+msgstr "Nếu dịch vụ được phát hiện lại trong các trace mới, nó sẽ tự động được tạo lại cùng toàn bộ thực thể."
+
+msgid "Hosts, items and triggers in Zabbix are not changed."
+msgstr "Host, item và trigger trong Zabbix không bị thay đổi."
+
+msgid "Remove %1$s"
+msgstr "Gỡ bỏ %1$s"
+
+msgid "No data found"
+msgstr "Không tìm thấy dữ liệu"
+
+msgid "No APM span matches the attribute filter in the selected time range. Change the filter above or press Reset to see everything."
+msgstr "Không có span APM nào khớp với bộ lọc thuộc tính trong khoảng thời gian đã chọn. Hãy đổi bộ lọc ở trên hoặc bấm Đặt lại để xem tất cả."
+
+msgid "No APM traces in the selected time range and no host with the apm.requests item. Services appear here as soon as the applications send traces to the Zabbix proxy."
+msgstr "Không có trace APM trong khoảng thời gian đã chọn và không có host nào có item apm.requests. Dịch vụ sẽ xuất hiện ở đây ngay khi các ứng dụng gửi trace tới Zabbix proxy."
+
+msgid "Could not save the layout: %1$s"
+msgstr "Không thể lưu bố cục: %1$s"
+
+msgid "Service"
+msgstr "Dịch vụ"
+
+msgid "Database"
+msgstr "Cơ sở dữ liệu"
+
+msgid "External service"
+msgstr "Dịch vụ bên ngoài"
+
+msgid "Application · %1$s services"
+msgstr "Ứng dụng · %1$s dịch vụ"
+
+msgid "No traffic in the window"
+msgstr "Không có lưu lượng trong khoảng thời gian"
+
+msgid "last span %1$s"
+msgstr "span cuối %1$s"
+
+msgid "no spans seen yet"
+msgstr "chưa thấy span nào"
+
+msgid "%1$s req/min"
+msgstr "%1$s yêu cầu/phút"
+
+msgid "%1$s calls/min"
+msgstr "%1$s lời gọi/phút"
+
+msgid "p95 %1$s"
+msgstr "p95 %1$s"
+
+msgid "%1$s errors/min"
+msgstr "%1$s lỗi/phút"
+
+msgid "%1$s errors"
+msgstr "%1$s lỗi"
+
+msgid "Traces (errors and slowest)"
+msgstr "Trace (lỗi và chậm nhất)"
+
+msgid "Requests/min"
+msgstr "Yêu cầu/phút"
+
+msgid "Calls/min"
+msgstr "Lời gọi/phút"
+
+msgid "Average"
+msgstr "Trung bình"
+
+msgid "Errors"
+msgstr "Lỗi"
+
+msgid "p95 latency"
+msgstr "Độ trễ p95"
+
+msgid "Logs ERROR/min"
+msgstr "Log ERROR/phút"
+
+msgid "No traffic in the selected time range."
+msgstr "Không có lưu lượng trong khoảng thời gian đã chọn."
+
+msgid "Last span %1$s (%2$s)."
+msgstr "Span cuối %1$s (%2$s)."
+
+msgid "No spans seen yet."
+msgstr "Chưa thấy span nào."
+
+msgid "Zabbix problems"
+msgstr "Sự cố Zabbix"
+
+msgid "Zabbix items (host %1$s, last 30 min)"
+msgstr "Item Zabbix (host %1$s, 30 phút gần nhất)"
+
+msgid "Inbound spans (traces)"
+msgstr "Span đến (trace)"
+
+msgid "Incoming calls (traces)"
+msgstr "Lời gọi đến (trace)"
+
+msgid "Endpoints"
+msgstr "Điểm cuối"
+
+msgid "Operation"
+msgstr "Thao tác"
+
+msgid "req/min"
+msgstr "yêu cầu/phút"
+
+msgid "p95"
+msgstr "p95"
+
+msgid "errors"
+msgstr "lỗi"
+
+msgid "Operations"
+msgstr "Thao tác"
+
+msgid "%1$s/min"
+msgstr "%1$s/phút"
+
+msgid "Open host problems in Zabbix"
+msgstr "Mở sự cố của host trong Zabbix"
+
+msgid "%1$s ms"
+msgstr "%1$s ms"
+
+msgid "%1$s s"
+msgstr "%1$s giây"
+
+msgid "%1$s s ago"
+msgstr "%1$s giây trước"
+
+msgid "%1$s min ago"
+msgstr "%1$s phút trước"
+
+msgid "%1$s h ago"
+msgstr "%1$s giờ trước"
+
+msgid "%1$s d ago"
+msgstr "%1$s ngày trước"
+
+msgid "Not classified"
+msgstr "Chưa phân loại"
+
+msgid "Information"
+msgstr "Thông tin"
+
+msgid "Warning"
+msgstr "Cảnh báo"
+
+msgid "High"
+msgstr "Cao"
+
+msgid "Disaster"
+msgstr "Thảm họa"
+
+msgid "OK"
+msgstr "OK"
+
+msgid "Incident"
+msgstr "Sự cố"
+
+msgid "No Zabbix host"
+msgstr "Không có host Zabbix"
+

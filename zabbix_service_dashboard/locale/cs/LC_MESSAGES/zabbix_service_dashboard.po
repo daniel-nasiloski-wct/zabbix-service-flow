@@ -1,0 +1,246 @@
+# APM dashboard module for Zabbix 8.0 - translations.
+# This file is distributed under the same license as the module.
+msgid ""
+msgstr ""
+"Project-Id-Version: zabbix_service_dashboard 1.0.0\n"
+"POT-Creation-Date: 2026-11-04 02:00+0000\n"
+"PO-Revision-Date: 2026-11-04 02:00+0000\n"
+"Language: cs\n"
+"Last-Translator: Daniel Nasiloski\n"
+"Language-Team: cs\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=3; plural=(n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2;\n"
+
+msgid "APM dashboard"
+msgstr "APM dashboard"
+
+msgid "Actions"
+msgstr "Akce"
+
+msgid "Edit"
+msgstr "Upravit"
+
+msgid "Save"
+msgstr "Uložit"
+
+msgid "Cancel"
+msgstr "Zrušit"
+
+msgid "Remove"
+msgstr "Odebrat"
+
+msgid "Nothing to remove"
+msgstr "Není co odebrat"
+
+msgid "Nothing to save"
+msgstr "Není co uložit"
+
+msgid "Invalid time range or filter"
+msgstr "Neplatný časový rozsah nebo filtr"
+
+msgid "Application"
+msgstr "Aplikace"
+
+msgid "Time range"
+msgstr "Časový rozsah"
+
+msgid "All applications (overview)"
+msgstr "Všechny aplikace (přehled)"
+
+msgid "Last %1$s minutes"
+msgstr "Posledních %1$s minut"
+
+msgid "Overview"
+msgstr "Přehled"
+
+msgid "Back to %1$s"
+msgstr "Zpět na %1$s"
+
+msgid "Remove application"
+msgstr "Odebrat aplikaci"
+
+msgid "Remove service"
+msgstr "Odebrat službu"
+
+msgid "Remove application \"%1$s\" from the map?"
+msgstr "Odebrat aplikaci \"%1$s\" z mapy?"
+
+msgid "Remove service \"%1$s\" from the map?"
+msgstr "Odebrat službu \"%1$s\" z mapy?"
+
+msgid "Its services, databases and external calls leave the map. Services shared with other applications stay."
+msgstr "Její služby, databáze a externí volání z mapy zmizí. Služby sdílené s jinými aplikacemi zůstanou."
+
+msgid "The service, its connections, databases and external calls leave the map."
+msgstr "Služba, její spojení, databáze a externí volání z mapy zmizí."
+
+msgid "If the application is discovered again in new traces, it is recreated automatically, with all its entities."
+msgstr "Pokud bude aplikace znovu objevena v nových trasách, automaticky se znovu vytvoří se všemi svými entitami."
+
+msgid "If the service is discovered again in new traces, it is recreated automatically, with all its entities."
+msgstr "Pokud bude služba znovu objevena v nových trasách, automaticky se znovu vytvoří se všemi svými entitami."
+
+msgid "Hosts, items and triggers in Zabbix are not changed."
+msgstr "Hostitelé, položky a triggery v Zabbixu se nemění."
+
+msgid "Remove %1$s"
+msgstr "Odebrat %1$s"
+
+msgid "No data found"
+msgstr "Nenalezena žádná data"
+
+msgid "No APM span matches the attribute filter in the selected time range. Change the filter above or press Reset to see everything."
+msgstr "Žádný APM span neodpovídá filtru atributů ve zvoleném časovém rozsahu. Změňte filtr výše nebo stiskněte Obnovit pro zobrazení všeho."
+
+msgid "No APM traces in the selected time range and no host with the apm.requests item. Services appear here as soon as the applications send traces to the Zabbix proxy."
+msgstr "Ve zvoleném časovém rozsahu nejsou žádné APM trasy a žádný hostitel s položkou apm.requests. Služby se zde objeví, jakmile aplikace začnou posílat trasy na Zabbix proxy."
+
+msgid "Could not save the layout: %1$s"
+msgstr "Rozložení se nepodařilo uložit: %1$s"
+
+msgid "Service"
+msgstr "Služba"
+
+msgid "Database"
+msgstr "Databáze"
+
+msgid "External service"
+msgstr "Externí služba"
+
+msgid "Application · %1$s services"
+msgstr "Aplikace · %1$s služeb"
+
+msgid "No traffic in the window"
+msgstr "Žádný provoz v rozsahu"
+
+msgid "last span %1$s"
+msgstr "poslední span %1$s"
+
+msgid "no spans seen yet"
+msgstr "zatím žádný span"
+
+msgid "%1$s req/min"
+msgstr "%1$s pož/min"
+
+msgid "%1$s calls/min"
+msgstr "%1$s volání/min"
+
+msgid "p95 %1$s"
+msgstr "p95 %1$s"
+
+msgid "%1$s errors/min"
+msgstr "%1$s chyb/min"
+
+msgid "%1$s errors"
+msgstr "%1$s chyb"
+
+msgid "Traces (errors and slowest)"
+msgstr "Trasy (chyby a nejpomalejší)"
+
+msgid "Requests/min"
+msgstr "Požadavky/min"
+
+msgid "Calls/min"
+msgstr "Volání/min"
+
+msgid "Average"
+msgstr "Průměr"
+
+msgid "Errors"
+msgstr "Chyby"
+
+msgid "p95 latency"
+msgstr "Latence p95"
+
+msgid "Logs ERROR/min"
+msgstr "Logy ERROR/min"
+
+msgid "No traffic in the selected time range."
+msgstr "Ve zvoleném časovém rozsahu není žádný provoz."
+
+msgid "Last span %1$s (%2$s)."
+msgstr "Poslední span %1$s (%2$s)."
+
+msgid "No spans seen yet."
+msgstr "Zatím žádný span."
+
+msgid "Zabbix problems"
+msgstr "Problémy Zabbixu"
+
+msgid "Zabbix items (host %1$s, last 30 min)"
+msgstr "Položky Zabbixu (hostitel %1$s, posledních 30 min)"
+
+msgid "Inbound spans (traces)"
+msgstr "Příchozí spany (trasy)"
+
+msgid "Incoming calls (traces)"
+msgstr "Příchozí volání (trasy)"
+
+msgid "Endpoints"
+msgstr "Koncové body"
+
+msgid "Operation"
+msgstr "Operace"
+
+msgid "req/min"
+msgstr "pož/min"
+
+msgid "p95"
+msgstr "p95"
+
+msgid "errors"
+msgstr "chyb"
+
+msgid "Operations"
+msgstr "Operace"
+
+msgid "%1$s/min"
+msgstr "%1$s/min"
+
+msgid "Open host problems in Zabbix"
+msgstr "Otevřít problémy hostitele v Zabbixu"
+
+msgid "%1$s ms"
+msgstr "%1$s ms"
+
+msgid "%1$s s"
+msgstr "%1$s s"
+
+msgid "%1$s s ago"
+msgstr "před %1$s s"
+
+msgid "%1$s min ago"
+msgstr "před %1$s min"
+
+msgid "%1$s h ago"
+msgstr "před %1$s h"
+
+msgid "%1$s d ago"
+msgstr "před %1$s d"
+
+msgid "Not classified"
+msgstr "Neklasifikováno"
+
+msgid "Information"
+msgstr "Informace"
+
+msgid "Warning"
+msgstr "Varování"
+
+msgid "High"
+msgstr "Vysoká"
+
+msgid "Disaster"
+msgstr "Katastrofa"
+
+msgid "OK"
+msgstr "OK"
+
+msgid "Incident"
+msgstr "Incident"
+
+msgid "No Zabbix host"
+msgstr "Žádný hostitel Zabbixu"
+

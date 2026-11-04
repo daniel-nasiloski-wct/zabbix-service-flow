@@ -1,0 +1,246 @@
+# APM dashboard module for Zabbix 8.0 - translations.
+# This file is distributed under the same license as the module.
+msgid ""
+msgstr ""
+"Project-Id-Version: zabbix_service_dashboard 1.0.0\n"
+"POT-Creation-Date: 2026-11-04 02:00+0000\n"
+"PO-Revision-Date: 2026-11-04 02:00+0000\n"
+"Language: uz\n"
+"Last-Translator: Daniel Nasiloski\n"
+"Language-Team: uz\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+
+msgid "APM dashboard"
+msgstr "APM paneli"
+
+msgid "Actions"
+msgstr "Amallar"
+
+msgid "Edit"
+msgstr "Tahrirlash"
+
+msgid "Save"
+msgstr "Saqlash"
+
+msgid "Cancel"
+msgstr "Bekor qilish"
+
+msgid "Remove"
+msgstr "Olib tashlash"
+
+msgid "Nothing to remove"
+msgstr "Olib tashlash uchun hech narsa yo'q"
+
+msgid "Nothing to save"
+msgstr "Saqlash uchun hech narsa yo'q"
+
+msgid "Invalid time range or filter"
+msgstr "Vaqt oralig'i yoki filtr noto'g'ri"
+
+msgid "Application"
+msgstr "Ilova"
+
+msgid "Time range"
+msgstr "Vaqt oralig'i"
+
+msgid "All applications (overview)"
+msgstr "Barcha ilovalar (umumiy ko'rinish)"
+
+msgid "Last %1$s minutes"
+msgstr "Oxirgi %1$s daqiqa"
+
+msgid "Overview"
+msgstr "Umumiy ko'rinish"
+
+msgid "Back to %1$s"
+msgstr "%1$s ga qaytish"
+
+msgid "Remove application"
+msgstr "Ilovani olib tashlash"
+
+msgid "Remove service"
+msgstr "Xizmatni olib tashlash"
+
+msgid "Remove application \"%1$s\" from the map?"
+msgstr "\"%1$s\" ilovasi xaritadan olib tashlansinmi?"
+
+msgid "Remove service \"%1$s\" from the map?"
+msgstr "\"%1$s\" xizmati xaritadan olib tashlansinmi?"
+
+msgid "Its services, databases and external calls leave the map. Services shared with other applications stay."
+msgstr "Uning xizmatlari, ma'lumotlar bazalari va tashqi chaqiruvlari xaritadan yo'qoladi. Boshqa ilovalar bilan umumiy xizmatlar qoladi."
+
+msgid "The service, its connections, databases and external calls leave the map."
+msgstr "Xizmat, uning aloqalari, ma'lumotlar bazalari va tashqi chaqiruvlari xaritadan yo'qoladi."
+
+msgid "If the application is discovered again in new traces, it is recreated automatically, with all its entities."
+msgstr "Agar ilova yangi treyslarda qayta aniqlansa, u barcha obyektlari bilan avtomatik qayta yaratiladi."
+
+msgid "If the service is discovered again in new traces, it is recreated automatically, with all its entities."
+msgstr "Agar xizmat yangi treyslarda qayta aniqlansa, u barcha obyektlari bilan avtomatik qayta yaratiladi."
+
+msgid "Hosts, items and triggers in Zabbix are not changed."
+msgstr "Zabbix dagi xostlar, elementlar va triggerlar o'zgartirilmaydi."
+
+msgid "Remove %1$s"
+msgstr "%1$s ni olib tashlash"
+
+msgid "No data found"
+msgstr "Ma'lumot topilmadi"
+
+msgid "No APM span matches the attribute filter in the selected time range. Change the filter above or press Reset to see everything."
+msgstr "Tanlangan vaqt oralig'ida atribut filtriga mos APM span yo'q. Yuqoridagi filtrni o'zgartiring yoki hammasini ko'rish uchun Tiklash tugmasini bosing."
+
+msgid "No APM traces in the selected time range and no host with the apm.requests item. Services appear here as soon as the applications send traces to the Zabbix proxy."
+msgstr "Tanlangan vaqt oralig'ida APM treyslari yo'q va apm.requests elementiga ega xost yo'q. Ilovalar Zabbix proxy ga treys yuborishi bilan xizmatlar shu yerda paydo bo'ladi."
+
+msgid "Could not save the layout: %1$s"
+msgstr "Joylashuvni saqlab bo'lmadi: %1$s"
+
+msgid "Service"
+msgstr "Xizmat"
+
+msgid "Database"
+msgstr "Ma'lumotlar bazasi"
+
+msgid "External service"
+msgstr "Tashqi xizmat"
+
+msgid "Application · %1$s services"
+msgstr "Ilova · %1$s xizmat"
+
+msgid "No traffic in the window"
+msgstr "Oraliqda trafik yo'q"
+
+msgid "last span %1$s"
+msgstr "oxirgi span %1$s"
+
+msgid "no spans seen yet"
+msgstr "hali span ko'rilmagan"
+
+msgid "%1$s req/min"
+msgstr "%1$s so'rov/daq"
+
+msgid "%1$s calls/min"
+msgstr "%1$s chaqiruv/daq"
+
+msgid "p95 %1$s"
+msgstr "p95 %1$s"
+
+msgid "%1$s errors/min"
+msgstr "%1$s xato/daq"
+
+msgid "%1$s errors"
+msgstr "%1$s xato"
+
+msgid "Traces (errors and slowest)"
+msgstr "Treyslar (xatolar va eng sekinlari)"
+
+msgid "Requests/min"
+msgstr "So'rovlar/daq"
+
+msgid "Calls/min"
+msgstr "Chaqiruvlar/daq"
+
+msgid "Average"
+msgstr "O'rtacha"
+
+msgid "Errors"
+msgstr "Xatolar"
+
+msgid "p95 latency"
+msgstr "p95 kechikishi"
+
+msgid "Logs ERROR/min"
+msgstr "ERROR jurnallari/daq"
+
+msgid "No traffic in the selected time range."
+msgstr "Tanlangan vaqt oralig'ida trafik yo'q."
+
+msgid "Last span %1$s (%2$s)."
+msgstr "Oxirgi span %1$s (%2$s)."
+
+msgid "No spans seen yet."
+msgstr "Hali span ko'rilmagan."
+
+msgid "Zabbix problems"
+msgstr "Zabbix muammolari"
+
+msgid "Zabbix items (host %1$s, last 30 min)"
+msgstr "Zabbix elementlari (xost %1$s, oxirgi 30 daq)"
+
+msgid "Inbound spans (traces)"
+msgstr "Kiruvchi spanlar (treyslar)"
+
+msgid "Incoming calls (traces)"
+msgstr "Kiruvchi chaqiruvlar (treyslar)"
+
+msgid "Endpoints"
+msgstr "Oxirgi nuqtalar"
+
+msgid "Operation"
+msgstr "Operatsiya"
+
+msgid "req/min"
+msgstr "so'rov/daq"
+
+msgid "p95"
+msgstr "p95"
+
+msgid "errors"
+msgstr "xato"
+
+msgid "Operations"
+msgstr "Operatsiyalar"
+
+msgid "%1$s/min"
+msgstr "%1$s/daq"
+
+msgid "Open host problems in Zabbix"
+msgstr "Xost muammolarini Zabbix da ochish"
+
+msgid "%1$s ms"
+msgstr "%1$s ms"
+
+msgid "%1$s s"
+msgstr "%1$s s"
+
+msgid "%1$s s ago"
+msgstr "%1$s s oldin"
+
+msgid "%1$s min ago"
+msgstr "%1$s daq oldin"
+
+msgid "%1$s h ago"
+msgstr "%1$s soat oldin"
+
+msgid "%1$s d ago"
+msgstr "%1$s kun oldin"
+
+msgid "Not classified"
+msgstr "Tasniflanmagan"
+
+msgid "Information"
+msgstr "Ma'lumot"
+
+msgid "Warning"
+msgstr "Ogohlantirish"
+
+msgid "High"
+msgstr "Yuqori"
+
+msgid "Disaster"
+msgstr "Falokat"
+
+msgid "OK"
+msgstr "OK"
+
+msgid "Incident"
+msgstr "Hodisa"
+
+msgid "No Zabbix host"
+msgstr "Zabbix xosti yo'q"
+

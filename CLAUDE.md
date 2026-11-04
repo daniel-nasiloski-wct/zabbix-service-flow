@@ -1,82 +1,85 @@
-# zabbix-service-flow
+# zabbix-service-flow → módulo "APM dashboard" do Zabbix 8.0
 
-Mapa de serviços estilo New Relic para o APM do Zabbix 8.0, no tema Dark blue. É um frontend React (Vite) à parte, que fala direto com a API do Zabbix; não é dashboard nem mapa do Zabbix. Criado em 2026-10-30 a pedido do usuário, junto com o lab de APM em `../` (projeto `Zabbix_telemetry`). Repo privado: https://github.com/daniel-nasiloski-wct/zabbix-service-flow
+Mapa de serviços estilo New Relic para o APM do Zabbix 8.0, agora **nativo no frontend do Zabbix** como módulo oficial (`<frontend>/modules/zabbix_service_dashboard/`), em **APM → APM dashboard**. Portado em 2026-11-03 da plataforma Node à parte (servidor próprio, login, SQLite, barra lateral), tudo removido. Repo público (desde 2026-11-04): https://github.com/daniel-nasiloski-wct/zabbix-service-flow. Projeto-pai: `../` (`Zabbix_telemetry`).
+
+## Regras do usuário (não desfazer sem pedir)
+
+- **Só módulo, nada invasivo:** o módulo cria o diretório em `modules/` e usa a coluna `config` da própria linha na tabela `module`. Nenhum arquivo do core, config, schema, serviço ou objeto do Zabbix é alterado; nenhum restart. O instalador nunca escreve fora de `modules/`.
+- **Testar e homologar só em Docker** (`tests/lab/`). A VM `.100` recebe a instalação real **uma única vez**, depois de o usuário aprovar o resultado mostrado no lab. Ainda não foi instalado lá.
+- **Repo público desde 2026-11-04** (a pedido: "abre o repo pra clone pra poder executar o curl"); o `curl … install.sh | sh` oficial funciona. O `install.sh` continua aceitando `--archive` e `GITHUB_TOKEN` para testar mudanças ainda não publicadas.
+- **Tema:** segue o tema do Zabbix (7 temas). A paleta Dark blue é a original aprovada.
+- **Remove application/service:** Admin e Super admin (`USER_TYPE_ZABBIX_ADMIN`). "O mesmo padrão dos outros dashboards" (pedidos de 2026-11-03): o menu de ações do cabeçalho (botão `ZBX_STYLE_BTN_ACTION` + `ZBX_ICON_MENU` ao lado do kiosk, `menuPopup` do Zabbix) tem **"Edit"**, que entra no **modo de edição** igual ao do dashboard: o cabeçalho troca menu+kiosk por **"Save" + "Cancel"** (duas `CListItem` alternadas por `display`, como `js-control-view-actions`/`js-control-edit-actions`); os cards balançam (`sd-shake`) e cada card de aplicação/serviço ganha um X redondo no canto superior direito que surge com "pop" (`.node-remove`, só `kind === 'service'`); sem hover/tooltip; clicar no card não navega; na **visão geral os cards são arrastados** (pointer events em `.node-pos`, célula pela grade `view.grid` de `overviewLayout`, os outros deslizam em 300 ms, o solto assenta com transição `.settling`); **Save** grava a ordem (`servicedashboard.layout`, POST JSON `{order}` com CSRF próprio, `CTopology::setOrder` → `topology.o`; a resposta de dados traz `order` e `sortApps()` aplica) e **Cancel** descarta. O X abre um `overlayDialogue` do Zabbix (Cancel/Remove) avisando que, se a aplicação for descoberta de novo nos traces, ela e todas as entidades são recriadas; a remoção é imediata (não espera o Save). Sem diálogo próprio nem `confirm()`.
+- **Idiomas (2026-11-03, "respeitando as regras do zabbix"):** gettext com domínio próprio (`includes/CI18n.php`: `bindtextdomain('zabbix_service_dashboard', locale/)`, `CI18n::t()` = `dgettext`); o core não traduz módulos sozinho, só faz o `setlocale` do idioma do usuário. Os textos do React são traduzidos no PHP e entregues no bootstrap (`i18n` = `{inglês: traduzido}`, `lang` do usuário para `Intl`); no JS, `t('…', args)` em `src/i18n.js` com marcadores `%1$s` como o `_s()` do Zabbix. **Todo texto novo entra em três lugares:** `t()` no JS, a lista `CI18n::JS_STRINGS` e os `.po` (`locale/<idioma>/LC_MESSAGES/zabbix_service_dashboard.po`, mesmos 39 diretórios de idioma do Zabbix 8.0; `npm run i18n` compila os `.mo` com `msgfmt` e falha se faltar msgid ou tradução). Textos que já são do core (APM, Logs, Resource attributes, Kiosk mode) continuam no `_()`. O Zabbix só troca de idioma se o locale existir no sistema (nas imagens do lab entram `glibc-langpack-*` / `locale-gen` de 9 idiomas).
+- **Layout da página (2026-11-03, "espaço a mais"):** só os seletores de aplicação/janela ficam na linha de navegação do Zabbix (os contadores de incidentes/warnings e o "Updated" foram removidos a pedido: "tá poluindo") (`CHtmlPage::setNavigation`, a mesma linha do botão Filter, via portal do React para `#service-dashboard-nav`); sem trilha e sem legenda (o usuário mandou tirar: "não é útil"); dentro de uma aplicação aparece um botão "voltar" flutuante no canto superior esquerdo do mapa com a posição atual (app › serviço). No kiosk a linha de navegação não existe e os controles caem para o topo do mapa (`.topbar`).
+- Interface escrita em inglês (idioma-fonte) e traduzida pelo gettext do módulo nos 39 idiomas do Zabbix 8.0 (ver "Idiomas" na arquitetura); comentários do código em português; sem atribuição a IA em commits/docs.
+- **Nome visível: "APM dashboard"** (renomeado de "Service dashboard" em 2026-11-03, a pedido). Os identificadores técnicos continuam os antigos (diretório `zabbix_service_dashboard`, namespace `ServiceDashboard`, ações `servicedashboard.*`, classe CSS `.service-dashboard`, assets `service-dashboard.*`): mudá-los não traz nada ao usuário e quebraria a linha já registrada na tabela `module`.
+- Falar português com o usuário, inclusive nas descrições dos comandos.
 
 ## Rodar
 
 ```bash
 npm install
-npm run dev        # http://localhost:5173 (escuta em 0.0.0.0)
-npm run build      # gera dist/
+npm run dev            # harness: index.html imita a página do Zabbix (theme/color-scheme no <html>) e lê dev/fixture.json
+npm run build          # bundle para zabbix_service_dashboard/assets/{js,css}/service-dashboard.* (nomes fixos, COMMITADO)
+npm run test:parity    # tests/parity.sh: graph.js (Node) × CGraph.php (php:8.3-cli em Docker) sobre fixture sintética
+npm run lint           # tests/lint.sh: php -l (php:8.1-cli) + sh -n
+tests/install/run.sh   # install.sh em rockylinux9 e debian12 (só o pacote do frontend)
 ```
 
-- Login com usuário do Zabbix (`user.login`); no lab, `Admin`/`zabbix`. O token fica no `sessionStorage` (`zabbix-service-flow-session`), só na aba.
-- `.env`: `VITE_ZABBIX_URL=http://192.168.128.100/api_jsonrpc.php` (a `.100` do lab, server + frontend 8.0.0rc3). Pode ser trocado na tela de login. O frontend do Zabbix é a mesma URL sem `api_jsonrpc.php` (usado nos links).
-- A API do Zabbix já responde CORS (`Access-Control-Allow-Origin: *`): o navegador chama direto, sem proxy no Vite.
-- Dependências fixas: React 18.3.1, Vite 5.4.11, `@vitejs/plugin-react` 4.3.4. Sem outras bibliotecas (nada de libs de grafo ou gráfico).
-- Rodar em segundo plano só quando o usuário pedir.
+Rodar `npm run build` antes de commitar qualquer mudança em `src/`. Dependências: React 18.3.1, Vite 5.4.11, `@vitejs/plugin-react` 4.3.4. Nada de libs de grafo/gráfico/rotas.
 
-## Dados de teste
+## Lab Docker (`tests/lab/`, prefixo `sdlab-`)
 
-Os dados vêm do `multi_app.py` (repo público `daniel-nasiloski-wct/zabbix-clickhouse`): 4 aplicações de clientes diferentes (`service.namespace`) e 17 serviços, enviando OTLP para o proxy na `.101`; os hosts ficam na `.100`, grupo `apps`.
+`docker compose up -d --build` → PostgreSQL, ClickHouse 26.8 (schema `otel_*` copiado de `../zabbix-clickhouse`), `sdlab-zabbix` (server + frontend, `http://localhost:8080/zabbix/`, Admin/zabbix; duas imagens, escolhidas pelo `build` do serviço no compose: `zabbix-rpm/` com RPMs rc, httpd + php-fpm, Oracle Linux 10 por padrão (igual à VM `.100`) ou AlmaLinux 10 pelos build args `BASE`/`ZABBIX_RELEASE_RPM` (**o compose está em Alma agora**); e `zabbix-deb/` com `.deb` rc, Apache + mod-php, Ubuntu 24.04 por padrão ou Debian 12 pelos build args `BASE`/`ZABBIX_RELEASE_DEB`. Oracle, Debian, Ubuntu e Alma foram validadas em 2026-11-03 com o mesmo comando de instalação. Família RHEL precisa de EPEL por causa do `fping`; no Alma é `epel-release` + `crb`, no Oracle `oracle-epel-release-el10` + `ol10_codeready_builder`) e `sdlab-proxy` (Oracle Linux 10 com `zabbix-proxy-sqlite3-apm`, OTLP em `localhost:4317`; **o pacote `-apm` do proxy só existe em RPM**, não há `.deb` para Debian/Ubuntu). Debian: o `zabbix-frontend-php` puxa `php-mysql` por padrão (instalar `php-pgsql` explicitamente), o `apache.conf` do 8.0 não traz `date.timezone` (ini em `conf.d`), e sem o pacote `locales` + `en_US.UTF-8` o frontend mostra o aviso "Locale for language en_US is not found". `seed.py` (idempotente): fonte global de APM (`settings.update apm_global_db`), proxy com coleta APM, grupo `apps` com os 17 hosts do `multi_app.py` (3 Telemetry query + 4 dependentes, macros, 4 triggers) e usuário comum `viewer` / `Sd-lab-2026!` (role "APM dashboard viewer"). `api.py <método> '<json>'` para chamadas avulsas. Tráfego: `../.venv/bin/python ../zabbix-clickhouse/multi_app.py --endpoint http://localhost:4317 --iterations 300 --interval 2 [--incident]` (da raiz do `Zabbix_telemetry`).
 
-```bash
-.venv/bin/python zabbix-clickhouse/multi_app.py --iterations 300 --interval 2 [--incident]
+Escala (pedido do usuário em 2026-11-03, "40 apps pra eu testar"): `tests/lab/scale_catalog.py` gera, com semente fixa, 40 aplicações / 139 serviços (entrada `<app>-web|portal|api|app` → 2 ou 3 internos `<app>-<papel>`, cada um com banco e às vezes externo ou cadeia interna; `platform-auth` e `platform-notify` são compartilhadas por 1/3 e 1/4 das apps). `scale_hosts.py [--apps 40] [--remove]` cria os hosts/itens/triggers em lote (macro p95 = 3× a latência esperada; plataformas com limite de erros 15). `../../../.venv/bin/python scale_app.py --endpoint http://localhost:4317 --iterations 600 --interval 6 --incidents 3` manda traces e logs (sem métricas) com uma thread por aplicação; com as 4 apps do `multi_app.py` dá 46 aplicações e 156 hosts. O entrypoint do lab sobe `StartTelemetryQueryPollers=5` por causa dos 468 itens Telemetry query. O `multi_app.py` publicado não foi alterado.
+
+Instalar/atualizar o módulo no lab com **um comando só, pelo `install.sh` via curl** (como o usuário pediu em 2026-11-03; o repo é privado e nada está commitado, então o tarball é servido do Mac): montar `zabbix-service-flow-main/zabbix_service_dashboard` num `.tar.gz` junto com o `install.sh` numa pasta, `python3 -m http.server 8787 --bind 0.0.0.0` nela, e dentro do container (`host.docker.internal` resolve o Mac):
+
+```sh
+ZABBIX_URL=http://localhost/zabbix/api_jsonrpc.php ZABBIX_TOKEN=<token> \
+  curl -fsSL http://host.docker.internal:8787/install.sh | sh -s -- --archive http://host.docker.internal:8787/zabbix-service-flow.tar.gz
 ```
 
-Rodar da raiz do `Zabbix_telemetry`.
+O token (`token.create` + `token.generate`, nome `install`, userid 1) faz o instalador registrar/habilitar o módulo pela API, sem Scan directory. Alternativa antiga: `docker cp` + `api.py module.create '{"id":"zabbix_service_dashboard","relative_path":"modules/zabbix_service_dashboard","status":1}'`. Reconstruir o container do Zabbix apaga `modules/` (a linha na tabela `module` fica): rodar o comando de novo.
 
-| Aplicação | Entrada | Serviços |
-| --- | --- | --- |
-| loja-online | `checkout-demo` | catalog-api, auth-service, payment-gateway, shipping-service |
-| banco-digital | `bank-portal` | account-service, fraud-engine, notification-service |
-| streaming | `stream-hub` | entitlement-service, media-service, recommendation-service |
-| logistica | `fleet-tracker` | telemetry-ingest, routing-engine → traffic-service |
+Screenshots: `node tests/shot.mjs <url> <png> --cookie zbx_session=<valor> [--eval js] [--evalWait ms] [--theme x]` (Chrome headless via DevTools; imprime erros de console). O cookie sai de um login por curl em `index.php` (`name/password/enter`). Trocar o tema do Admin: `api.py user.update '{"userid":"1","theme":"dark-blue-theme"}'`.
 
-`--incident` sorteia um serviço e um modo (latência ou erros) para a execução inteira. As triggers disparam 2 a 3 min após o início e só fecham após 5 min no normal (regra do usuário: incidente não pode fechar na iteração seguinte). Os hosts, itens e triggers são criados pelo `apm_hosts.py` (raiz do `Zabbix_telemetry`, fora do git).
+## Arquitetura
+
+- **PHP (módulo):** `Module.php` põe o item depois de Logs em APM (`findOrAdd(_('APM'))->getSubMenu()->insertAfter(_('Logs'), …)`), ou em Monitoring se a role não vê APM; try/catch para nunca derrubar outras páginas. `CControllerServiceDashboardView` (página), `…Data` (GET JSON `?minutes=5|15|30|60`), `…Remove` (POST JSON `{ids, _csrf_token}`, Admin+). `includes/CCollector` (port de `loadData`: `API::ApmSpan/Item/Host/Trigger/History`, limit 50000 por timestamp desc, `memory_limit` 512M), `CGraph` (port de `buildGraph/mergeKnown/seenTopology`), `CTopology` (memória 7 dias + hidden em `module.config['topology']`, `DB::select/DB::update('module')`, tetos 400 nós/1200 ligações/60 KB, grava no máximo a cada 5 min por lastSeen), `CCache` (JSON em `sys_get_temp_dir()`, TTL 30 s, `flock`; assinatura `sa` para Super admin, `u<userid>` para os demais, porque a API filtra spans por permissão).
+- **Filtro por atributos (2026-11-03, "IGUAL ao do Zabbix"):** a view monta o mesmo `CFilter` de APM → Traces com `CTagFilterFieldHelper::getTagFilterField(..., FILTER_TYPE_APM_ATTRIBUTE)` para Resource attributes e Span attributes (Exists/Equals/Contains/Does not…, And/Or ou Or), templates `CTemplateTag` + `dynamicRows` + `CApmAttrFilterItem` (ambos já carregados em todas as páginas: **não** chamar `addJsFile('class.apm.attrfilteritem.js')`, dá "already declared"). `includes/CSpanFilter` valida (`rules()`), normaliza, grava/lê o perfil do usuário (`CProfile` em `web.servicedashboard.filter_*`, `.active` = aba aberta, como o Zabbix) e traduz para `apmspan.get` (`resource_attributes[_evaltype]`, `span_attributes[_evaltype]`). Fluxo: Apply → GET `filter_set=1&filter_*` na própria view (hidden `service`/`minutes` atualizados pela URL num listener de submit) → perfil salvo → bootstrap `filter`/`filtered` → o React manda os mesmos campos em `servicedashboard.data`. Com filtro ativo a coleta **não** mescla a memória de topologia nem os hosts sem span, e não grava nada (só as remoções continuam valendo); o cache ganha sufixo `f<md5>`. Reset = `filter_rst=1` (apaga o perfil). O painel começa recolhido (`.active` padrão 0) porque ocupa ~280 px; Apply deixa aberto e o Zabbix lembra a escolha.
+- **Resposta de dados** = mesmo shape do antigo `/api/flow`: `{graph, hosts, items, triggers, history, from, till, spans, frontend:'', updated}`. `applyHealth/layout/tenants/overviewLayout` continuam no navegador (`src/graph.js`).
+- **Frontend:** `main.jsx` monta `Dashboard` em `#service-dashboard-root` com `window.SERVICE_DASHBOARD` (URLs das ações, `csrf`, `canRemove`, `minutes`, `service`, `windows`, `refreshMs`). Estado na URL do Zabbix (`&service=…&minutes=…`, pushState/popstate). Altura = viewport menos o topo (recalcula em resize/kiosk). Links de trace/problemas relativos (`zabbix.php?action=apm.trace.list…`, `problem.view…`).
+- **CSS:** tudo sob `.service-dashboard`, sem resets globais, keyframes `sd-*`, tooltip `z-index` 1200. Paleta por tema via `html[color-scheme="light"]` (Blue/Blue classic) e `html[theme="…"]` (dark/dark-classic, dark-blue, hc-light, hc-dark); cores de estado também em `--*-rgb`. Valores vieram de `sass/stylesheets/sass/{base/_colors,<tema>}.scss` do Zabbix.
+
+## Fatos do frontend 8.0 que custaram caro (verificados no lab)
+
+- `validateInput()` usa o validador **antigo** (regras em string) a menos que o controller chame `setInputValidationMethod(self::INPUT_VALIDATION_FORM)` no `init()`; só então aceita `['object', 'fields' => […]]`. Sem isso: "Cannot parse validation rules".
+- Assets declarados no `manifest.json` carregam em **todas** as páginas do Zabbix → o bundle é incluído pela view (`addCssFile` + `<script type="module">` com `?v=<versão>`); `addJsFile` passa pelo `jsLoader.php` (whitelist do core), não serve.
+- Views GET e ações JSON de leitura chamam `disableCsrfValidation()`; o POST valida `_csrf_token` de `CCsrfTokenHelper::get('servicedashboard.remove')` (nome completo da ação); sem token o Zabbix devolve `{"error":{"title":"Access denied"…}}`.
+- `CModule::setConfig()` passa por `API::Module()->update()` (só Super admin): a topologia é gravada com `DB::update('module', …)` direto. A API `module.get` devolve `config` já decodificado; o `DB::select` devolve a string.
+- Módulo novo é visível por padrão para todas as roles (`modules.default_access`); negar é `role.update rules.modules [{moduleid, status:0}]` → some do menu e as ações negam. Módulo desabilitado = nada muda no Zabbix.
+- O tema do Zabbix estiliza `h3` (caixa alta), `header`/`nav`/`main`/`footer`/`section` (o `header` clipava o dropdown), `li` (`inline-block` + padding), `button`, `table`, `ul`: **nada de tags semânticas** dentro do mapa — só divs com classe (`nav-controls`/`topbar`, `canvas`, `context`, `tip-*`) — e os resets de `li`/`ul`/`button`/`table` ficam dentro de `.service-dashboard`.
+- No Zabbix o `body` tem altura fixa e quem rola é o `.wrapper`: a altura do mapa (`useFillViewport` em `Dashboard.jsx`) é calculada a partir do contêiner com `overflow-y` (não da janela nem do `body`) e observa com `ResizeObserver` os irmãos do mapa em cada nível até esse contêiner (o filtro do Zabbix aparece depois do carregamento e recolhe/expande). Só conta como "abaixo do mapa" o que começa abaixo dele, porque a barra lateral também é irmã no DOM.
+- **Modo kiosk** (botão de tela cheia): a view precisa de `$this->enableLayoutModes()` + `$this->getLayoutMode()` (é isso que o layout do `ZBase` lê para esconder barra lateral, cabeçalho e rodapé) **e** de `$this->addJsFile('layout.mode.js')` (o botão de `get_icon('kioskmode')` é só HTML; esse JS grava `web.layout.mode` e recarrega). Com só o `CViewHelper::loadLayoutMode()` no controller, o botão não fazia nada e, no máximo, sumia só o título. No kiosk o filtro leva `CFilter::setHidden()` (atributo `hidden` não funciona: o JS do filtro chama `tabs.show()`), senão o botão "Filter" fica embaixo do controle de sair, que o core mostra no canto ao mexer o mouse e esconde após 2 s. Corrigido em 2026-11-03 depois de "o botao de kiosk mode nao funciona" e "copia EXATAMENTE como é no zabbix".
+- Frontend fica em `/usr/share/zabbix/ui` (RPM e DEB); `rpm -Va zabbix-web` não acusa nada do instalador.
+- Pacote `zabbix-release` do 8.0: `repo.zabbix.com/zabbix/8.0/release/<distro>/<ver>/noarch/zabbix-release-latest-8.0.el10.noarch.rpm` (Debian: `zabbix-release_latest_8.0+debian12_all.deb`).
 
 ## Contrato com o Zabbix
 
-- **Host = `service.name`.** Cada serviço é ligado ao host com exatamente o mesmo nome técnico (`host.get` com `filter.host`). Serviço sem host fica cinza ("No Zabbix host").
-- Itens lidos por key: `apm.requests`, `apm.latency.p95`, `apm.errors`, `apm.logs.error` (`ITEM_KEYS` em `src/zabbix.js`). São os dependentes JSONPath dos itens Telemetry query do manual; o item bruto de erros tem key `apm.error.raw`.
-- Triggers: `trigger.get` com `value=1`, `monitored`, `skipDependent`, `expandDescription`. Os nomes das triggers e dos problemas vêm do Zabbix e estão em português (ex.: "checkout-demo: latência p95 alta").
-- Link de trace: `zabbix.php?action=apm.trace.list&filter_set=1&filter_traceid=<id>&from=now-1h&to=now`. Link de problemas do host: página de problemas filtrada pelo hostid.
+- **Host = `service.name`** (`host.get` com `filter.host`). Itens por key: `apm.requests`, `apm.latency.p95`, `apm.errors`, `apm.logs.error`. Triggers: `value=1`, `monitored`, `skipDependent`, `expandDescription`. Hosts com `apm.requests` entram no mapa mesmo sem span.
+- Regras do grafo e do layout: ver `src/graph.js` (inalteradas desde a versão Node): ligação pelo `parent_spanid` com estatística do span CLIENT; banco/externo = um nó por chamador; estado = pior severidade das triggers (2-3 amarelo, 4-5 vermelho); aplicação = serviço que ninguém chama.
 
-## Código (`src/`)
+## Escala mínima e rolagem (2026-11-03, depois de "miniaturas invisíveis" com 44 apps)
 
-| Arquivo | O que faz |
-| --- | --- |
-| `zabbix.js` | Cliente JSON-RPC mínimo (Bearer token) e `loadData`: `apmspan.get` (janela de 5 a 60 min, até 50000 spans), `host.get`, `item.get`, `history.get` (30 min, float) e `trigger.get` |
-| `graph.js` | `buildGraph` (nós e ligações a partir dos spans), `applyHealth` (estado pelo Zabbix), `layout` (colunas), `tenants` (aplicações) e `overviewLayout` (grade da visão geral) |
-| `App.jsx` | Topo (dropdown de aplicação/serviço, janela de tempo, contadores, sair), trilha, legenda; atualiza a cada 30 s; serviço selecionado vai no hash da URL |
-| `FlowMap.jsx` | Desenho e animação do mapa, hover e foco |
-| `Tooltip.jsx` | Detalhes no hover: itens do Zabbix com sparkline de 30 min, problemas, endpoints, traces (erro primeiro, depois os mais lentos) |
-| `Login.jsx`, `format.js`, `styles.css`, `main.jsx` | Login, formatação `en-US` e rótulos de severidade/estado, tema |
-
-### Regras do grafo
-
-- Ligação entre serviços: span filho (`parent_spanid`) em outro serviço; a estatística (chamadas/min, p95, média, erros, operações) vem do span CLIENT do chamador.
-- Bancos (`db.system`) e externos (`server.address`) viram um nó por chamador.
-- Estado: serviço = pior severidade das triggers em problema do host (prioridade 2-3 amarelo `warn`, 4-5 vermelho `crit`). Ligação para serviço herda o estado do chamado. Ligação para banco/externo herda o estado do chamador quando ela é a suspeita (10% ou mais de erros ou p95 a partir de 500 ms), e o nó do banco/externo herda o da ligação.
-- Layout em colunas: chamadores à esquerda, dependências à direita; com um serviço selecionado, quem chama à esquerda e o que ele chama à direita. Ordem dentro da coluna pela média da posição de quem chama.
-- Aplicação (tenant) = serviço que nenhum outro serviço chama, mais tudo o que ele alcança. Estado da aplicação = pior estado entre os membros.
-
-## Decisões do usuário (não desfazer sem pedir)
-
-- **Interface em inglês** desde 2026-10-30 (números e horários em `en-US`). Comentários do código ficam em português. Os nomes vindos do Zabbix continuam como estão.
-- **Visão geral ("All applications") só com os cards das aplicações**, simples e clicáveis, no mesmo `FlowMap`, em grade. Clicar abre o fluxo com animação (o card desliza para o início do fluxo). O usuário reprovou a versão com cards detalhados (KPIs, miniatura do fluxo, lista de problemas): "meio zuado".
-- Animações nas trocas de tela e no hover (pedido do usuário: "tava muito duro").
-- Ícone do Zabbix como favicon (`public/`), com `?v=2` nos links do `index.html` para furar o cache do Safari. Nada de emoji.
-- O visual de dashboard/mapa nativo do Zabbix gerado por API (`apm_services.py`) foi reprovado ("ficou horrível"); este projeto existe no lugar dele.
+`FlowMap` nunca encolhe a cena abaixo de `MIN_SCALE` (0,85); quando não cabe, `.flowmap` rola (`overflow: auto`, área `.scroll-area` com a grade de pontos). A visão geral calcula as colunas pela largura do canvas (`overviewLayout(apps, maxCols)`, `maxCols` medido em `Dashboard.jsx`), então o excedente desce e rola em vez de apertar. Não voltar ao "encaixa tudo na tela" sem pedir.
 
 ## Safari (navegador do usuário)
 
-- Não usar `foreignObject` para os cards: no Safari eles saem do lugar com opacidade/animação. Cards são divs HTML posicionadas sobre um SVG que só tem as ligações, dentro de uma `.scene` escalada.
-- O Safari não anima o atributo `d` de path por CSS: as transições (posição, opacidade, tamanho da cena, 750 ms) são feitas com `requestAnimationFrame`.
-- Testar no Safari; o Chrome esconde esses problemas.
+Sem `foreignObject` nos cards; transições por `requestAnimationFrame` (Safari não anima `d` de path por CSS). **Arrastar e soltar:** o Safari perde a captura de ponteiro quando o elemento arrastado é movido no DOM, e o React move os `.node-pos` quando a ordem da cena muda; por isso os cards são renderizados em ordem fixa (por id) e `pointermove`/`pointerup` são ouvidos na `window`, não no card (2026-11-04: no Safari o card voltava à célula de origem e o Save gravava a ordem antiga). Validação visual no lab foi em Chrome headless (`tests/shot.mjs --drag x1,y1,x2,y2` usa o mouse do DevTools); a conferência no Safari é do usuário.
 
-## Regras de trabalho
+## Pendências
 
-- Nenhuma atribuição a IA em commits, README ou código: sem `Co-Authored-By`, sem rodapé "Generated with". A mensagem de commit termina na última linha de conteúdo.
-- Não rodar nada na VM `.101` (proxy APM) sem pedido explícito; o usuário executa lá manualmente para os vídeos. A `.100` só é lida pela API.
-- Screenshot sem abrir o navegador do usuário: Chrome headless com `--user-data-dir` próprio (o perfil normal pode estar em uso).
+- Mostrar o lab ao usuário e, com aprovação, fazer a primeira instalação na `.100` (backup de `modules/` e da tabela `module`, `install.sh --archive` ou GitHub com token, Scan directory → Enable).
+- Repo publicado em 2026-11-04; o `curl` público funciona. Sem arquivo de licença ainda (o usuário não escolheu).

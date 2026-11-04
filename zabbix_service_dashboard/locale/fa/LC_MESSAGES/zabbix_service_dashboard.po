@@ -1,0 +1,246 @@
+# APM dashboard module for Zabbix 8.0 - translations.
+# This file is distributed under the same license as the module.
+msgid ""
+msgstr ""
+"Project-Id-Version: zabbix_service_dashboard 1.0.0\n"
+"POT-Creation-Date: 2026-11-04 02:00+0000\n"
+"PO-Revision-Date: 2026-11-04 02:00+0000\n"
+"Language: fa\n"
+"Last-Translator: Daniel Nasiloski\n"
+"Language-Team: fa\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+msgid "APM dashboard"
+msgstr "داشبورد APM"
+
+msgid "Actions"
+msgstr "اقدامات"
+
+msgid "Edit"
+msgstr "ویرایش"
+
+msgid "Save"
+msgstr "ذخیره"
+
+msgid "Cancel"
+msgstr "لغو"
+
+msgid "Remove"
+msgstr "حذف"
+
+msgid "Nothing to remove"
+msgstr "چیزی برای حذف نیست"
+
+msgid "Nothing to save"
+msgstr "چیزی برای ذخیره نیست"
+
+msgid "Invalid time range or filter"
+msgstr "بازه زمانی یا فیلتر نامعتبر است"
+
+msgid "Application"
+msgstr "برنامه"
+
+msgid "Time range"
+msgstr "بازه زمانی"
+
+msgid "All applications (overview)"
+msgstr "همه برنامه‌ها (نمای کلی)"
+
+msgid "Last %1$s minutes"
+msgstr "%1$s دقیقه اخیر"
+
+msgid "Overview"
+msgstr "نمای کلی"
+
+msgid "Back to %1$s"
+msgstr "بازگشت به %1$s"
+
+msgid "Remove application"
+msgstr "حذف برنامه"
+
+msgid "Remove service"
+msgstr "حذف سرویس"
+
+msgid "Remove application \"%1$s\" from the map?"
+msgstr "برنامه \"%1$s\" از نقشه حذف شود؟"
+
+msgid "Remove service \"%1$s\" from the map?"
+msgstr "سرویس \"%1$s\" از نقشه حذف شود؟"
+
+msgid "Its services, databases and external calls leave the map. Services shared with other applications stay."
+msgstr "سرویس‌ها، پایگاه‌های داده و فراخوانی‌های خارجی آن از نقشه حذف می‌شوند. سرویس‌های مشترک با برنامه‌های دیگر می‌مانند."
+
+msgid "The service, its connections, databases and external calls leave the map."
+msgstr "این سرویس به همراه اتصال‌ها، پایگاه‌های داده و فراخوانی‌های خارجی آن از نقشه حذف می‌شود."
+
+msgid "If the application is discovered again in new traces, it is recreated automatically, with all its entities."
+msgstr "اگر برنامه دوباره در ردیابی‌های جدید کشف شود، به‌طور خودکار با همه موجودیت‌هایش دوباره ساخته می‌شود."
+
+msgid "If the service is discovered again in new traces, it is recreated automatically, with all its entities."
+msgstr "اگر سرویس دوباره در ردیابی‌های جدید کشف شود، به‌طور خودکار با همه موجودیت‌هایش دوباره ساخته می‌شود."
+
+msgid "Hosts, items and triggers in Zabbix are not changed."
+msgstr "میزبان‌ها، آیتم‌ها و تریگرهای Zabbix تغییر نمی‌کنند."
+
+msgid "Remove %1$s"
+msgstr "حذف %1$s"
+
+msgid "No data found"
+msgstr "داده‌ای یافت نشد"
+
+msgid "No APM span matches the attribute filter in the selected time range. Change the filter above or press Reset to see everything."
+msgstr "هیچ span از APM با فیلتر ویژگی‌ها در بازه زمانی انتخاب‌شده مطابقت ندارد. فیلتر بالا را تغییر دهید یا برای دیدن همه، بازنشانی را بزنید."
+
+msgid "No APM traces in the selected time range and no host with the apm.requests item. Services appear here as soon as the applications send traces to the Zabbix proxy."
+msgstr "در بازه زمانی انتخاب‌شده ردیابی APM وجود ندارد و میزبانی با آیتم apm.requests نیست. به محض اینکه برنامه‌ها ردیابی به پراکسی Zabbix بفرستند، سرویس‌ها اینجا نمایش داده می‌شوند."
+
+msgid "Could not save the layout: %1$s"
+msgstr "ذخیره چیدمان ممکن نشد: %1$s"
+
+msgid "Service"
+msgstr "سرویس"
+
+msgid "Database"
+msgstr "پایگاه داده"
+
+msgid "External service"
+msgstr "سرویس خارجی"
+
+msgid "Application · %1$s services"
+msgstr "برنامه · %1$s سرویس"
+
+msgid "No traffic in the window"
+msgstr "بدون ترافیک در بازه"
+
+msgid "last span %1$s"
+msgstr "آخرین span %1$s"
+
+msgid "no spans seen yet"
+msgstr "هنوز span دیده نشده"
+
+msgid "%1$s req/min"
+msgstr "%1$s درخواست/دقیقه"
+
+msgid "%1$s calls/min"
+msgstr "%1$s فراخوانی/دقیقه"
+
+msgid "p95 %1$s"
+msgstr "p95 %1$s"
+
+msgid "%1$s errors/min"
+msgstr "%1$s خطا/دقیقه"
+
+msgid "%1$s errors"
+msgstr "%1$s خطا"
+
+msgid "Traces (errors and slowest)"
+msgstr "ردیابی‌ها (خطاها و کندترین‌ها)"
+
+msgid "Requests/min"
+msgstr "درخواست/دقیقه"
+
+msgid "Calls/min"
+msgstr "فراخوانی/دقیقه"
+
+msgid "Average"
+msgstr "میانگین"
+
+msgid "Errors"
+msgstr "خطاها"
+
+msgid "p95 latency"
+msgstr "تأخیر p95"
+
+msgid "Logs ERROR/min"
+msgstr "لاگ‌های ERROR/دقیقه"
+
+msgid "No traffic in the selected time range."
+msgstr "در بازه زمانی انتخاب‌شده ترافیکی وجود ندارد."
+
+msgid "Last span %1$s (%2$s)."
+msgstr "آخرین span %1$s (%2$s)."
+
+msgid "No spans seen yet."
+msgstr "هنوز span دیده نشده."
+
+msgid "Zabbix problems"
+msgstr "مشکلات Zabbix"
+
+msgid "Zabbix items (host %1$s, last 30 min)"
+msgstr "آیتم‌های Zabbix (میزبان %1$s، ۳۰ دقیقه اخیر)"
+
+msgid "Inbound spans (traces)"
+msgstr "spanهای ورودی (ردیابی‌ها)"
+
+msgid "Incoming calls (traces)"
+msgstr "فراخوانی‌های ورودی (ردیابی‌ها)"
+
+msgid "Endpoints"
+msgstr "نقاط پایانی"
+
+msgid "Operation"
+msgstr "عملیات"
+
+msgid "req/min"
+msgstr "درخواست/دقیقه"
+
+msgid "p95"
+msgstr "p95"
+
+msgid "errors"
+msgstr "خطا"
+
+msgid "Operations"
+msgstr "عملیات‌ها"
+
+msgid "%1$s/min"
+msgstr "%1$s/دقیقه"
+
+msgid "Open host problems in Zabbix"
+msgstr "باز کردن مشکلات میزبان در Zabbix"
+
+msgid "%1$s ms"
+msgstr "%1$s میلی‌ثانیه"
+
+msgid "%1$s s"
+msgstr "%1$s ثانیه"
+
+msgid "%1$s s ago"
+msgstr "%1$s ثانیه پیش"
+
+msgid "%1$s min ago"
+msgstr "%1$s دقیقه پیش"
+
+msgid "%1$s h ago"
+msgstr "%1$s ساعت پیش"
+
+msgid "%1$s d ago"
+msgstr "%1$s روز پیش"
+
+msgid "Not classified"
+msgstr "طبقه‌بندی‌نشده"
+
+msgid "Information"
+msgstr "اطلاعات"
+
+msgid "Warning"
+msgstr "هشدار"
+
+msgid "High"
+msgstr "بالا"
+
+msgid "Disaster"
+msgstr "فاجعه"
+
+msgid "OK"
+msgstr "سالم"
+
+msgid "Incident"
+msgstr "رخداد"
+
+msgid "No Zabbix host"
+msgstr "میزبان Zabbix وجود ندارد"
+

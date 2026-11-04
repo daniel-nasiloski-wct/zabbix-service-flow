@@ -4,9 +4,11 @@
   "version": "1.0.0",
   "type": "module",
   "scripts": {
-    "dev": "vite --host 0.0.0.0",
+    "dev": "vite",
     "build": "vite build",
-    "preview": "vite preview --host 0.0.0.0"
+    "test:parity": "sh tests/parity.sh",
+    "lint": "sh tests/lint.sh",
+    "i18n": "sh tests/i18n.sh"
   },
   "dependencies": {
     "react": "18.3.1",
@@ -15,5 +17,8 @@
   "devDependencies": {
     "@vitejs/plugin-react": "4.3.4",
     "vite": "5.4.11"
+  },
+  "engines": {
+    "node": ">=22.13"
   }
 }

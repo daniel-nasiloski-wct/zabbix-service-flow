@@ -1,0 +1,246 @@
+# APM dashboard module for Zabbix 8.0 - translations.
+# This file is distributed under the same license as the module.
+msgid ""
+msgstr ""
+"Project-Id-Version: zabbix_service_dashboard 1.0.0\n"
+"POT-Creation-Date: 2026-11-04 02:00+0000\n"
+"PO-Revision-Date: 2026-11-04 02:00+0000\n"
+"Language: de\n"
+"Last-Translator: Daniel Nasiloski\n"
+"Language-Team: de\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+msgid "APM dashboard"
+msgstr "APM-Dashboard"
+
+msgid "Actions"
+msgstr "Aktionen"
+
+msgid "Edit"
+msgstr "Bearbeiten"
+
+msgid "Save"
+msgstr "Speichern"
+
+msgid "Cancel"
+msgstr "Abbrechen"
+
+msgid "Remove"
+msgstr "Entfernen"
+
+msgid "Nothing to remove"
+msgstr "Nichts zu entfernen"
+
+msgid "Nothing to save"
+msgstr "Nichts zu speichern"
+
+msgid "Invalid time range or filter"
+msgstr "Ungültiger Zeitraum oder Filter"
+
+msgid "Application"
+msgstr "Anwendung"
+
+msgid "Time range"
+msgstr "Zeitraum"
+
+msgid "All applications (overview)"
+msgstr "Alle Anwendungen (Übersicht)"
+
+msgid "Last %1$s minutes"
+msgstr "Letzte %1$s Minuten"
+
+msgid "Overview"
+msgstr "Übersicht"
+
+msgid "Back to %1$s"
+msgstr "Zurück zu %1$s"
+
+msgid "Remove application"
+msgstr "Anwendung entfernen"
+
+msgid "Remove service"
+msgstr "Dienst entfernen"
+
+msgid "Remove application \"%1$s\" from the map?"
+msgstr "Anwendung \"%1$s\" aus der Karte entfernen?"
+
+msgid "Remove service \"%1$s\" from the map?"
+msgstr "Dienst \"%1$s\" aus der Karte entfernen?"
+
+msgid "Its services, databases and external calls leave the map. Services shared with other applications stay."
+msgstr "Ihre Dienste, Datenbanken und externen Aufrufe verschwinden aus der Karte. Mit anderen Anwendungen geteilte Dienste bleiben."
+
+msgid "The service, its connections, databases and external calls leave the map."
+msgstr "Der Dienst, seine Verbindungen, Datenbanken und externen Aufrufe verschwinden aus der Karte."
+
+msgid "If the application is discovered again in new traces, it is recreated automatically, with all its entities."
+msgstr "Wird die Anwendung in neuen Traces erneut entdeckt, wird sie automatisch mit allen ihren Entitäten neu angelegt."
+
+msgid "If the service is discovered again in new traces, it is recreated automatically, with all its entities."
+msgstr "Wird der Dienst in neuen Traces erneut entdeckt, wird er automatisch mit allen seinen Entitäten neu angelegt."
+
+msgid "Hosts, items and triggers in Zabbix are not changed."
+msgstr "Hosts, Elemente und Trigger in Zabbix werden nicht verändert."
+
+msgid "Remove %1$s"
+msgstr "%1$s entfernen"
+
+msgid "No data found"
+msgstr "Keine Daten gefunden"
+
+msgid "No APM span matches the attribute filter in the selected time range. Change the filter above or press Reset to see everything."
+msgstr "Kein APM-Span entspricht dem Attributfilter im gewählten Zeitraum. Ändern Sie den Filter oben oder klicken Sie auf Zurücksetzen, um alles zu sehen."
+
+msgid "No APM traces in the selected time range and no host with the apm.requests item. Services appear here as soon as the applications send traces to the Zabbix proxy."
+msgstr "Keine APM-Traces im gewählten Zeitraum und kein Host mit dem Element apm.requests. Dienste erscheinen hier, sobald die Anwendungen Traces an den Zabbix-Proxy senden."
+
+msgid "Could not save the layout: %1$s"
+msgstr "Layout konnte nicht gespeichert werden: %1$s"
+
+msgid "Service"
+msgstr "Dienst"
+
+msgid "Database"
+msgstr "Datenbank"
+
+msgid "External service"
+msgstr "Externer Dienst"
+
+msgid "Application · %1$s services"
+msgstr "Anwendung · %1$s Dienste"
+
+msgid "No traffic in the window"
+msgstr "Kein Verkehr im Zeitraum"
+
+msgid "last span %1$s"
+msgstr "letzter Span %1$s"
+
+msgid "no spans seen yet"
+msgstr "noch keine Spans gesehen"
+
+msgid "%1$s req/min"
+msgstr "%1$s Anfr./min"
+
+msgid "%1$s calls/min"
+msgstr "%1$s Aufrufe/min"
+
+msgid "p95 %1$s"
+msgstr "p95 %1$s"
+
+msgid "%1$s errors/min"
+msgstr "%1$s Fehler/min"
+
+msgid "%1$s errors"
+msgstr "%1$s Fehler"
+
+msgid "Traces (errors and slowest)"
+msgstr "Traces (Fehler und langsamste)"
+
+msgid "Requests/min"
+msgstr "Anfragen/min"
+
+msgid "Calls/min"
+msgstr "Aufrufe/min"
+
+msgid "Average"
+msgstr "Durchschnitt"
+
+msgid "Errors"
+msgstr "Fehler"
+
+msgid "p95 latency"
+msgstr "p95-Latenz"
+
+msgid "Logs ERROR/min"
+msgstr "Logs ERROR/min"
+
+msgid "No traffic in the selected time range."
+msgstr "Kein Verkehr im gewählten Zeitraum."
+
+msgid "Last span %1$s (%2$s)."
+msgstr "Letzter Span %1$s (%2$s)."
+
+msgid "No spans seen yet."
+msgstr "Noch keine Spans gesehen."
+
+msgid "Zabbix problems"
+msgstr "Zabbix-Probleme"
+
+msgid "Zabbix items (host %1$s, last 30 min)"
+msgstr "Zabbix-Elemente (Host %1$s, letzte 30 min)"
+
+msgid "Inbound spans (traces)"
+msgstr "Eingehende Spans (Traces)"
+
+msgid "Incoming calls (traces)"
+msgstr "Eingehende Aufrufe (Traces)"
+
+msgid "Endpoints"
+msgstr "Endpunkte"
+
+msgid "Operation"
+msgstr "Operation"
+
+msgid "req/min"
+msgstr "Anfr./min"
+
+msgid "p95"
+msgstr "p95"
+
+msgid "errors"
+msgstr "Fehler"
+
+msgid "Operations"
+msgstr "Operationen"
+
+msgid "%1$s/min"
+msgstr "%1$s/min"
+
+msgid "Open host problems in Zabbix"
+msgstr "Host-Probleme in Zabbix öffnen"
+
+msgid "%1$s ms"
+msgstr "%1$s ms"
+
+msgid "%1$s s"
+msgstr "%1$s s"
+
+msgid "%1$s s ago"
+msgstr "vor %1$s s"
+
+msgid "%1$s min ago"
+msgstr "vor %1$s min"
+
+msgid "%1$s h ago"
+msgstr "vor %1$s h"
+
+msgid "%1$s d ago"
+msgstr "vor %1$s d"
+
+msgid "Not classified"
+msgstr "Nicht klassifiziert"
+
+msgid "Information"
+msgstr "Information"
+
+msgid "Warning"
+msgstr "Warnung"
+
+msgid "High"
+msgstr "Hoch"
+
+msgid "Disaster"
+msgstr "Katastrophe"
+
+msgid "OK"
+msgstr "OK"
+
+msgid "Incident"
+msgstr "Vorfall"
+
+msgid "No Zabbix host"
+msgstr "Kein Zabbix-Host"
+

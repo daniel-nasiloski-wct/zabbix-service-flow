@@ -1,6 +1,7 @@
 import React, { useLayoutEffect, useRef, useState } from 'react'
-import { SEVERITY, STATE_LABEL, clock, dur, num, pct, since } from './format.js'
+import { clock, dateTime, dur, num, pct, severityLabel, since, stateLabel } from './format.js'
 import { severityState } from './graph.js'
+import { t } from './i18n.js'
 
 function Sparkline({ values }) {
   if (values.length < 2) return <svg className="spark" />
@@ -21,34 +22,34 @@ const traceUrl = (frontend, id) =>
 function Traces({ traces, frontend }) {
   if (!traces.length) return null
   return (
-    <section>
-      <h4>Traces (errors and slowest)</h4>
+    <div className="tip-section">
+      <h4>{t('Traces (errors and slowest)')}</h4>
       <table className="traces">
         <tbody>
-          {traces.map((t) => (
-            <tr key={`${t.traceid}-${t.ts}`}>
-              <td><i className={`dot ${t.error ? 'crit' : 'ok'}`} /></td>
+          {traces.map((tr) => (
+            <tr key={`${tr.traceid}-${tr.ts}`}>
+              <td><i className={`dot ${tr.error ? 'crit' : 'ok'}`} /></td>
               <td className="mono">
-                <a href={traceUrl(frontend, t.traceid)} target="_blank" rel="noreferrer">{t.traceid.slice(0, 12)}…</a>
+                <a href={traceUrl(frontend, tr.traceid)} target="_blank" rel="noreferrer">{tr.traceid.slice(0, 12)}…</a>
               </td>
-              <td className="op">{t.op}</td>
-              <td className="num">{dur(t.seconds)}</td>
-              <td className="num muted">{clock(t.ts)}</td>
+              <td className="op">{tr.op}</td>
+              <td className="num">{dur(tr.seconds)}</td>
+              <td className="num muted">{clock(tr.ts)}</td>
             </tr>
           ))}
         </tbody>
       </table>
-    </section>
+    </div>
   )
 }
 
-function Stats({ s, rpmLabel = 'Calls/min' }) {
+function Stats({ s, rpmLabel }) {
   return (
     <div className="stats">
-      <div><span>{rpmLabel}</span><b>{num(s.rpm, 1)}</b></div>
-      <div><span>p95</span><b>{dur(s.p95)}</b></div>
-      <div><span>Average</span><b>{dur(s.avg)}</b></div>
-      <div><span>Errors</span><b>{pct(s.errPct)}</b></div>
+      <div><span>{rpmLabel || t('Calls/min')}</span><b>{num(s.rpm, 1)}</b></div>
+      <div><span>{t('p95')}</span><b>{dur(s.p95)}</b></div>
+      <div><span>{t('Average')}</span><b>{dur(s.avg)}</b></div>
+      <div><span>{t('Errors')}</span><b>{pct(s.errPct)}</b></div>
     </div>
   )
 }
@@ -60,57 +61,71 @@ const ZBX_ITEMS = [
   ['apm.logs.error', 'Logs ERROR/min', (v) => num(v, 0)],
 ]
 
+// Sem spans na janela: o item vem da topologia salva ou de um host com itens apm.*.
+function Idle({ lastSeen }) {
+  return (
+    <p className="idle-note">
+      {t('No traffic in the selected time range.')}{' '}
+      {lastSeen ? t('Last span %1$s (%2$s).', since(lastSeen), dateTime(lastSeen * 1000)) : t('No spans seen yet.')}
+    </p>
+  )
+}
+
 function NodeTip({ n, frontend }) {
   return (
     <>
-      <header>
+      <div className="tip-head">
         <h3>{n.label}</h3>
-        <span className={`pill ${n.state}`}>{STATE_LABEL[n.state]}</span>
-      </header>
+        <span className={`pill ${n.state}`}>{stateLabel(n.state)}</span>
+      </div>
 
       {n.problems?.length > 0 && (
-        <section>
-          <h4>Zabbix problems</h4>
+        <div className="tip-section">
+          <h4>{t('Zabbix problems')}</h4>
           <ul className="problems">
             {n.problems.map((p) => (
               <li key={p.triggerid} className={severityState(p.priority)}>
-                <span className="sev">{SEVERITY[p.priority]}</span>
+                <span className="sev">{severityLabel(p.priority)}</span>
                 <span>{p.description}</span>
                 <span className="muted">{since(p.lastchange)}</span>
               </li>
             ))}
           </ul>
-        </section>
+        </div>
       )}
 
       {n.host && (
-        <section>
-          <h4>Zabbix items (host {n.host.host}, last 30 min)</h4>
+        <div className="tip-section">
+          <h4>{t('Zabbix items (host %1$s, last 30 min)', n.host.host)}</h4>
           <div className="items">
             {ZBX_ITEMS.map(([key, label, fmt]) => {
               const it = n.items[key]
               return (
                 <div key={key} className="item">
-                  <span>{label}</span>
+                  <span>{t(label)}</span>
                   <b>{it ? fmt(it.lastvalue) : '—'}</b>
                   <Sparkline values={it ? it.history : []} />
                 </div>
               )
             })}
           </div>
-        </section>
+        </div>
       )}
 
-      <section>
-        <h4>{n.kind === 'service' ? 'Inbound spans (traces)' : 'Incoming calls (traces)'}</h4>
-        <Stats s={n.stats} rpmLabel={n.kind === 'service' ? 'Requests/min' : 'Calls/min'} />
-      </section>
+      {n.idle ? (
+        <div className="tip-section"><Idle lastSeen={n.lastSeen} /></div>
+      ) : (
+        <div className="tip-section">
+          <h4>{n.kind === 'service' ? t('Inbound spans (traces)') : t('Incoming calls (traces)')}</h4>
+          <Stats s={n.stats} rpmLabel={n.kind === 'service' ? t('Requests/min') : t('Calls/min')} />
+        </div>
+      )}
 
       {n.endpoints?.length > 0 && (
-        <section>
-          <h4>Endpoints</h4>
+        <div className="tip-section">
+          <h4>{t('Endpoints')}</h4>
           <table className="endpoints">
-            <thead><tr><th>Operation</th><th>req/min</th><th>p95</th><th>errors</th></tr></thead>
+            <thead><tr><th>{t('Operation')}</th><th>{t('req/min')}</th><th>{t('p95')}</th><th>{t('errors')}</th></tr></thead>
             <tbody>
               {n.endpoints.map((e) => (
                 <tr key={e.name}>
@@ -120,15 +135,15 @@ function NodeTip({ n, frontend }) {
               ))}
             </tbody>
           </table>
-        </section>
+        </div>
       )}
 
       <Traces traces={n.traces} frontend={frontend} />
       {n.host && (
-        <footer>
+        <div className="tip-foot">
           <a href={`${frontend}zabbix.php?action=problem.view&filter_set=1&hostids[]=${n.host.hostid}`}
-            target="_blank" rel="noreferrer">Open host problems in Zabbix ↗</a>
-        </footer>
+            target="_blank" rel="noreferrer">{t('Open host problems in Zabbix')} ↗</a>
+        </div>
       )}
     </>
   )
@@ -137,17 +152,23 @@ function NodeTip({ n, frontend }) {
 function EdgeTip({ e, byId, frontend }) {
   return (
     <>
-      <header>
+      <div className="tip-head">
         <h3>{byId.get(e.from).label} → {byId.get(e.to).label}</h3>
-        <span className={`pill ${e.state}`}>{STATE_LABEL[e.state]}</span>
-      </header>
-      <section><Stats s={e.stats} /></section>
-      <section>
-        <h4>Operations</h4>
-        <ul className="ops">
-          {e.ops.map((o) => <li key={o.name}><span>{o.name}</span><span className="muted">{num(o.rpm, 1)}/min</span></li>)}
-        </ul>
-      </section>
+        <span className={`pill ${e.state}`}>{stateLabel(e.state)}</span>
+      </div>
+      {e.idle ? (
+        <div className="tip-section"><Idle lastSeen={e.lastSeen} /></div>
+      ) : (
+        <>
+          <div className="tip-section"><Stats s={e.stats} /></div>
+          <div className="tip-section">
+            <h4>{t('Operations')}</h4>
+            <ul className="ops">
+              {e.ops.map((o) => <li key={o.name}><span>{o.name}</span><span className="muted">{t('%1$s/min', num(o.rpm, 1))}</span></li>)}
+            </ul>
+          </div>
+        </>
+      )}
       <Traces traces={e.traces} frontend={frontend} />
     </>
   )

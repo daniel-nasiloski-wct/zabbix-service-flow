@@ -1,0 +1,8 @@
+# Teste do install.sh no Debian 12: só o pacote do frontend (zabbix-frontend-php), sem banco nem servidor.
+FROM debian:12
+ENV DEBIAN_FRONTEND=noninteractive
+RUN apt-get update && apt-get install -y --no-install-recommends curl ca-certificates \
+ && curl -fsSL -o /tmp/zabbix-release.deb "https://repo.zabbix.com/zabbix/8.0/release/debian/pool/main/z/zabbix-release/zabbix-release_latest_8.0%2Bdebian12_all.deb" \
+ && dpkg -i /tmp/zabbix-release.deb && apt-get update \
+ && apt-get install -y --no-install-recommends zabbix-frontend-php zabbix-apache-conf \
+ && rm -rf /var/lib/apt/lists/*

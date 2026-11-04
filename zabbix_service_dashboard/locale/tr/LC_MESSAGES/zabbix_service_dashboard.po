@@ -1,0 +1,246 @@
+# APM dashboard module for Zabbix 8.0 - translations.
+# This file is distributed under the same license as the module.
+msgid ""
+msgstr ""
+"Project-Id-Version: zabbix_service_dashboard 1.0.0\n"
+"POT-Creation-Date: 2026-11-04 02:00+0000\n"
+"PO-Revision-Date: 2026-11-04 02:00+0000\n"
+"Language: tr\n"
+"Last-Translator: Daniel Nasiloski\n"
+"Language-Team: tr\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+msgid "APM dashboard"
+msgstr "APM panosu"
+
+msgid "Actions"
+msgstr "İşlemler"
+
+msgid "Edit"
+msgstr "Düzenle"
+
+msgid "Save"
+msgstr "Kaydet"
+
+msgid "Cancel"
+msgstr "İptal"
+
+msgid "Remove"
+msgstr "Kaldır"
+
+msgid "Nothing to remove"
+msgstr "Kaldırılacak bir şey yok"
+
+msgid "Nothing to save"
+msgstr "Kaydedilecek bir şey yok"
+
+msgid "Invalid time range or filter"
+msgstr "Geçersiz zaman aralığı veya filtre"
+
+msgid "Application"
+msgstr "Uygulama"
+
+msgid "Time range"
+msgstr "Zaman aralığı"
+
+msgid "All applications (overview)"
+msgstr "Tüm uygulamalar (genel bakış)"
+
+msgid "Last %1$s minutes"
+msgstr "Son %1$s dakika"
+
+msgid "Overview"
+msgstr "Genel bakış"
+
+msgid "Back to %1$s"
+msgstr "%1$s ögesine dön"
+
+msgid "Remove application"
+msgstr "Uygulamayı kaldır"
+
+msgid "Remove service"
+msgstr "Servisi kaldır"
+
+msgid "Remove application \"%1$s\" from the map?"
+msgstr "\"%1$s\" uygulaması haritadan kaldırılsın mı?"
+
+msgid "Remove service \"%1$s\" from the map?"
+msgstr "\"%1$s\" servisi haritadan kaldırılsın mı?"
+
+msgid "Its services, databases and external calls leave the map. Services shared with other applications stay."
+msgstr "Servisleri, veritabanları ve dış çağrıları haritadan çıkar. Diğer uygulamalarla paylaşılan servisler kalır."
+
+msgid "The service, its connections, databases and external calls leave the map."
+msgstr "Servis, bağlantıları, veritabanları ve dış çağrıları haritadan çıkar."
+
+msgid "If the application is discovered again in new traces, it is recreated automatically, with all its entities."
+msgstr "Uygulama yeni izlerde yeniden keşfedilirse tüm varlıklarıyla birlikte otomatik olarak yeniden oluşturulur."
+
+msgid "If the service is discovered again in new traces, it is recreated automatically, with all its entities."
+msgstr "Servis yeni izlerde yeniden keşfedilirse tüm varlıklarıyla birlikte otomatik olarak yeniden oluşturulur."
+
+msgid "Hosts, items and triggers in Zabbix are not changed."
+msgstr "Zabbix'teki sunucular, ögeler ve tetikleyiciler değiştirilmez."
+
+msgid "Remove %1$s"
+msgstr "%1$s ögesini kaldır"
+
+msgid "No data found"
+msgstr "Veri bulunamadı"
+
+msgid "No APM span matches the attribute filter in the selected time range. Change the filter above or press Reset to see everything."
+msgstr "Seçilen zaman aralığında öznitelik filtresine uyan APM span yok. Yukarıdaki filtreyi değiştirin veya her şeyi görmek için Sıfırla'ya basın."
+
+msgid "No APM traces in the selected time range and no host with the apm.requests item. Services appear here as soon as the applications send traces to the Zabbix proxy."
+msgstr "Seçilen zaman aralığında APM izi yok ve apm.requests ögesine sahip sunucu yok. Uygulamalar Zabbix proxy'ye iz göndermeye başlar başlamaz servisler burada görünür."
+
+msgid "Could not save the layout: %1$s"
+msgstr "Yerleşim kaydedilemedi: %1$s"
+
+msgid "Service"
+msgstr "Servis"
+
+msgid "Database"
+msgstr "Veritabanı"
+
+msgid "External service"
+msgstr "Dış servis"
+
+msgid "Application · %1$s services"
+msgstr "Uygulama · %1$s servis"
+
+msgid "No traffic in the window"
+msgstr "Aralıkta trafik yok"
+
+msgid "last span %1$s"
+msgstr "son span %1$s"
+
+msgid "no spans seen yet"
+msgstr "henüz span görülmedi"
+
+msgid "%1$s req/min"
+msgstr "%1$s istek/dk"
+
+msgid "%1$s calls/min"
+msgstr "%1$s çağrı/dk"
+
+msgid "p95 %1$s"
+msgstr "p95 %1$s"
+
+msgid "%1$s errors/min"
+msgstr "%1$s hata/dk"
+
+msgid "%1$s errors"
+msgstr "%1$s hata"
+
+msgid "Traces (errors and slowest)"
+msgstr "İzler (hatalar ve en yavaşlar)"
+
+msgid "Requests/min"
+msgstr "İstek/dk"
+
+msgid "Calls/min"
+msgstr "Çağrı/dk"
+
+msgid "Average"
+msgstr "Ortalama"
+
+msgid "Errors"
+msgstr "Hatalar"
+
+msgid "p95 latency"
+msgstr "p95 gecikmesi"
+
+msgid "Logs ERROR/min"
+msgstr "ERROR günlükleri/dk"
+
+msgid "No traffic in the selected time range."
+msgstr "Seçilen zaman aralığında trafik yok."
+
+msgid "Last span %1$s (%2$s)."
+msgstr "Son span %1$s (%2$s)."
+
+msgid "No spans seen yet."
+msgstr "Henüz span görülmedi."
+
+msgid "Zabbix problems"
+msgstr "Zabbix sorunları"
+
+msgid "Zabbix items (host %1$s, last 30 min)"
+msgstr "Zabbix ögeleri (sunucu %1$s, son 30 dk)"
+
+msgid "Inbound spans (traces)"
+msgstr "Gelen spanler (izler)"
+
+msgid "Incoming calls (traces)"
+msgstr "Gelen çağrılar (izler)"
+
+msgid "Endpoints"
+msgstr "Uç noktalar"
+
+msgid "Operation"
+msgstr "İşlem"
+
+msgid "req/min"
+msgstr "istek/dk"
+
+msgid "p95"
+msgstr "p95"
+
+msgid "errors"
+msgstr "hata"
+
+msgid "Operations"
+msgstr "İşlemler"
+
+msgid "%1$s/min"
+msgstr "%1$s/dk"
+
+msgid "Open host problems in Zabbix"
+msgstr "Sunucunun sorunlarını Zabbix'te aç"
+
+msgid "%1$s ms"
+msgstr "%1$s ms"
+
+msgid "%1$s s"
+msgstr "%1$s sn"
+
+msgid "%1$s s ago"
+msgstr "%1$s sn önce"
+
+msgid "%1$s min ago"
+msgstr "%1$s dk önce"
+
+msgid "%1$s h ago"
+msgstr "%1$s sa önce"
+
+msgid "%1$s d ago"
+msgstr "%1$s g önce"
+
+msgid "Not classified"
+msgstr "Sınıflandırılmamış"
+
+msgid "Information"
+msgstr "Bilgi"
+
+msgid "Warning"
+msgstr "Uyarı"
+
+msgid "High"
+msgstr "Yüksek"
+
+msgid "Disaster"
+msgstr "Felaket"
+
+msgid "OK"
+msgstr "Tamam"
+
+msgid "Incident"
+msgstr "Olay"
+
+msgid "No Zabbix host"
+msgstr "Zabbix sunucusu yok"
+

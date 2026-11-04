@@ -1,15 +1,51 @@
 <!doctype html>
-<html lang="en">
+<html lang="en" theme="dark-blue-theme" color-scheme="dark">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Service flow</title>
-    <link rel="icon" href="/favicon.ico?v=2" />
-    <link rel="icon" sizes="192x192" href="/zabbix-icon.png?v=2" />
-    <link rel="apple-touch-icon" href="/apple-touch-icon.png?v=2" />
+    <title>APM dashboard (dev harness)</title>
+    <link rel="icon" href="data:," />
+    <!-- Imita a página do Zabbix: atributos theme/color-scheme no <html>, cabeçalho fixo e a área de conteúdo. -->
+    <style>
+      body { margin: 0; font: 13px Arial, Tahoma, Verdana, sans-serif; background: #0b1526; color: #ccd; }
+      html[color-scheme="light"] body { background: #f4f5f7; color: #223; }
+      .dev-header { display: flex; gap: 12px; align-items: center; padding: 10px 16px; background: rgba(128, 128, 128, 0.15); }
+      .dev-header b { margin-right: auto; }
+      .dev-header select { font: inherit; }
+      .wrapper { padding: 10px 16px; }
+    </style>
   </head>
   <body>
-    <div id="root"></div>
+    <div class="dev-header">
+      <b>Zabbix (dev harness) · APM › APM dashboard</b>
+      <label>Theme
+        <select id="dev-theme">
+          <option value="blue-theme">Blue</option>
+          <option value="blue-classic-theme">Blue (classic)</option>
+          <option value="dark-theme">Dark</option>
+          <option value="dark-blue-theme" selected>Dark blue</option>
+          <option value="dark-classic-theme">Dark (classic)</option>
+          <option value="hc-light">High-contrast light</option>
+          <option value="hc-dark">High-contrast dark</option>
+        </select>
+      </label>
+    </div>
+    <div class="wrapper">
+      <div id="service-dashboard-root" class="service-dashboard"></div>
+    </div>
+    <script>
+      window.SERVICE_DASHBOARD = {
+        viewUrl: '/', dataUrl: '/dev/fixture.json?', removeUrl: '/dev/remove', layoutUrl: '/dev/layout', csrf: 'dev', csrfLayout: 'dev',
+        canRemove: true, lang: 'en_US', i18n: {},
+        minutes: 15, service: '', windows: [5, 15, 30, 60], refreshMs: 30000, frontend: 'http://localhost:8080/zabbix/', version: 'dev',
+        filter: { resource_attributes: [], resource_attributes_evaltype: 0, span_attributes: [], span_attributes_evaltype: 0 }, filtered: false,
+      }
+      const dark = new Set(['dark-theme', 'dark-blue-theme', 'dark-classic-theme', 'hc-dark'])
+      document.getElementById('dev-theme').addEventListener('change', (e) => {
+        document.documentElement.setAttribute('theme', e.target.value)
+        document.documentElement.setAttribute('color-scheme', dark.has(e.target.value) ? 'dark' : 'light')
+      })
+    </script>
     <script type="module" src="/src/main.jsx"></script>
   </body>
 </html>

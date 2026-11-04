@@ -1,0 +1,246 @@
+# APM dashboard module for Zabbix 8.0 - translations.
+# This file is distributed under the same license as the module.
+msgid ""
+msgstr ""
+"Project-Id-Version: zabbix_service_dashboard 1.0.0\n"
+"POT-Creation-Date: 2026-11-04 02:00+0000\n"
+"PO-Revision-Date: 2026-11-04 02:00+0000\n"
+"Language: he\n"
+"Last-Translator: Daniel Nasiloski\n"
+"Language-Team: he\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+msgid "APM dashboard"
+msgstr "לוח מחוונים APM"
+
+msgid "Actions"
+msgstr "פעולות"
+
+msgid "Edit"
+msgstr "עריכה"
+
+msgid "Save"
+msgstr "שמירה"
+
+msgid "Cancel"
+msgstr "ביטול"
+
+msgid "Remove"
+msgstr "הסרה"
+
+msgid "Nothing to remove"
+msgstr "אין מה להסיר"
+
+msgid "Nothing to save"
+msgstr "אין מה לשמור"
+
+msgid "Invalid time range or filter"
+msgstr "טווח זמן או מסנן לא חוקיים"
+
+msgid "Application"
+msgstr "יישום"
+
+msgid "Time range"
+msgstr "טווח זמן"
+
+msgid "All applications (overview)"
+msgstr "כל היישומים (סקירה)"
+
+msgid "Last %1$s minutes"
+msgstr "%1$s הדקות האחרונות"
+
+msgid "Overview"
+msgstr "סקירה"
+
+msgid "Back to %1$s"
+msgstr "חזרה אל %1$s"
+
+msgid "Remove application"
+msgstr "הסרת יישום"
+
+msgid "Remove service"
+msgstr "הסרת שירות"
+
+msgid "Remove application \"%1$s\" from the map?"
+msgstr "להסיר את היישום \"%1$s\" מהמפה?"
+
+msgid "Remove service \"%1$s\" from the map?"
+msgstr "להסיר את השירות \"%1$s\" מהמפה?"
+
+msgid "Its services, databases and external calls leave the map. Services shared with other applications stay."
+msgstr "השירותים, מסדי הנתונים והקריאות החיצוניות שלו ייעלמו מהמפה. שירותים המשותפים עם יישומים אחרים יישארו."
+
+msgid "The service, its connections, databases and external calls leave the map."
+msgstr "השירות, החיבורים, מסדי הנתונים והקריאות החיצוניות שלו ייעלמו מהמפה."
+
+msgid "If the application is discovered again in new traces, it is recreated automatically, with all its entities."
+msgstr "אם היישום יתגלה שוב בעקבות חדשות, הוא ייווצר מחדש אוטומטית עם כל הישויות שלו."
+
+msgid "If the service is discovered again in new traces, it is recreated automatically, with all its entities."
+msgstr "אם השירות יתגלה שוב בעקבות חדשות, הוא ייווצר מחדש אוטומטית עם כל הישויות שלו."
+
+msgid "Hosts, items and triggers in Zabbix are not changed."
+msgstr "מארחים, פריטים וטריגרים ב-Zabbix אינם משתנים."
+
+msgid "Remove %1$s"
+msgstr "הסרת %1$s"
+
+msgid "No data found"
+msgstr "לא נמצאו נתונים"
+
+msgid "No APM span matches the attribute filter in the selected time range. Change the filter above or press Reset to see everything."
+msgstr "אף span של APM אינו תואם למסנן התכונות בטווח הזמן שנבחר. שנו את המסנן למעלה או לחצו על איפוס כדי לראות הכול."
+
+msgid "No APM traces in the selected time range and no host with the apm.requests item. Services appear here as soon as the applications send traces to the Zabbix proxy."
+msgstr "אין עקבות APM בטווח הזמן שנבחר ואין מארח עם הפריט apm.requests. השירותים יופיעו כאן ברגע שהיישומים ישלחו עקבות ל-proxy של Zabbix."
+
+msgid "Could not save the layout: %1$s"
+msgstr "לא ניתן לשמור את הפריסה: %1$s"
+
+msgid "Service"
+msgstr "שירות"
+
+msgid "Database"
+msgstr "מסד נתונים"
+
+msgid "External service"
+msgstr "שירות חיצוני"
+
+msgid "Application · %1$s services"
+msgstr "יישום · %1$s שירותים"
+
+msgid "No traffic in the window"
+msgstr "אין תעבורה בטווח"
+
+msgid "last span %1$s"
+msgstr "span אחרון %1$s"
+
+msgid "no spans seen yet"
+msgstr "עדיין לא נראו spans"
+
+msgid "%1$s req/min"
+msgstr "%1$s בקשות/דקה"
+
+msgid "%1$s calls/min"
+msgstr "%1$s קריאות/דקה"
+
+msgid "p95 %1$s"
+msgstr "p95 %1$s"
+
+msgid "%1$s errors/min"
+msgstr "%1$s שגיאות/דקה"
+
+msgid "%1$s errors"
+msgstr "%1$s שגיאות"
+
+msgid "Traces (errors and slowest)"
+msgstr "עקבות (שגיאות והאיטיים ביותר)"
+
+msgid "Requests/min"
+msgstr "בקשות/דקה"
+
+msgid "Calls/min"
+msgstr "קריאות/דקה"
+
+msgid "Average"
+msgstr "ממוצע"
+
+msgid "Errors"
+msgstr "שגיאות"
+
+msgid "p95 latency"
+msgstr "השהיית p95"
+
+msgid "Logs ERROR/min"
+msgstr "יומני ERROR/דקה"
+
+msgid "No traffic in the selected time range."
+msgstr "אין תעבורה בטווח הזמן שנבחר."
+
+msgid "Last span %1$s (%2$s)."
+msgstr "span אחרון %1$s (%2$s)."
+
+msgid "No spans seen yet."
+msgstr "עדיין לא נראו spans."
+
+msgid "Zabbix problems"
+msgstr "בעיות Zabbix"
+
+msgid "Zabbix items (host %1$s, last 30 min)"
+msgstr "פריטי Zabbix (מארח %1$s, 30 הדקות האחרונות)"
+
+msgid "Inbound spans (traces)"
+msgstr "spans נכנסים (עקבות)"
+
+msgid "Incoming calls (traces)"
+msgstr "קריאות נכנסות (עקבות)"
+
+msgid "Endpoints"
+msgstr "נקודות קצה"
+
+msgid "Operation"
+msgstr "פעולה"
+
+msgid "req/min"
+msgstr "בקשות/דקה"
+
+msgid "p95"
+msgstr "p95"
+
+msgid "errors"
+msgstr "שגיאות"
+
+msgid "Operations"
+msgstr "פעולות"
+
+msgid "%1$s/min"
+msgstr "%1$s/דקה"
+
+msgid "Open host problems in Zabbix"
+msgstr "פתיחת בעיות המארח ב-Zabbix"
+
+msgid "%1$s ms"
+msgstr "%1$s מ\"ש"
+
+msgid "%1$s s"
+msgstr "%1$s שנ'"
+
+msgid "%1$s s ago"
+msgstr "לפני %1$s שנ'"
+
+msgid "%1$s min ago"
+msgstr "לפני %1$s דק'"
+
+msgid "%1$s h ago"
+msgstr "לפני %1$s שע'"
+
+msgid "%1$s d ago"
+msgstr "לפני %1$s ימים"
+
+msgid "Not classified"
+msgstr "לא מסווג"
+
+msgid "Information"
+msgstr "מידע"
+
+msgid "Warning"
+msgstr "אזהרה"
+
+msgid "High"
+msgstr "גבוהה"
+
+msgid "Disaster"
+msgstr "אסון"
+
+msgid "OK"
+msgstr "תקין"
+
+msgid "Incident"
+msgstr "תקרית"
+
+msgid "No Zabbix host"
+msgstr "אין מארח Zabbix"
+
