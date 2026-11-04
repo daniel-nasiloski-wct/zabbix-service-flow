@@ -104,3 +104,7 @@ Laboratório completo em Docker (Zabbix 8.0 rc em Oracle Linux, Alma, Ubuntu ou 
 | `install.sh` | Instalador, atualizador e desinstalador |
 | `tests/` | Paridade JS × PHP, lint, traduções, capturas, lab Docker, testes do instalador |
 | `docs/` | Capturas usadas neste README |
+
+## Licença
+
+[MIT](LICENSE).
