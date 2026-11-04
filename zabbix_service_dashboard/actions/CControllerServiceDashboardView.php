@@ -61,6 +61,8 @@ class CControllerServiceDashboardView extends CController {
 		$data = [
 			'version' => $version,
 			'action' => $this->getAction(),
+			// Sem o filtro por atributos (frontend anterior ao 8.0.0rc3) a página sai sem o painel de filtro.
+			'filter_supported' => CSpanFilter::supported(),
 			'filter' => $filter,
 			'filter_idx' => CSpanFilter::PROFILE,
 			// Recolhido até o usuário abrir (o Zabbix lembra a escolha em .active); Apply deixa aberto.

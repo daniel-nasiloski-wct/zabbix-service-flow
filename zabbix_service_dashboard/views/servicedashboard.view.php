@@ -26,8 +26,11 @@ $this->enableLayoutModes();
 $web_layout_mode = $this->getLayoutMode();
 $this->addJsFile('layout.mode.js');
 
+// O filtro por atributos só existe a partir do 8.0.0rc3 (constante, JS e parâmetros da API); em
+// frontends anteriores a página sai sem ele (CSpanFilter::supported()), em vez de erro fatal.
+$filter = null;
 $filter_fields = (new CFormGrid())->addClass(CFormGrid::ZBX_STYLE_FORM_GRID_LABEL_WIDTH_TRUE);
-foreach (['resource' => _('Resource attributes'), 'span' => _('Span attributes')] as $type => $label) {
+foreach ($data['filter_supported'] ? ['resource' => _('Resource attributes'), 'span' => _('Span attributes')] : [] as $type => $label) {
 	$filter_fields->addItem([
 		new CLabel($label, 'filter_'.$type.'_attributes'),
 		new CFormField(
@@ -47,21 +50,23 @@ foreach (['resource' => _('Resource attributes'), 'span' => _('Span attributes')
 
 // service/minutes viajam escondidos no formulário para o Apply não perder a aplicação e a janela
 // escolhidas; o JS abaixo copia os valores atuais da URL antes de enviar.
-$filter = (new CFilter())
-	->setId('servicedashboard_filter')
-	->setResetUrl((new CUrl('zabbix.php'))->setArgument('action', $data['action']))
-	->setProfile($data['filter_idx'])
-	->setActiveTab($data['active_tab'])
-	->addVar('action', $data['action'], 'filter_action')
-	->addVar('service', $data['bootstrap']['service'], 'filter_service')
-	->addVar('minutes', (string) $data['bootstrap']['minutes'], 'filter_minutes')
-	->addFilterTab(_('Filter'), [$filter_fields]);
+if ($data['filter_supported']) {
+	$filter = (new CFilter())
+		->setId('servicedashboard_filter')
+		->setResetUrl((new CUrl('zabbix.php'))->setArgument('action', $data['action']))
+		->setProfile($data['filter_idx'])
+		->setActiveTab($data['active_tab'])
+		->addVar('action', $data['action'], 'filter_action')
+		->addVar('service', $data['bootstrap']['service'], 'filter_service')
+		->addVar('minutes', (string) $data['bootstrap']['minutes'], 'filter_minutes')
+		->addFilterTab(_('Filter'), [$filter_fields]);
 
-// No kiosk o filtro fica escondido (CFilter::setHidden(), o JS do filtro não o mostra), como nas
-// páginas do core: senão o botão "Filter" fica embaixo do controle de sair do kiosk, que aparece no
-// canto quando o mouse se mexe.
-if ($web_layout_mode == ZBX_LAYOUT_KIOSKMODE) {
-	$filter->setHidden();
+	// No kiosk o filtro fica escondido (CFilter::setHidden(), o JS do filtro não o mostra), como nas
+	// páginas do core: senão o botão "Filter" fica embaixo do controle de sair do kiosk, que aparece
+	// no canto quando o mouse se mexe.
+	if ($web_layout_mode == ZBX_LAYOUT_KIOSKMODE) {
+		$filter->setHidden();
+	}
 }
 
 // Controles do cabeçalho como no dashboard: menu de ações (ZBX_STYLE_BTN_ACTION + ZBX_ICON_MENU; o
@@ -114,7 +119,7 @@ $controls = (new CList())
 	)
 	->show();
 
-foreach (['resource', 'span'] as $type) {
+foreach ($data['filter_supported'] ? ['resource', 'span'] : [] as $type) {
 	(new CTemplateTag('filter-'.$type.'-attributes-row-tmpl'))
 		->addItem(
 			CTagFilterFieldHelper::getTemplate([
@@ -132,7 +137,7 @@ echo (new CScriptTag(
 ));
 
 (new CScriptTag('
-	for (const type of ["resource", "span"]) {
+	for (const type of '.json_encode($data['filter_supported'] ? ['resource', 'span'] : []).') {
 		jQuery("#filter-" + type + "-attributes")
 			.dynamicRows({template: "#filter-" + type + "-attributes-row-tmpl"})
 			.on("afteradd.dynamicRows", function () {

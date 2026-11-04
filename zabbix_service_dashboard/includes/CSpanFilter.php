@@ -16,6 +16,15 @@ class CSpanFilter {
 	public const PROFILE = 'web.servicedashboard.filter';
 	public const TYPES = ['resource', 'span'];
 
+	/**
+	 * O filtro por atributos existe no frontend a partir do 8.0.0rc3 (CTagFilterFieldHelper::FILTER_TYPE_APM_ATTRIBUTE,
+	 * class.apm.attrfilteritem.js e resource_attributes/span_attributes em apmspan.get). Em versões
+	 * anteriores o módulo funciona sem o filtro, em vez de dar erro fatal na página.
+	 */
+	public static function supported(): bool {
+		return defined('CTagFilterFieldHelper::FILTER_TYPE_APM_ATTRIBUTE');
+	}
+
 	private const OPERATORS = [TAG_OPERATOR_EXISTS, TAG_OPERATOR_EQUAL, TAG_OPERATOR_LIKE, TAG_OPERATOR_NOT_EXISTS,
 		TAG_OPERATOR_NOT_EQUAL, TAG_OPERATOR_NOT_LIKE
 	];
@@ -39,6 +48,9 @@ class CSpanFilter {
 
 	/** Filtro limpo a partir dos campos recebidos: só linhas com chave; operador e valor saneados. */
 	public static function normalize(array $input, string $prefix = 'filter_'): array {
+		if (!self::supported()) {
+			$input = [];
+		}
 		$filter = [];
 		foreach (self::TYPES as $type) {
 			$evaltype = (int) ($input[$prefix.$type.'_attributes_evaltype'] ?? TAG_EVAL_TYPE_AND_OR);

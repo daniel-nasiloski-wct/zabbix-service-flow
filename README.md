@@ -26,7 +26,7 @@ Atualiza a cada 30 segundos. A coleta é compartilhada: não importa quantas pes
 
 ## Requisitos
 
-- Zabbix **8.0** (frontend) com o APM configurado: fonte de dados global apontando para o ClickHouse e aplicações enviando traces para um proxy com o coletor APM.
+- Zabbix **8.0** (frontend) com o APM configurado: fonte de dados global apontando para o ClickHouse e aplicações enviando traces para um proxy com o coletor APM. O filtro por atributos precisa do 8.0.0rc3 ou mais novo; em builds anteriores o módulo funciona sem ele.
 - Para as cores de incidente, hosts com o **mesmo nome técnico** do `service.name` e os itens `apm.requests`, `apm.latency.p95`, `apm.errors` e `apm.logs.error` (dependentes dos itens *Telemetry query*). Sem o host, o serviço aparece cinza ("No Zabbix host").
 - Para o mapa aparecer em outro idioma, o locale correspondente precisa existir no servidor, como para o próprio Zabbix.
 
