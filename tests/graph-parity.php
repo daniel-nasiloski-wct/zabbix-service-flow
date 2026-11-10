@@ -1,12 +1,13 @@
 <?php declare(strict_types = 1);
-// Mesmo que graph-parity.mjs, com o port PHP (zabbix_service_dashboard/includes/CGraph.php).
+// Mesmo que graph-parity.mjs, com o port PHP (zabbix_service_dashboard/includes/CGraph.php). O grafo de
+// entrada é o que o buildGraph do JS montou (argv[2]); no módulo ele vem das contas do ClickHouse.
 
 require __DIR__.'/../zabbix_service_dashboard/includes/CGraph.php';
 
 use Modules\ServiceDashboard\Includes\CGraph;
 
 $fixture = json_decode(file_get_contents($argv[1]), true);
-$graph = CGraph::buildGraph($fixture['spans'], (int) $fixture['minutes']);
+$graph = json_decode(file_get_contents($argv[2]), true)['graph'];
 $out = [
 	'graph' => $graph,
 	'seen' => CGraph::seenTopology($graph),

@@ -7,16 +7,13 @@ use RuntimeException;
 
 /**
  * Coleta do Zabbix pela API interna do frontend, com as permissões do usuário logado (sem token,
- * sem user.login). Port de server/zabbix.js loadData(): spans da janela + hosts, itens, histórico
- * e triggers em problema dos hosts com o mesmo nome do service.name.
+ * sem user.login). Port de server/zabbix.js loadData(): estatísticas dos spans da janela (CSpanStats,
+ * agregadas no ClickHouse) + hosts, itens, histórico e triggers em problema dos hosts com o mesmo nome
+ * do service.name.
  */
 class CCollector {
 
 	public const ITEM_KEYS = ['apm.requests', 'apm.latency.p95', 'apm.errors', 'apm.logs.error'];
-	public const SPAN_FIELDS = ['traceid', 'spanid', 'parent_spanid', 'span_name', 'span_kind', 'service_name',
-		'span_attributes', 'duration', 'status_code', 'timestamp'
-	];
-	public const SPAN_LIMIT = 50000;
 	public const HISTORY_SECONDS = 1800;
 
 	/**
@@ -28,8 +25,6 @@ class CCollector {
 	 * gravado na memória; só as remoções continuam valendo.
 	 */
 	public static function snapshot(int $minutes, array $filter = []): array {
-		self::raiseLimits();
-
 		$filtered = CSpanFilter::isActive($filter);
 		$topology = new CTopology();
 		$known = $topology->known();
@@ -43,7 +38,7 @@ class CCollector {
 		}
 
 		$d = self::loadData($minutes, $known_names, CSpanFilter::apiOptions($filter));
-		$graph = CGraph::buildGraph($d['spans'], $minutes);
+		$graph = CGraph::fromStats($d['stats'], $minutes);
 		if ($filtered) {
 			$merged = CGraph::mergeKnown($graph, ['hidden' => $known['hidden']], [], $minutes);
 		}
@@ -62,7 +57,9 @@ class CCollector {
 			'history' => $d['history'],
 			'from' => $d['from'],
 			'till' => $d['till'],
-			'spans' => count($d['spans']),
+			'spans' => array_sum(array_column(array_filter($d['stats']['services'],
+				static fn(array $row): bool => (int) $row['total'] === 1
+			), 'spans')),
 			'frontend' => '',
 			'updated' => (int) round(microtime(true) * 1000)
 		];
@@ -70,23 +67,13 @@ class CCollector {
 
 	/**
 	 * @param string[] $known_names  Serviços já conhecidos da topologia salva (podem estar sem spans na janela).
-	 * @param array    $span_options Parâmetros extras do apmspan.get (filtro por atributos).
+	 * @param array    $span_options Filtro por atributos (CSpanFilter::apiOptions()).
 	 */
 	public static function loadData(int $minutes, array $known_names = [], array $span_options = []): array {
 		$till = time();
 		$from = $till - $minutes * 60;
 
-		// Os mais novos primeiro, para o limite cortar os antigos; depois volta à ordem cronológica,
-		// que é a que o grafo espera (amostras mais recentes ficam).
-		$spans = self::call('apmspan.get', API::ApmSpan()->get($span_options + [
-			'time_from' => $from,
-			'time_till' => $till,
-			'limit' => self::SPAN_LIMIT,
-			'output' => self::SPAN_FIELDS,
-			'sortfield' => ['timestamp'],
-			'sortorder' => ZBX_SORT_DOWN
-		]));
-		$spans = array_reverse($spans);
+		$stats = CSpanStats::load($from, $till, $span_options);
 
 		$apm_items = self::call('item.get', API::Item()->get([
 			'filter' => ['key_' => 'apm.requests'],
@@ -94,7 +81,7 @@ class CCollector {
 			'output' => ['hostid']
 		]));
 
-		$names = array_values(array_unique(array_merge(array_column($spans, 'service_name'), $known_names)));
+		$names = array_values(array_unique(array_merge(array_column($stats['services'], 'svc'), $known_names)));
 		$apm_hostids = array_values(array_unique(array_column($apm_items, 'hostid')));
 
 		$by_name = $names
@@ -143,7 +130,7 @@ class CCollector {
 			: [];
 
 		return [
-			'spans' => $spans, 'hosts' => $hosts, 'apmHosts' => $apm_hosts, 'items' => $items,
+			'stats' => $stats, 'hosts' => $hosts, 'apmHosts' => $apm_hosts, 'items' => $items,
 			'triggers' => $triggers, 'history' => $history, 'from' => $from, 'till' => $till
 		];
 	}
@@ -156,31 +143,5 @@ class CCollector {
 		}
 
 		return $result;
-	}
-
-	/** Até 50 mil spans em arrays PHP pedem mais memória do que o padrão do frontend. */
-	private static function raiseLimits(): void {
-		$limit = ini_get('memory_limit');
-		$bytes = self::toBytes((string) $limit);
-		if ($bytes !== -1 && $bytes < 512 * 1024 * 1024) {
-			@ini_set('memory_limit', '512M');
-		}
-		@set_time_limit(60);
-	}
-
-	private static function toBytes(string $value): int {
-		$value = trim($value);
-		if ($value === '' || $value === '-1') {
-			return -1;
-		}
-		$unit = strtolower(substr($value, -1));
-		$number = (int) $value;
-
-		return match ($unit) {
-			'g' => $number * 1024 * 1024 * 1024,
-			'm' => $number * 1024 * 1024,
-			'k' => $number * 1024,
-			default => $number
-		};
 	}
 }

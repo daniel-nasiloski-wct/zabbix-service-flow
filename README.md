@@ -8,7 +8,7 @@ Mapa de serviços estilo New Relic **dentro do frontend do Zabbix 8.0**, em **AP
 
 ## O que ele mostra
 
-- **Fluxo automático.** Lê os spans recentes (`apmspan.get`) e descobre quem chama quem. Bancos de dados (`db.system`) e serviços externos (`server.address`, ou `net.peer.name`/`http.host` nas convenções antigas) viram nós próprios.
+- **Fluxo automático.** Lê os spans da janela, agregados no próprio ClickHouse (sem limite de spans), e descobre quem chama quem. Bancos de dados (`db.system`) e serviços externos (`server.address`, ou `net.peer.name`/`http.host` nas convenções antigas) viram nós próprios.
 - **Incidentes do Zabbix no mapa.** Cada serviço é ligado ao host do Zabbix com o mesmo nome do `service.name`. Triggers em problema pintam o serviço e as ligações que chegam nele: verde OK, amarelo atenção/média, vermelho alta/desastre.
 - **Detalhe ao passar o mouse.** Num serviço: itens do Zabbix com gráfico dos últimos 30 minutos, problemas abertos, endpoints e os traces com erro ou mais lentos. Numa ligação: chamadas por minuto, p95, média, erros, operações e traces. Cada trace abre em APM → Traces.
 - **Visão geral por aplicação.** Cada serviço que ninguém chama é a entrada de uma aplicação. A visão geral mostra um card por aplicação com o pior estado dela; clicar abre o fluxo.
@@ -67,14 +67,14 @@ Rodar de novo atualiza no lugar. Para esconder o mapa de alguns perfis: *Users �
 | --- | --- |
 | **Toca** | O diretório do módulo e, depois de habilitado, a coluna `config` da própria linha na tabela `module` (onde o Zabbix guarda a configuração de cada módulo). É lá que ficam a memória de topologia (7 dias, compacta, teto de 60 KB), as remoções manuais e a ordem dos cards. |
 | **Não toca** | Arquivos do frontend, `zabbix.conf.php`, Apache/Nginx/php-fpm, schema do banco, hosts, itens, triggers, dashboards. Nenhum serviço é reiniciado. O servidor Zabbix (daemon) nem sabe que o módulo existe: tudo roda no PHP do frontend. |
-| **Lê** | `apmspan.get`, `host.get`, `item.get`, `history.get` e `trigger.get` pela API interna, com as permissões do usuário. Um usuário comum vê só os serviços cujos hosts e atributos de recurso ele pode ver. |
+| **Lê** | Os spans no ClickHouse do APM, pela mesma conexão e com o mesmo filtro de permissão da `apmspan.get` (só consultas agregadas); `host.get`, `item.get`, `history.get` e `trigger.get` pela API interna, com as permissões do usuário. Um usuário comum vê só os serviços cujos hosts e atributos de recurso ele pode ver. |
 | **Cache** | 30 segundos, em arquivos no diretório temporário do PHP. Perder o diretório custa só uma coleta a mais. |
 | **Reverter** | *Administration → General → Modules → Disable* (imediato) e `sh install.sh uninstall`. |
 
 ## Como funciona
 
 1. A página (`servicedashboard.view`) entrega o HTML com o filtro do Zabbix, os controles do cabeçalho e o ponto de montagem; o mapa em si é um bundle React carregado só nessa página.
-2. A ação de dados (`servicedashboard.data`) coleta spans, hosts, itens, histórico e triggers com a sessão do usuário, monta o grafo em PHP (`includes/CGraph.php`, o mesmo algoritmo de `src/graph.js`, com teste de paridade) e devolve JSON. O resultado fica em cache por 30 segundos.
+2. A ação de dados (`servicedashboard.data`) pede ao ClickHouse as contas prontas dos spans da janela (`includes/CSpanStats.php`: contagens, erros, média, p95, operações e traces mais lentos por serviço, endpoint e ligação), busca hosts, itens, histórico e triggers com a sessão do usuário, monta o grafo em PHP (`includes/CGraph.php`, no mesmo formato de `src/graph.js`) e devolve JSON. O resultado fica em cache por 30 segundos.
 3. O navegador aplica estado, layout e animações, e consulta de novo a cada 30 segundos.
 4. Remoções (`servicedashboard.remove`) e a ordem dos cards (`servicedashboard.layout`) são POSTs com token CSRF, permitidos a Admin e Super admin, gravados na linha do módulo.
 
@@ -88,7 +88,7 @@ Requer Node 22+ para compilar o frontend (o servidor do Zabbix não precisa de N
 npm install
 npm run dev          # harness em http://localhost:8000 que imita a página do Zabbix (dev/fixture.json, troca de tema)
 npm run build        # gera assets/js/service-dashboard.js e assets/css/service-dashboard.css dentro do módulo
-npm run test:parity  # o grafo em PHP (CGraph.php) produz o mesmo resultado que src/graph.js
+npm run test:parity  # mergeKnown/seenTopology em PHP (CGraph.php) produzem o mesmo resultado que src/graph.js
 npm run lint         # php -l (PHP 8.1) e sh -n
 npm run i18n         # compila as traduções (.po → .mo, precisa do msgfmt do gettext) e confere se nada ficou sem traduzir
 ```
