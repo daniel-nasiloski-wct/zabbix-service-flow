@@ -135,11 +135,12 @@ class CGraph {
 				self::add($nodes[$svc]['endpoints'][$ep], $s, null);
 			}
 			elseif ($s['span_kind'] === 'Client' && !isset($remote_parents['s'.$s['spanid']])) {
-				// Chamada para algo sem instrumentação: banco (db.system) ou serviço externo (server.address).
+				// Chamada para algo sem instrumentação: banco (db.system) ou serviço externo (server.address;
+				// instrumentações com as convenções antigas só gravam net.peer.name ou http.host).
 				// Um nó por chamador: o mysql do checkout e o do shipping são bancos diferentes.
 				$attrs = self::attributes($s);
 				$db = $attrs['db.system'] ?? null;
-				$ext = $attrs['server.address'] ?? null;
+				$ext = ($attrs['server.address'] ?? '') ?: (($attrs['net.peer.name'] ?? '') ?: ($attrs['http.host'] ?? null));
 				$target = null;
 				if ($db) {
 					$target = 'db:'.$db.'@'.$svc;

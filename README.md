@@ -8,7 +8,7 @@ Mapa de serviços estilo New Relic **dentro do frontend do Zabbix 8.0**, em **AP
 
 ## O que ele mostra
 
-- **Fluxo automático.** Lê os spans recentes (`apmspan.get`) e descobre quem chama quem. Bancos de dados (`db.system`) e serviços externos (`server.address`) viram nós próprios.
+- **Fluxo automático.** Lê os spans recentes (`apmspan.get`) e descobre quem chama quem. Bancos de dados (`db.system`) e serviços externos (`server.address`, ou `net.peer.name`/`http.host` nas convenções antigas) viram nós próprios.
 - **Incidentes do Zabbix no mapa.** Cada serviço é ligado ao host do Zabbix com o mesmo nome do `service.name`. Triggers em problema pintam o serviço e as ligações que chegam nele: verde OK, amarelo atenção/média, vermelho alta/desastre.
 - **Detalhe ao passar o mouse.** Num serviço: itens do Zabbix com gráfico dos últimos 30 minutos, problemas abertos, endpoints e os traces com erro ou mais lentos. Numa ligação: chamadas por minuto, p95, média, erros, operações e traces. Cada trace abre em APM → Traces.
 - **Visão geral por aplicação.** Cada serviço que ninguém chama é a entrada de uma aplicação. A visão geral mostra um card por aplicação com o pior estado dela; clicar abre o fluxo.

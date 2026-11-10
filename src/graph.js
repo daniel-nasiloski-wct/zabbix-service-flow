@@ -81,12 +81,13 @@ export function buildGraph(spans, minutes) {
       if (!svc.endpoints.has(s.span_name)) svc.endpoints.set(s.span_name, newAcc())
       add(svc.endpoints.get(s.span_name), s)
     } else if (s.span_kind === 'Client' && !remoteParents.has(s.spanid)) {
-      // Chamada para algo sem instrumentação: banco (db.system) ou serviço externo (server.address).
+      // Chamada para algo sem instrumentação: banco (db.system) ou serviço externo (server.address;
+      // instrumentações com as convenções antigas só gravam net.peer.name ou http.host).
       const attrs = s.span_attributes || {}
       let target = null
       // Um nó por chamador: o mysql do checkout e o do shipping são bancos diferentes.
       const db = attrs['db.system']
-      const ext = attrs['server.address']
+      const ext = attrs['server.address'] || attrs['net.peer.name'] || attrs['http.host']
       if (db) target = node(`db:${db}@${s.service_name}`, 'db', db)
       else if (ext) target = node(`ext:${ext}@${s.service_name}`, 'external', ext)
       if (target) {
